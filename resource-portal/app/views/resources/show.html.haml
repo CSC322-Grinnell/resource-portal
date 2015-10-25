@@ -31,7 +31,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} Powersheik County Resource Portal
+          %a.navbar-brand{:href => "/"} Poweshiek County Resource Portal
         .navbar-collapse.collapse
           %form.navbar-form.navbar-right{:role => "form"}
             .form-group
@@ -42,18 +42,26 @@
             
     / Main Jumbotron for a primary marketing message or call to action.
     .container
-      / Example row of columns
-        .row
-        .col-md-4
-          %h2 Groceries and Meals
-          %a.btn.btn-primary{:href => "/resources/Groceries", :role => "button"} Get resources &raquo;
-          /= link_to "Get Resources", resources_path, { class: "btn btn-default", role: "button" }
-        .col-md-4
-          %h2 Housing
-          %a.btn.btn-primary{:href => "/resources/Housing", :role => "button"} Get resources &raquo;
-        .col-md-4
-          %h2 Employment
-          %a.btn.btn-primary{:href => "/resources/Employment", :role => "button"} Get resources&raquo;
+      .row
+        .col-md-12 
+          %h1{:style => "text-align: center"} #{@category}
+  
+    .container{:style => "background-color:#DCDCDC"}
+      - [1,2,3,4,5,6,7,8,9,10].each do |thing|
+      .row{:style => "background-color:#FFFFFF; margin: 25px"}
+        .col-md-6
+          %ul{:class => "list-group"}
+            %li Name:
+            %li Address:
+            %li Phone:
+            %li Fax:
+            %li Website:
+            %li Email:
+        .col-md-6 
+          %img{:src =>"/assets/mapsaps.png",:class =>"img-thumbnail",:height => "100%",:width =>"100px"}
+    -end unless @dont_show_things
+      /Examaple 2
+
       %hr/
       %footer
 
@@ -67,4 +75,3 @@
     / Include all compiled plugins (below), or include individual files as needed
     %script{:src => "js/bootstrap.min.js"}
 
-= link_to 'Home', resources_path

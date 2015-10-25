@@ -14,3 +14,68 @@ from the hash into the resource model.
 { agency_name:MICA
   agency_address:123 street
   agency_phone_number: 555-555-5555 }
+  
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Bootstrap, from Twitter
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    / Le styles
+    %link{:href => "/css/bootstrap.css", :rel => "stylesheet"}/
+    :css
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+        %link{:href => "/css/bootstrap-responsive.css", :rel => "stylesheet"}/
+    / Le fav and touch icons
+    %link{:href => "images/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
+    %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
+    %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "#"} Project name
+          .nav-collapse
+            %ul.nav
+              %li.active
+                %a{:href => "#"} Home
+              %li
+                %a{:href => "#about"} About
+              %li
+                %a{:href => "#contact"} Contact
+          / /.nav-collapse
+    .container
+      %h1 Bootstrap starter template
+      %p
+        Use this document as a way to quick start any new project.
+        %br/
+        All you get is this message and a barebones HTML document.
+    / /container
+    /
+      Le javascript
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    %script{:src => "/js/jquery.js"}
+    %script{:src => "/js/bootstrap-transition.js"}
+    %script{:src => "/js/bootstrap-alert.js"}
+    %script{:src => "/js/bootstrap-modal.js"}
+    %script{:src => "/js/bootstrap-dropdown.js"}
+    %script{:src => "/js/bootstrap-scrollspy.js"}
+    %script{:src => "/js/bootstrap-tab.js"}
+    %script{:src => "/js/bootstrap-tooltip.js"}
+    %script{:src => "/js/bootstrap-popover.js"}
+    %script{:src => "/js/bootstrap-button.js"}
+    %script{:src => "/js/bootstrap-collapse.js"}
+    %script{:src => "/js/bootstrap-carousel.js"}
+    %script{:src => "/js/bootstrap-typeahead.js"}
