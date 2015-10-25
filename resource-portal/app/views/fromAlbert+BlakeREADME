@@ -1,0 +1,16 @@
+Dear Zoe and Zhi,
+
+
+If you want to get access to all of the categories (the names of the resource categories),
+you can get it through @categories that exists in the controller.
+
+
+In the view submission form, the user clicks "Complete" and a bundle of information
+is sent to the form_controller. This bundle should be a hash table consisting of all of the 
+information agreed upon for the form. The form_controller will then store the information retreived
+from the hash into the resource model. 
+
+
+{ agency_name:MICA
+  agency_address:123 street
+  agency_phone_number: 555-555-5555 }

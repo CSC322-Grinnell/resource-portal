@@ -27,3 +27,5 @@ contact_email:string agency_email:string description_of_service:text
 =end 
 
 #rails generate migration remove NameofColumn NameofTable
+
+#rails generate migration add_email_to_users email:string

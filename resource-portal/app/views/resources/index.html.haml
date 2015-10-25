@@ -1,0 +1,75 @@
+!!! 5
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE-edge"}/
+    %meta{"name" => "viewport", :content => "width=device-width, initial-scale=1"}/
+    %meta{"name" => "description", "content" => ""}/
+    %meta{"name" => "author", "content" => ""}/
+    %link{:href => "../../assets/ico/favicon.ico", :rel => "shortcut icon"}/
+
+    /%title Jumbotron Template for Twitter Bootstrap
+
+    / Bootstrap Core CSS
+    %link{:href => "css/bootstrap.min.css", :rel => :stylesheet}/
+
+    / Custom Styles for this template
+    %link{:href => "css/jumbotron.css", :rel => :stylesheet}/
+
+    / HTML5 Shim and Respond.js IE8 Support of HTML5 elements and media queries.
+    / WARNING: Respond.js doesn't work if you view the page using file://
+    /[if IE9]
+      %script{:src => "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"}
+      %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.42/respond.min.js"}
+
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{:type => "button", "data-toggle" => "collapse", "data-target" => ".navbar-collapse"}
+            %span.sr-only Toggle Navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} Project Name
+        .navbar-collapse.collapse
+          %form.navbar-form.navbar-right{:role => "form"}
+            .form-group
+              %input.form-control{:type => "text", :placeholder => "Email"}
+            .form-group
+              %input.form-control{:type => "password", :placeholder => "Password"}
+            %button.btn.btn-success{:type => "submit"} Sign in
+            
+    / Main Jumbotron for a primary marketing message or call to action.
+    .jumbotron
+      .container
+        %h1 Poweshiek County Resource Portal
+        %p This is an online resource directory for the Poweshiek County of Iowa consisting of Food, Housing, and Employment resources. This website is being built through a student project at Grinnell College.
+        %p
+          %a.btn.btn-primary.btn-lg{:role => "button"} Learn more &raquo;
+
+    .container
+      / Example row of columns
+      .row
+        .col-md-4
+          %h2 Groceries and Meals
+          %a.btn.btn-primary{:href => "/resources/Groceries", :role => "button"} Get resources &raquo;
+          /= link_to "Get Resources", resources_path, { class: "btn btn-default", role: "button" }
+        .col-md-4
+          %h2 Housing
+          %a.btn.btn-primary{:href => "/resources/Housing", :role => "button"} Get resources &raquo;
+        .col-md-4
+          %h2 Employment
+          %a.btn.btn-primary{:href => "/resources/Employment", :role => "button"} Get resources&raquo;
+      %hr/
+      %footer
+
+    / Bootstrap Core JavaScript
+    / ========================================
+    / Placed at the end of the document so that pages can load faster.
+
+    / Jquery necessary for Bootstrap's JavaScript Plugins
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
+
+    / Include all compiled plugins (below), or include individual files as needed
+    %script{:src => "js/bootstrap.min.js"}
