@@ -46,17 +46,22 @@
         .col-md-12 
           %h1{:style => "text-align: center"} #{@category}
   
-    .container{:style => "background-color:#DCDCDC"}
-      - [1,2,3,4,5,6,7,8,9,10].each do |thing|
-      .row{:style => "background-color:#FFFFFF; margin: 25px"}
+    .container{:id => "all-resources"}
+      - @resources.each do |resource|
+      .row.resource_block
+        %h3 #{resource.title}
+        %p.description #{resource.description_of_service}
         .col-md-6
           %ul{:class => "list-group"}
-            %li Name:
-            %li Address:
-            %li Phone:
-            %li Fax:
-            %li Website:
-            %li Email:
+            %li Address: #{resource.address}
+            %li Alternative Address: #{resource.alternative_address}
+            %li Phone: #{resource.phone_number}
+            %li Alternative Phone: #{resource.alternative_phone_number}
+            %li Website: #{resource.website}
+            %li Fax: #{resource.fax_number}
+            %li Contact Email: #{resource.contact_email}
+            %li Agency Email: #{resource.agency_email}
+            %li Name of Submitter: #{resource.name_of_submitter}
         .col-md-6 
           %img{:src =>"/assets/mapsaps.png",:class =>"img-thumbnail",:height => "100%",:width =>"100px"}
     -end unless @dont_show_things

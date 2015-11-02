@@ -11,7 +11,7 @@
     /%title Jumbotron Template for Twitter Bootstrap
 
     / Bootstrap Core CSS
-    %link{:href => "css/bootstrap.min.css", :rel => :stylesheet}/
+    %link{:href => "scss/bootstrap.min.css", :rel => :stylesheet}/
 
     / Custom Styles for this template
     %link{:href => "css/jumbotron.css", :rel => :stylesheet}/
@@ -52,16 +52,16 @@
       / Example row of columns
       .row
         .col-md-4
-          %h2 Groceries and Meals
-          %a.btn.btn-primary{:href => "/resources/Groceries and Meals", :role => "button"} Get resources &raquo;
+          %a.btn.btn-info{:href => "/resources/Food and Groceries", :role => "button", :class => "resource_button", :id => "groceries_button"} Groceries and Meals &raquo;
           /= link_to "Get Resources", resources_path, { class: "btn btn-default", role: "button" }
         .col-md-4
-          %h2 Housing
-          %a.btn.btn-primary{:href => "/resources/Housing", :role => "button"} Get resources &raquo;
+          %a.btn.btn-info{:href => "/resources/Housing", :role => "button", :class => "resource_button", :id => "housing_button"} Housing &raquo;
         .col-md-4
-          %h2 Employment
-          %a.btn.btn-primary{:href => "/resources/Employment", :role => "button"} Get resources &raquo;
+          %a.btn.btn-info{:href => "/resources/Employment", :role => "button", :class => "resource_button", :id => "employment_button"} Employment &raquo;
       %hr/
+      .row 
+        .col-md-12
+          %a.btn.btn-default{:href => "/resources/new", :role => "button"} Enter a new resource &raquo;
       %footer
 
     / Bootstrap Core JavaScript

@@ -17,3 +17,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.resource_button {
+    margin: 5px auto;
+    font-size: 24px;
+}
+
+.resource_block {
+    background-color:#FFFFFF; 
+    margin: 25px;
+    padding: 0px 10px;
+}
+
+#all-resources {
+    background-color:#DCDCDC;
+}
+
+.list-group {
+    list-style-type: none;
+}

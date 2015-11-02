@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @test_gen.game %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @test_gen.score %>
+</p>
+
+<%= link_to 'Edit', edit_test_gen_path(@test_gen) %> |
+<%= link_to 'Back', test_gens_path %>

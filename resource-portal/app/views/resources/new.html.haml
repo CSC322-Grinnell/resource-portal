@@ -1,0 +1,12 @@
+= form_for @resource,:url => resources_path, :html => { :id => "fileupload", :multipart => true } do |f| 
+  %p
+    = f.label :title
+    = f.text_field :title
+  %p
+    = f.label :address
+    = f.text_field :address
+  %p
+    = f.label :category
+    = f.select :category, [['Categories', nil], 'Food and Groceries', 'Housing', 'Employment']
+  %p.button
+    = f.submit

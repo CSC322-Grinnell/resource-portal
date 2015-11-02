@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151010034427) do
+ActiveRecord::Schema.define(version: 20151101225958) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(version: 20151010034427) do
     t.string   "reviewer_name"
     t.time     "date_reviewed"
     t.text     "reviewer_comment"
+  end
+
+  create_table "test_gens", force: :cascade do |t|
+    t.string   "game"
+    t.integer  "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
