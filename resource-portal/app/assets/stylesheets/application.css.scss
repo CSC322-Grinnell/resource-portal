@@ -17,19 +17,34 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.resource_button {
-    margin: 5px auto;
+@mixin shadow-round($height) {
+    box-shadow: 0px 0px $height grey;
+    border-radius: 3px;
+}
+.btn {
+    @include shadow-round(6px)
+}
+.option_button {
+    margin: 5px 10px;
     font-size: 24px;
+}
+.option_button:visited {
+}
+.option_buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 .resource_block {
     background-color:#FFFFFF; 
     margin: 25px;
     padding: 0px 10px;
+    @include shadow-round(12px);
 }
 
 #all-resources {
     background-color:#DCDCDC;
+    @include shadow-round(8px);
 }
 
 .list-group {
@@ -49,4 +64,37 @@
    margin: auto;
     width: 60%;
     padding: 10px
+}
+
+.form-section {
+    padding: 10px;
+    margin: 5px;
+    background-color: #DEDEDE;
+    @include shadow-round(8px);
+}
+
+.jumbotron p {
+    line-height: inherit;
+}
+
+/** Footer styling **/
+footer {
+    padding: 20px 0px 10px 0px;
+    margin-top: 30px;
+    background-color: #EEEEEE;
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+}
+
+#body {
+   padding:10px;
+   padding-bottom:80px;   /* Height of the footer */
+   height:100%;
+}
+
+#container {
+    min-height: 100%;
+    position: relative;
 }

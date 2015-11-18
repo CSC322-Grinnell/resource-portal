@@ -25,105 +25,99 @@
       %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.42/respond.min.js"}
 
   %body
-    .navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
-      .container
-        .navbar-header
-          %button.navbar-toggle{:type => "button", "data-toggle" => "collapse", "data-target" => ".navbar-collapse"}
-            %span.sr-only Toggle Navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{:href => "/"} Poweshiek County Resource Portal
-        .navbar-collapse.collapse
-          %form.navbar-form.navbar-right{:role => "form"}
-            .form-group
-              %input.form-control{:type => "text", :placeholder => "Email"}
-            .form-group
-              %input.form-control{:type => "password", :placeholder => "Password"}
-            %button.btn.btn-success{:type => "submit"} Sign in
-
     .container
       .row
-        .col-md-12 
+        .col-md-10 
           %h1{:style => "text-align: center"} Resource Form
     .container 
-      .row.default-padding
+      .row
         = form_for @resource,:url => resources_path do |f| 
-          .row.top-buffer
-            %form_group
-              .col-md-2
-                = f.label :Agency_name
-              .col-md-10
-                = f.text_field :title, :class => "form-control"
-          .row.top-buffer      
-            %form_group
-              .col-md-2
-                = f.label :Category
-              .col-md-10
-                = f.select :category, [['Categories', nil], 'Food and Groceries', 'Housing', 'Employment'], :class => "form-control"
-          .row.top-buffer
-            %form_group
-              .col-md-2
-                = f.label :Address
-              .col-md-10
-                = f.text_field :address, :class => "form-control"
-          .row.top-buffer
-            %form_group
-              .col-md-2
-                = f.label :Alternative_Address
-              .col-md-10
-                = f.text_field :alternative_address, :class => "form-control"
-          .row.top-buffer
-            %form_group
-              .col-md-2
-                = f.label :Phone_number
-              .col-md-10
-                = f.text_field :phone_number, :class => "form-control" 
-          .row.top-buffer
-            %form_group
-              .col-md-2
-                = f.label :Alternative_Phone_number
-              .col-md-10
-                = f.text_field :alternative_phone_number, :class => "form-control"  
-          .row.top-buffer
-            %form_group
-              .col-md-2
-                = f.label :Website
-              .col-md-10
-                = f.text_field :website, :class => "form-control"   
-          .row.top-buffer
-            %form_group
-              .col-md-2
-                = f.label :Fax_number
-              .col-md-10
-                = f.text_field :fax_number, :class => "form-control"   
-          .row.top-buffer
-            %form_group
-              .col-md-2
-                = f.label :Contact_email
-              .col-md-10
-                = f.text_field :contact_email, :class => "form-control"   
-          .row.top-buffer
-            %form_group
-              .col-md-2
-                = f.label :Agency_email
-              .col-md-10
-                = f.text_field :agency_email, :class => "form-control"   
-          .row.top-buffer
-            %form_group
-              .col-md-2
-                = f.label :Service_description
-              .col-md-10
-                = f.text_field :description_of_service, :class => "form-control" 
-          .row.top-buffer
-            %form_group
-              .col-md-2
-                = f.label :Submitter_name
-              .col-md-10
-                = f.text_field :name_of_submitter, :class => "form-control"   
+          %div.form-section.col-md-10
+            %p Tell us about your service...
+            .row.top-buffer
+              %form_group
+                .col-md-2
+                  / Referenced: http://stackoverflow.com/questions/13003626/custom-text-for-rails-form-for-label
+                  = f.label :Agency_name, "Agency Name***"
+                .col-md-8
+                  = f.text_field :title, :class => "form-control", :required => true
+            .row.top-buffer
+              %form_group
+                .col-md-2
+                  = f.label :Description_of_service, "Description of Service***"
+                .col-md-8
+                  = f.text_area :description_of_service, :class => "form-control", :rows => 3, :required => true  
+            .row.top-buffer      
+              %form_group
+                .col-md-2
+                  = f.label :Category, "Category***"
+                .col-md-8
+                  / Referenced: https://gorails.com/forum/select-form-helper-required-true-not-working
+                  /             http://stackoverflow.com/questions/16573508/rails-f-check-box-set-checked-unchecked-values
+                  /             http://stackoverflow.com/questions/10887893/twitter-bootstrap-checkbox-columns-columns-within-form
+                  /             http://www.skuunk.com/2008/05/checkbox-arrays-in-rails.html
+                  /             http://railscasts.com/episodes/230-inherited-resources?view=asciicast
+                  = f.select :category, ['Food and Groceries', 'Housing', 'Employment'], {:prompt => "Select"}, {:required=> true, :class => "form-control"}
+            %p How community members can find your service...
+            .row.top-buffer
+              %form_group
+                .col-md-2
+                  = f.label :Address, "Address***"
+                .col-md-8
+                  = f.text_field :address, :class => "form-control", :required => true 
+            .row.top-buffer
+              %form_group
+                .col-md-2
+                  = f.label :Alternative_Address, "Alternative Address"
+                .col-md-8
+                  = f.text_field :alternative_address, :class => "form-control"
+            .row.top-buffer
+              %form_group
+                .col-md-2
+                  = f.label :Phone_number, "Phone Number"
+                .col-md-8
+                  = f.text_field :phone_number, :class => "form-control" 
+            .row.top-buffer
+              %form_group
+                .col-md-2
+                  = f.label :Alternative_Phone_number, "Alternative Phone Number"
+                .col-md-8
+                  = f.text_field :alternative_phone_number, :class => "form-control"  
+            .row.top-buffer
+              %form_group
+                .col-md-2
+                  = f.label :Website, "Website"
+                .col-md-8
+                  = f.text_field :website, :class => "form-control"   
+            .row.top-buffer
+              %form_group
+                .col-md-2
+                  = f.label :Fax_number, "Fax Number"
+                .col-md-8
+                  = f.text_field :fax_number, :class => "form-control"
+            .row.top-buffer
+              %form_group
+                .col-md-2
+                  = f.label :Agency_email, "Email"
+                .col-md-8
+                  = f.text_field :agency_email, :class => "form-control"   
+          %div.form-section.col-md-10
+            %p How we can contact you...
+            .row.top-buffer
+              %form_group
+                .col-md-2
+                  = f.label :Contact_email, "Contact Email***"
+                .col-md-8
+                  = f.text_field :contact_email, :class => "form-control", :required => true    
+            .row.top-buffer
+              %form_group
+                .col-md-2
+                  = f.label :Submitter_name, "Name"
+                .col-md-8
+                  = f.text_field :name_of_submitter, :class => "form-control"   
           .row.top-buffer
             .col-md-4
-            .col-md-4
-            .col-md-4
-              %button.btn.btn-success{:type => "submit"} Submit 
-            
+              / https://coderwall.com/p/jzofog/ruby-on-rails-flash-messages-with-bootstrap
+              / http://stackoverflow.com/questions/15534128/how-to-display-a-rails-flash-notice-upon-redirect
+              %button.btn.btn-success{:type => "submit", :confirm => "confirm"} Submit
+              
