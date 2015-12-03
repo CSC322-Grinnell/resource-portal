@@ -27,7 +27,7 @@
     .container
       .row
         .col-md-12 
-          %h1{:style => "text-align: center"} #{@category}
+          %h1{:style => "text-align: center"} #{@category.category_name}
   
     .container{:id => "all-resources"}
       - @resources.each do |resource|
@@ -52,6 +52,5 @@
 
       %hr/
       %footer
-
 
 

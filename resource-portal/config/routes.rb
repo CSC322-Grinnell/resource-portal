@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 get 'admin' => 'resources#admin'
+get 'Pending' => 'resources#Pending'
+get 'sign_up' => 'users#sign_up'
 
 resources :resources
   # Example resource route with options:

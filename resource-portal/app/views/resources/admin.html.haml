@@ -28,7 +28,22 @@
         .col-md-12 
           %h1{:style => "text-align: center"} Administrator Home
     .container
-      .row.col-md-12.option_buttons
-        %a.btn.btn-info{:href => "/admin/pending", :role => "button", :class => "option_button", :id => ""} View Pending &raquo;
-        %a.btn.btn-info{:href => "/admin/existing", :role => "button", :class => "option_button", :id => ""} Edit Existing &raquo;
-        %a.btn.btn-info{:href => "/admin/all", :role => "button", :class => "option_button", :id => ""} View All &raquo;
+      %ul.nav.nav-pills
+        %li
+          %a{:href => "#pending_tab" }Pending Resources
+        %li
+          %a{:href => "#existing_tab" }Edit Existing
+        %li
+          %a{:href => "#view_all_tab" }View All
+      %div.tab-content
+        %div.tab-pane#pending_tab
+          %p 1
+        %div.tab-pane#existing_tab
+          %p 2
+        %div.tab-pane#view_all_tab
+          %p 3
+      // .row.col-md-12.option_buttons
+      //   %a.btn.btn-info{:href => "/admin/pending", :role => "button", :class => "option_button", :id => ""} View Pending &raquo;
+      //   %a.btn.btn-info{:href => "/admin/existing", :role => "button", :class => "option_button", :id => ""} Edit Existing &raquo;
+      //   %a.btn.btn-info{:href => "/admin/all", :role => "button", :class => "option_button", :id => ""} View All &raquo;
+      //   %p #{@albert}

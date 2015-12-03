@@ -46,25 +46,24 @@
                 .col-md-2
                   = f.label :Description_of_service, "Description of Service***"
                 .col-md-8
-                  = f.text_area :description_of_service, :class => "form-control", :rows => 3, :required => true  
+                  = f.text_area :description_of_service, :class => "form-control", :rows => 3
             .row.top-buffer      
               %form_group
                 .col-md-2
                   = f.label :Category, "Category***"
                 .col-md-8
-                  / Referenced: https://gorails.com/forum/select-form-helper-required-true-not-working
-                  /             http://stackoverflow.com/questions/16573508/rails-f-check-box-set-checked-unchecked-values
-                  /             http://stackoverflow.com/questions/10887893/twitter-bootstrap-checkbox-columns-columns-within-form
-                  /             http://www.skuunk.com/2008/05/checkbox-arrays-in-rails.html
-                  /             http://railscasts.com/episodes/230-inherited-resources?view=asciicast
-                  = f.select :category, ['Food and Groceries', 'Housing', 'Employment'], {:prompt => "Select"}, {:required=> true, :class => "form-control"}
+                  %ul
+                  - Category.all.each do |category|
+                    = check_box_tag 'category_ids[]', category.id, :required => true
+                    = category.category_name
+          %div.form-section.col-md-10
             %p How community members can find your service...
             .row.top-buffer
               %form_group
                 .col-md-2
                   = f.label :Address, "Address***"
                 .col-md-8
-                  = f.text_field :address, :class => "form-control", :required => true 
+                  = f.text_field :address, :class => "form-control"
             .row.top-buffer
               %form_group
                 .col-md-2
@@ -108,16 +107,12 @@
                 .col-md-2
                   = f.label :Contact_email, "Contact Email***"
                 .col-md-8
-                  = f.text_field :contact_email, :class => "form-control", :required => true    
+                  = f.text_field :contact_email, :class => "form-control"  
             .row.top-buffer
               %form_group
                 .col-md-2
                   = f.label :Submitter_name, "Name"
                 .col-md-8
-                  = f.text_field :name_of_submitter, :class => "form-control"   
-          .row.top-buffer
-            .col-md-4
-              / https://coderwall.com/p/jzofog/ruby-on-rails-flash-messages-with-bootstrap
-              / http://stackoverflow.com/questions/15534128/how-to-display-a-rails-flash-notice-upon-redirect
-              %button.btn.btn-success{:type => "submit", :confirm => "confirm"} Submit
-              
+                  = f.text_field :name_of_submitter, :class => "form-control" 
+          %div.col-md-2
+            %button.btn.btn-success{:type => "submit", :confirm => "confirm"} Submit

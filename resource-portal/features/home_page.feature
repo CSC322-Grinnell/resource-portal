@@ -13,7 +13,7 @@ Scenario: Reaching Home page from scratch
   Then I am taken to the Home page of the Home Page interface where I can decide what to do next
   
   
-  
+
   Given that there is a button/logo on each page of the app that links to te home page.
   And that the user is in a page other than the home page:
   
