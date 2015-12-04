@@ -50,14 +50,14 @@ end
 def create
     # Receives information from the view, passes it and stores it in the model.
      #params[:category] = Category.create!(params[:category])
+     #CategoryResource.create!(resource_id:  resource_id, category_id: form_category.id)
      temp = Resource.create!(resource_params)
      
      # the easy way
      temp.category_ids = params[:category_ids] # [4, 9, 10]
      temp.save!
-     flash[:success] = "#{@title} was successfully submitted."
+     flash[:success] = "#{resource_params[:title]} was successfully submitted."
      redirect_to resources_path
-     #CategoryResource.create!(resource_id:  resource_id, category_id: form_category.id)
 end
 
 def update
@@ -67,8 +67,16 @@ def destroy
 end
 
 def admin
-    @albert = "Albert's variable"
+    @pending_resources = Resource.where(status: "Pending")
+    @approved_resources = Resource.where(status: "Approved")
     
+end
+
+def modify_status
+    resource = Resource.find(params[:id])
+     resource.status = params[:decision]
+    resource.save!
+   redirect_to admin_path
 end
 
 end

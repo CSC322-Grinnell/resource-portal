@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 get 'admin' => 'resources#admin'
 get 'Pending' => 'resources#Pending'
 get 'sign_up' => 'users#sign_up'
+#post 'admin/:id', to: 'resources#modify_status'
+post 'modify_status', to:  'resources#modify_status'
 
 resources :resources
   # Example resource route with options:

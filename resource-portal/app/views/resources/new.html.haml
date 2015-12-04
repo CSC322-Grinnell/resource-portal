@@ -46,7 +46,7 @@
                 .col-md-2
                   = f.label :Description_of_service, "Description of Service***"
                 .col-md-8
-                  = f.text_area :description_of_service, :class => "form-control", :rows => 3
+                  = f.text_area :description_of_service, :class => "form-control", :rows => 3, :required => true
             .row.top-buffer      
               %form_group
                 .col-md-2
@@ -63,7 +63,7 @@
                 .col-md-2
                   = f.label :Address, "Address***"
                 .col-md-8
-                  = f.text_field :address, :class => "form-control"
+                  = f.text_field :address, :class => "form-control", :required => true
             .row.top-buffer
               %form_group
                 .col-md-2
@@ -107,7 +107,7 @@
                 .col-md-2
                   = f.label :Contact_email, "Contact Email***"
                 .col-md-8
-                  = f.text_field :contact_email, :class => "form-control"  
+                  = f.text_field :contact_email, :class => "form-control", :required => true  
             .row.top-buffer
               %form_group
                 .col-md-2

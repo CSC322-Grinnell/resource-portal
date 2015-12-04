@@ -29,6 +29,7 @@
                   %input.form-control{:type => "password", :placeholder => "Password"}
                 %button.btn.btn-success{:type => "submit"} Sign in
     %div#body
+      / https://www.railstutorial.org/book/sign_up#sec-the_flash
       - flash.each do |message_type, message|
         %div{:class => "alert alert-#{message_type}"}= message
       = yield
