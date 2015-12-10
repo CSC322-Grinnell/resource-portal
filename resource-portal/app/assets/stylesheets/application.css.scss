@@ -16,23 +16,33 @@
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+/*@import "font-awesome-sprockets";
+@import "font-awesome";*/
 @mixin shadow-round($height) {
     box-shadow: 0px 0px $height grey;
     border-radius: 3px;
 }
+
+#log-out-link {
+    color: #EEEEEE;
+    padding: 0px 20px;
+}
 .btn {
-    @include shadow-round(6px)
+    @include shadow-round(6px);
+    margin: 2px;
 }
 .option_button {
     margin: 5px 10px;
     font-size: 24px;
+    background-color:#68acca;
 }
 .option_button:visited {
+    color: white;
 }
 .option_buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .resource_block {
@@ -97,4 +107,24 @@ footer {
 #container {
     min-height: 100%;
     position: relative;
+}
+
+#call-to-action {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px;
+}
+#enter-resource-button {
+    font-size: 2em;
+    background-color:#a0c738;
+}
+
+#main-page-jumbotron {
+    background-image: url(../images/corn-field-white.jpg);
+    background-position: 0% 45%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    min-height: 400px;
+    /*text-shadow: 0px 0px 4px black;*/
 }

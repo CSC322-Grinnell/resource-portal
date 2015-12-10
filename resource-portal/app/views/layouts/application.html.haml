@@ -15,27 +15,27 @@
               %span.icon-bar
               %span.icon-bar
               %span.icon-bar
-            %a.navbar-brand{:href => "/"} Poweshiek County Resource Portal
-          -if user_signed_in?  
-            .navbar-collapse.collapse
-              %form.navbar-form.navbar-right{:role => "form"}
-                = link_to "Log Out", destroy_user_session_path, :method => :delete
-          - if false 
-            .navbar-collapse.collapse
-              %form.navbar-form.navbar-right{:role => "form"}
-                .form-group
-                  %input.form-control{:type => "text", :placeholder => "Email"}
-                .form-group
-                  %input.form-control{:type => "password", :placeholder => "Password"}
-                %button.btn.btn-success{:type => "submit"} Sign in
+              // This is the header text for all pages.
+            %a.navbar-brand{:href => "/"} Resource Portal
+          .navbar-collapse.collapse
+            %form.navbar-form.navbar-right{:role => "form"}
+              //= link_to "Log Out", destroy_user_session_path, :method => :delete
+              %a.btn.btn-default{:href => "/admin", :role => "button"} Admin &raquo;
+              - if user_signed_in?
+                = link_to "Log Out", destroy_user_session_path, :method => :delete, :id => "log-out-link"
+              
+              //= button_to 'Log Out', {:action => "destroy", :controller => "devise/sessions"}, {:class => 'btn-success', :method => :delete}
+              //%a.btn.btn-default{:href => "/admin/sign_out", :role => "button"} Logout &raquo;
+          // 
     %div#body
-      / https://www.railstutorial.org/book/sign_up#sec-the_flash
+      / To enable flash messages, especially after submitting a resource form
+      / Reference: https://www.railstutorial.org/book/sign_up#sec-the_flash
       - flash.each do |message_type, message|
         %div{:class => "alert alert-#{message_type}"}= message
       = yield
-    %footer#footer
-      %div.container
-        %p this is a footer  
+    // %footer#footer
+    //   %div.container
+    //     %p this is a footer  
 
     / Bootstrap Core JavaScript
     / ========================================

@@ -25,7 +25,7 @@
   %body
             
     / Main Jumbotron for a primary marketing message or call to action.
-    .jumbotron
+    .jumbotron#main-page-jumbotron
       .container
         %h1 Poweshiek County Resource Portal
         %p This is an online resource directory for the Poweshiek County of Iowa consisting of Food, Housing, and Employment resources. This website is being built through a student project at Grinnell College.
@@ -33,18 +33,19 @@
 
     .container
       / Example row of columns
-      .row.option_buttons
+      .row
         - Category.all.each do |category|
-          %a.btn.btn-info{:href => "/resources/#{category.id}", :role => "button", :class => "option_button"} #{category.category_name} &raquo;
+          %div.col-md-4.option_buttons
+            %a.btn.btn-info{:href => "/resources/#{category.id}", :role => "button", :class => "option_button"} #{category.category_name} &raquo;
         // %a.btn.btn-info{:href => "/resources/Food and Groceries", :role => "button", :class => "option_button", :id => "groceries_button"} Groceries and Meals &raquo;
         // /= link_to "Get Resources", resources_path, { class: "btn btn-default", role: "button" }
         // %a.btn.btn-info{:href => "/resources/Housing", :role => "button", :class => "option_button", :id => "housing_button"} Housing &raquo;
         // %a.btn.btn-info{:href => "/resources/Employment", :role => "button", :class => "option_button", :id => "employment_button"} Employment &raquo;
       %hr/
       .row 
-        .col-md-12
-          %a.btn.btn-default{:href => "/resources/new", :role => "button"} Enter a new resource &raquo;
-          %a.btn.btn-default{:href => "/admin", :role => "button"} Admin &raquo;
-          -if !user_signed_in?
-            %a.btn.btn-default{:href => "/users/sign_in", :role => "button"} Sign In &raquo;
-          %a.btn.btn-default{:href => "/users/sign_up", :role => "button"} Sign Up &raquo;
+        .col-md-12#call-to-action
+          %a.btn.btn-default{:href => "/resources/new", :role => "button", :id => "enter-resource-button"} Enter a new resource &raquo;
+          //%a.btn.btn-default{:href => "/admin", :role => "button"} Admin &raquo;
+          //-if !user_signed_in?
+          //%a.btn.btn-default{:href => "/users/sign_in", :role => "button"} Sign In &raquo;
+          //%a.btn.btn-default{:href => "/users/sign_up", :role => "button"} Sign Up &raquo;

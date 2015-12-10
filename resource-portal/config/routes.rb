@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -19,6 +21,7 @@ get 'Pending' => 'resources#Pending'
 get 'sign_up' => 'users#sign_up'
 #post 'admin/:id', to: 'resources#modify_status'
 post 'modify_status', to:  'resources#modify_status'
+#get '/admin/sign_out' => 'devise/sessions#destroy'
 
 resources :resources
   # Example resource route with options:

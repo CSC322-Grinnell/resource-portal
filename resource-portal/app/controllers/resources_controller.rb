@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
   protect_from_forgery with: :exception
   skip_before_filter :verify_authenticity_token, :only => :create
-   #before_action :authenticate_user!, :except => [:show, :index,:new,:create]
+  before_action :authenticate_user!, :except => [:show, :index,:new,:create]
   
 
 # Should params.require include :category and others?
@@ -22,12 +22,13 @@ end
 #link_to?
 def show
     category_id = params[:id]
-   @category = Category.find(category_id)
-   # category_name = @category.category_name
-   # @temp = Category.where(category_name: @category)
+    @category = Category.find(category_id)
+    # category_name = @category.category_name
+    # @temp = Category.where(category_name: @category)
     #@resources = @temp.resources
-    @resources = Resource.joins(:category).where(categories: { category_name:@category.category_name })
+    @resources = Resource.joins(:category).where(categories: { category_name:@category.category_name }).where(status: "Approved")
 
+#Request.pending.where(:state_id => state_id AND :approved_id => current_user.id)
  #  @resources = Resource.joins(:categories).find(@temp)
     
     #@resources = Resource.includes(:category).all
@@ -45,6 +46,7 @@ def new
 end
 
 def edit
+    @resource = Resource.find(params[:id])
 end
 
 def create
@@ -52,11 +54,10 @@ def create
      #params[:category] = Category.create!(params[:category])
      #CategoryResource.create!(resource_id:  resource_id, category_id: form_category.id)
      temp = Resource.create!(resource_params)
-     
      # the easy way
      temp.category_ids = params[:category_ids] # [4, 9, 10]
-     temp.save!
      flash[:success] = "#{resource_params[:title]} was successfully submitted."
+     temp.save!
      redirect_to resources_path
 end
 
@@ -78,5 +79,14 @@ def modify_status
     resource.save!
    redirect_to admin_path
 end
+
+def update
+    @resource = Resource.find(params[:id])
+    if @resource.update_attributes(resource_params)
+        flash[:success] = "Resource updated"
+        redirect_to admin_path
+    end
+end
+
 
 end

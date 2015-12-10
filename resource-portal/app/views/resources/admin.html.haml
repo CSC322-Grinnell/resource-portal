@@ -29,12 +29,12 @@
           %h1{:style => "text-align: center"} Administrator Home
     .container
       %ul.nav.nav-pills
-        %li
+        %li.active
           %a(href="#pending_tab" data-toggle="tab" aria-expanded="true") Pending Resources
         %li
           %a(href="#existing_tab" data-toggle="tab") Edit Existing
       %div.tab-content
-        %div.tab-pane#pending_tab
+        %div.tab-pane#pending_tab.active
           - @pending_resources.each do |resource|
             .row.resource_block
               %h3 #{resource.title}
@@ -51,9 +51,9 @@
                   %li Agency Email: #{resource.agency_email}
                   %li Name of Submitter: #{resource.name_of_submitter}
               .col-md-6
-
-                = button_to 'Approve', { :action => 'modify_status' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn-success', :method => 'post'}
-                = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn-danger', :method => 'post'}
+                
+                = button_to 'Approve', { :action => 'modify_status' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-success', :method => 'post'}
+                = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}
               
                 
         %div.tab-pane#existing_tab
@@ -72,7 +72,12 @@
                   %li Contact Email: #{resource.contact_email}
                   %li Agency Email: #{resource.agency_email}
                   %li Name of Submitter: #{resource.name_of_submitter}
-                .col-md-6
+              .col-md-6
+              = button_to 'Delete', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}
+              = button_to 'Edit', { :action => 'edit' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-default', :method => 'get'}
+                
+                
+                  
       // .row.col-md-12.option_buttons
       //   %a.btn.btn-info{:href => "/admin/pending", :role => "button", :class => "option_button", :id => ""} View Pending &raquo;
       //   %a.btn.btn-info{:href => "/admin/existing", :role => "button", :class => "option_button", :id => ""} Edit Existing &raquo;

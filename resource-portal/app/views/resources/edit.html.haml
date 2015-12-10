@@ -31,7 +31,7 @@
           %h1{:style => "text-align: center"} Resource Form
     .container 
       .row
-        = form_for @resource,:url => (@resource.new_record? ? resources_path : edit_resource(@resource)) do |f| 
+        = form_for @resource do |f| 
           %div.form-section.col-md-10
             %p Tell us about your service...
             .row.top-buffer
@@ -85,7 +85,7 @@
             .row.top-buffer
               %form_group
                 .col-md-2
-                  = f.label :Website, "Website (www.website.com)"
+                  = f.label :Website, "Website"
                 .col-md-8
                   = f.text_field :website, :class => "form-control"   
             .row.top-buffer
