@@ -70,7 +70,11 @@ end
 def admin
     @pending_resources = Resource.where(status: "Pending")
     @approved_resources = Resource.where(status: "Approved")
+    @approved_housing_resources =  Resource.joins(:category).where(categories: { category_name:"Housing" }).where(status: "Approved")
+    @approved_employment_resources = Resource.joins(:category).where(categories: { category_name:"Employment" }).where(status: "Approved")
+    @approved_food_groceries_resources = Resource.joins(:category).where(categories: { category_name:"Food and Groceries" }).where(status: "Approved")
     
+   @approved_categories = {:Employment => @approved_employment_resources, :Housing => @approved_housing_resources, :Food => @approved_food_groceries_resources}
 end
 
 def modify_status
