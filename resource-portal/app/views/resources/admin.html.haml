@@ -56,86 +56,114 @@
      
         %div.tab-pane#existing_tab
           #accordion.panel-group
-          .panel.panel-default
-            .panel-heading
-              %h4.panel-title
-                %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse1"}
-                  Food and Groceries
-            #collapse1.panel-collapse.collapse
-              .panel-body
-                .container
-              - @approved_food_groceries_resources.each do |resource|
-                .row.resource_block
-                  %h3 #{resource.title}
-                  %p.description #{resource.description_of_service}
-                  .col-md-6
-                    %ul{:class => "list-group"}
-                      %li Address: #{resource.address}
-                      %li Alternative Address: #{resource.alternative_address}
-                      %li Phone: #{resource.phone_number}
-                      %li Alternative Phone: #{resource.alternative_phone_number}
-                      %li Website: #{resource.website}
-                      %li Fax: #{resource.fax_number}
-                      %li Contact Email: #{resource.contact_email}
-                      %li Agency Email: #{resource.agency_email}
-                      %li Name of Submitter: #{resource.name_of_submitter}
-                  .col-md-6
-                    = button_to 'Edit', { :action => 'modify_status' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-default', :method => 'get'}
-                    = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}                  
+          -@approved_categories.each do |category,resource_values|
+            .panel.panel-default
+              .panel-heading
+                %h4.panel-title
+                  %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#item_#{category}"}
+                    #{category}
+              .panel-collapse.collapse{:id => "item_#{category}"}
+                .panel-body
+                  .container
+                - resource_values.each do |resource|
+                  .row.resource_block
+                    %h3 #{resource.title}
+                    %p.description #{resource.description_of_service}
+                    .col-md-6
+                      %ul{:class => "list-group"}
+                        %li Address: #{resource.address}
+                        %li Alternative Address: #{resource.alternative_address}
+                        %li Phone: #{resource.phone_number}
+                        %li Alternative Phone: #{resource.alternative_phone_number}
+                        %li Website: #{resource.website}
+                        %li Fax: #{resource.fax_number}
+                        %li Contact Email: #{resource.contact_email}
+                        %li Agency Email: #{resource.agency_email}
+                        %li Name of Submitter: #{resource.name_of_submitter}
+                    .col-md-6
+                      = button_to 'Edit', { :action => 'edit' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-default', :method => 'get'}
+                      = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}                  
+          
+          // .panel.panel-default
+          //   .panel-heading
+          //     %h4.panel-title
+          //       %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse1"}
+          //         Food and Groceries
+          //   #collapse1.panel-collapse.collapse
+          //     .panel-body
+          //       .container
+          //     - @approved_food_groceries_resources.each do |resource|
+          //       .row.resource_block
+          //         %h3 #{resource.title}
+          //         %p.description #{resource.description_of_service}
+          //         .col-md-6
+          //           %ul{:class => "list-group"}
+          //             %li Address: #{resource.address}
+          //             %li Alternative Address: #{resource.alternative_address}
+          //             %li Phone: #{resource.phone_number}
+          //             %li Alternative Phone: #{resource.alternative_phone_number}
+          //             %li Website: #{resource.website}
+          //             %li Fax: #{resource.fax_number}
+          //             %li Contact Email: #{resource.contact_email}
+          //             %li Agency Email: #{resource.agency_email}
+          //             %li Name of Submitter: #{resource.name_of_submitter}
+          //         .col-md-6
+          //           = button_to 'Edit', { :action => 'edit' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-default', :method => 'get'}
+          //           = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}                  
                   
-          .panel.panel-default
-            .panel-heading
-              %h4.panel-title
-                %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse2"}
-                  Housing
-            #collapse2.panel-collapse.collapse
-              .panel-body
-                .container
-              -  @approved_housing_resources.each do |resource|
-                .row.resource_block
-                  %h3 #{resource.title}
-                  %p.description #{resource.description_of_service}
-                  .col-md-6
-                    %ul{:class => "list-group"}
-                      %li Address: #{resource.address}
-                      %li Alternative Address: #{resource.alternative_address}
-                      %li Phone: #{resource.phone_number}
-                      %li Alternative Phone: #{resource.alternative_phone_number}
-                      %li Website: #{resource.website}
-                      %li Fax: #{resource.fax_number}
-                      %li Contact Email: #{resource.contact_email}
-                      %li Agency Email: #{resource.agency_email}
-                      %li Name of Submitter: #{resource.name_of_submitter}
-                  .col-md-6
-                    = button_to 'Edit', { :action => 'edit' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-default', :method => 'get'}
-                    = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}                           
+          // .panel.panel-default
+          //   .panel-heading
+          //     %h4.panel-title
+          //       %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse2"}
+          //         Housing
+          //   #collapse2.panel-collapse.collapse
+          //     .panel-body
+          //       .container
+          //     -  @approved_housing_resources.each do |resource|
+          //       .row.resource_block
+          //         %h3 #{resource.title}
+          //         %p.description #{resource.description_of_service}
+          //         .col-md-6
+          //           %ul{:class => "list-group"}
+          //             %li Address: #{resource.address}
+          //             %li Alternative Address: #{resource.alternative_address}
+          //             %li Phone: #{resource.phone_number}
+          //             %li Alternative Phone: #{resource.alternative_phone_number}
+          //             %li Website: #{resource.website}
+          //             %li Fax: #{resource.fax_number}
+          //             %li Contact Email: #{resource.contact_email}
+          //             %li Agency Email: #{resource.agency_email}
+          //             %li Name of Submitter: #{resource.name_of_submitter}
+          //         .col-md-6
+          //           = button_to 'Edit', { :action => 'edit' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-default', :method => 'get'}
+          //           = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}                           
          
-          .panel.panel-default
-            .panel-heading
-              %h4.panel-title
-                %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse3"}
-                  Employment
-            #collapse3.panel-collapse.collapse
-              .panel-body
-                .container
-              -  @approved_employment_resources.each do |resource|
-                .row.resource_block
-                  %h3 #{resource.title}
-                  %p.description #{resource.description_of_service}
-                  .col-md-6
-                    %ul{:class => "list-group"}
-                      %li Address: #{resource.address}
-                      %li Alternative Address: #{resource.alternative_address}
-                      %li Phone: #{resource.phone_number}
-                      %li Alternative Phone: #{resource.alternative_phone_number}
-                      %li Website: #{resource.website}
-                      %li Fax: #{resource.fax_number}
-                      %li Contact Email: #{resource.contact_email}
-                      %li Agency Email: #{resource.agency_email}
-                      %li Name of Submitter: #{resource.name_of_submitter}
-                  .col-md-6
-                    = button_to 'Edit', { :action => 'edit' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-default', :method => 'get'}
-                    = button_to 'Delete', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}                                           
+          // .panel.panel-default
+          //   .panel-heading
+          //     %h4.panel-title
+          //       %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse3"}
+          //         Employment
+          //   #collapse3.panel-collapse.collapse
+          //     .panel-body
+          //       .container
+          //     -  @approved_employment_resources.each do |resource|
+          //       .row.resource_block
+          //         %h3 #{resource.title}
+          //         %p.description #{resource.description_of_service}
+          //         .col-md-6
+          //           %ul{:class => "list-group"}
+          //             %li Address: #{resource.address}
+          //             %li Alternative Address: #{resource.alternative_address}
+          //             %li Phone: #{resource.phone_number}
+          //             %li Alternative Phone: #{resource.alternative_phone_number}
+          //             %li Website: #{resource.website}
+          //             %li Fax: #{resource.fax_number}
+          //             %li Contact Email: #{resource.contact_email}
+          //             %li Agency Email: #{resource.agency_email}
+          //             %li Name of Submitter: #{resource.name_of_submitter}
+          //         .col-md-6
+          //           = button_to 'Edit', { :action => 'edit' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-default', :method => 'get'}
+          //           = button_to 'Delete', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}                                           
                   
       // .row.col-md-12.option_buttons
       //   %a.btn.btn-info{:href => "/admin/pending", :role => "button", :class => "option_button", :id => ""} View Pending &raquo;
