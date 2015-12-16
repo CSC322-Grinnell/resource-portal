@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 #gem 'cucumber', '~> 2.1'
 
+
 group :test do
   gem 'cucumber-rails' 
   gem 'cucumber-rails-training-wheels'
@@ -37,7 +38,8 @@ gem "haml"
 gem 'table_print'
 gem 'devise'
 #gem 'font-awesome-sass', '~> 4.4.0'
-
+gem 'font-awesome-sass', '~> 4.4.0'
+#gem 'font-awesome-sass'
 gem 'database_cleaner'
 
 # Use ActiveModel has_secure_password

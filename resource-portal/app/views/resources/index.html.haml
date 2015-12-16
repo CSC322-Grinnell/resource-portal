@@ -23,7 +23,6 @@
       %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.42/respond.min.js"}
 
   %body
-            
     / Main Jumbotron for a primary marketing message or call to action.
     .jumbotron#main-page-jumbotron
       .container
@@ -44,7 +43,10 @@
       %hr/
       .row 
         .col-md-12#call-to-action
-          %a.btn.btn-default{:href => "/resources/new", :role => "button", :id => "enter-resource-button"} Enter a new resource &raquo;
+          %a.btn.btn-default{:href => "/resources/new", :role => "button", :id => "enter-resource-button"}
+            Enter a new resource 
+            %i.fa.fa-plus.fa-lg 
+              &raquo;
           //%a.btn.btn-default{:href => "/admin", :role => "button"} Admin &raquo;
           //-if !user_signed_in?
           //%a.btn.btn-default{:href => "/users/sign_in", :role => "button"} Sign In &raquo;

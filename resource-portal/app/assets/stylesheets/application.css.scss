@@ -18,6 +18,8 @@
 @import "bootstrap";
 /*@import "font-awesome-sprockets";
 @import "font-awesome";*/
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @mixin shadow-round($height) {
     box-shadow: 0px 0px $height grey;
     border-radius: 3px;
@@ -59,6 +61,9 @@
 
 .list-group {
     list-style-type: none;
+}
+.panel_style{
+    background-color:#2ecc71;
 }
 
 .top-buffer{

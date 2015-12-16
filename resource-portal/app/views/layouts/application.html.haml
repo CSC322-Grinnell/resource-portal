@@ -16,13 +16,17 @@
               %span.icon-bar
               %span.icon-bar
               // This is the header text for all pages.
-            %a.navbar-brand{:href => "/"} Resource Portal
+            %a.navbar-brand.fa.fa-home.fa-lg{:href => "/"} 
+              Resource Portal
           .navbar-collapse.collapse
             %form.navbar-form.navbar-right{:role => "form"}
               //= link_to "Log Out", destroy_user_session_path, :method => :delete
-              %a.btn.btn-default{:href => "/admin", :role => "button"} Admin &raquo;
+              %a.btn.btn-default.fa.fa-user{:href => "/admin", :role => "button"}
+                Admin &raquo;
               - if user_signed_in?
-                = link_to "Log Out", destroy_user_session_path, :method => :delete, :id => "log-out-link"
+                = link_to destroy_user_session_path, :method => :delete, :id => "log-out-link" do
+                  Log Out
+                  %i.fa.fa-sign-out
               
               //= button_to 'Log Out', {:action => "destroy", :controller => "devise/sessions"}, {:class => 'btn-success', :method => :delete}
               //%a.btn.btn-default{:href => "/admin/sign_out", :role => "button"} Logout &raquo;

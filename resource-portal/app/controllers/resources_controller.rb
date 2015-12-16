@@ -68,6 +68,7 @@ def destroy
 end
 
 def admin
+    #TODO : DRY out querries
     @pending_resources = Resource.where(status: "Pending")
     @approved_resources = Resource.where(status: "Approved")
     @approved_housing_resources =  Resource.joins(:category).where(categories: { category_name:"Housing" }).where(status: "Approved")
