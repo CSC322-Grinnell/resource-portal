@@ -13,35 +13,18 @@ def resource_params
 end
 
 def index
-        # return the category model column names to the view
-   # @categories = Resource.select(:category_name).map(&:category_name).uniq #get unique names
-    #Category.uniq.pluck(:category_name)
+    @categories = Category.get_categories
 end
 
-#If you click on a category, this path is invoked to show the corresponding resources
-#link_to?
+
 def show
-    category_id = params[:id]
+    category_id = params[:id] #note that categorynames are used as identifiers
     @category = Category.find(category_id)
-    # category_name = @category.category_name
-    # @temp = Category.where(category_name: @category)
-    #@resources = @temp.resources
-    @resources = Resource.joins(:category).where(categories: { category_name:@category.category_name }).where(status: "Approved")
-
-#Request.pending.where(:state_id => state_id AND :approved_id => current_user.id)
- #  @resources = Resource.joins(:categories).find(@temp)
-    
-    #@resources = Resource.includes(:category).all
-    #@resources = Resource.joins(:resource_category).where(category_name: @category )
-   # @Show = show.find(params[:id])
-   #Order.joins(:products).where(:products => {name: 'Milk (1 liter)'})
+    @resources = Resource.joins(:category).where(categories: { category_name:@category.category_name }).where(status: "Approved").order(:title)
 end
 
-# This will be the method that the submission path goes to ( reousrce_new)
-# If we are here, the info has been submitted in a hash and is ready to be 
-# added to the model. 
+
 def new
-   # submit_info = params[:submit_info]
    @resource = Resource.new
 end
 
@@ -70,10 +53,10 @@ end
 def admin
     #TODO : DRY out querries
     @pending_resources = Resource.where(status: "Pending")
-    @approved_resources = Resource.where(status: "Approved")
-    @approved_housing_resources =  Resource.joins(:category).where(categories: { category_name:"Housing" }).where(status: "Approved")
-    @approved_employment_resources = Resource.joins(:category).where(categories: { category_name:"Employment" }).where(status: "Approved")
-    @approved_food_groceries_resources = Resource.joins(:category).where(categories: { category_name:"Food and Groceries" }).where(status: "Approved")
+    #@approved_resources = Resource.where(status: "Approved")
+    @approved_housing_resources =  Resource.joins(:category).where(categories: { category_name:"Housing" }).where(status: "Approved").order(:title)
+    @approved_employment_resources = Resource.joins(:category).where(categories: { category_name:"Employment" }).where(status: "Approved").order(:title)
+    @approved_food_groceries_resources = Resource.joins(:category).where(categories: { category_name:"Food and Groceries" }).where(status: "Approved").order(:title)
     
    @approved_categories = {:Employment => @approved_employment_resources, :Housing => @approved_housing_resources, :Food => @approved_food_groceries_resources}
 end

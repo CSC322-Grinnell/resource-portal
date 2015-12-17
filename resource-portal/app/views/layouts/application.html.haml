@@ -15,7 +15,6 @@
               %span.icon-bar
               %span.icon-bar
               %span.icon-bar
-              // This is the header text for all pages.
             %a.navbar-brand.fa.fa-home.fa-lg{:href => "/"} 
               Resource Portal
           .navbar-collapse.collapse
@@ -27,19 +26,12 @@
                 = link_to destroy_user_session_path, :method => :delete, :id => "log-out-link" do
                   Log Out
                   %i.fa.fa-sign-out
-              
-              //= button_to 'Log Out', {:action => "destroy", :controller => "devise/sessions"}, {:class => 'btn-success', :method => :delete}
-              //%a.btn.btn-default{:href => "/admin/sign_out", :role => "button"} Logout &raquo;
-          // 
     %div#body
       / To enable flash messages, especially after submitting a resource form
       / Reference: https://www.railstutorial.org/book/sign_up#sec-the_flash
       - flash.each do |message_type, message|
         %div{:class => "alert alert-#{message_type}"}= message
       = yield
-    // %footer#footer
-    //   %div.container
-    //     %p this is a footer  
 
     / Bootstrap Core JavaScript
     / ========================================
