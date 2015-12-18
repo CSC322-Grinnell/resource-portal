@@ -37,56 +37,71 @@
             Edit Existing
       %div.tab-content
         %div.tab-pane#pending_tab.active
-          - @pending_resources.each do |resource|
-            .row.resource_block
-              %h3 #{resource.title}
-              %p.description #{resource.description_of_service}
-              .col-md-6
-                %ul{:class => "list-group"}
-                  %li Address: #{resource.address}
-                  %li Alternative Address: #{resource.alternative_address}
-                  %li Phone: #{resource.phone_number}
-                  %li Alternative Phone: #{resource.alternative_phone_number}
-                  %li Website: #{resource.website}
-                  %li Fax: #{resource.fax_number}
-                  %li Contact Email: #{resource.contact_email}
-                  %li Agency Email: #{resource.agency_email}
-                  %li Name of Submitter: #{resource.name_of_submitter}
-              .col-md-6
-                = button_to 'Approve', { :action => 'modify_status' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-success', :method => 'post'}
-                = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}
-     
-        %div.tab-pane#existing_tab
-          #accordion.panel-group
-          -@approved_categories.each do |category,resource_values|
+          #accordion1.panel-group
+          -@pending_resources.each do |category,resource_values|
             .panel.panel-default
               .panel-heading
                 %h4.panel-title
-                  %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#item_#{category}"}
+                  %a{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#item_Pending_#{category}"}
                     %i.fa.fa-arrow-circle-down.fa-lg
                     #{category} (#{resource_values.length})
-                    
+              .panel-collapse.collapse{:id => "item_Pending_#{category}"}
+                .panel-body
+                  - resource_values.each do |resource|
+                    .row.resource_block
+                      %h3 #{resource.title}
+                      %p.description #{resource.description_of_service}
+                      .col-md-6
+                        %ul{:class => "list-group"}
+                          %li Address: #{resource.address}
+                          %li Alternative Address: #{resource.alternative_address}
+                          %li Phone: #{resource.phone_number}
+                          %li Alternative Phone: #{resource.alternative_phone_number}
+                          %li Website: #{resource.website}
+                          %li Fax: #{resource.fax_number}
+                          %li Contact Email: #{resource.contact_email}
+                          %li Agency Email: #{resource.agency_email}
+                          %li Name of Submitter: #{resource.name_of_submitter}
+                      .col-md-6
+                        // = button_to({ :action => 'edit' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-default', :method => 'get'}) do
+                        //   %i.fa.fa-pencil.fa-lg
+                        //   Edit
+                        // = button_to({:action => 'modify_status' ,:method => 'post',:decision =>"Rejected", :id => resource.id}, {:class => 'btn btn-danger'}) do
+                        //   %i.fa.fa-trash-o.fa-lg   
+                        //   Delete
+                        = button_to 'Approve', { :action => 'modify_status' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-success', :method => 'post'}
+                        = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}                              
+        // %div.tab-pane#pending_tab.active
+        //   - @pending_resources.each do |resource|
+        //     .row.resource_block
+        //       %h3 #{resource.title}
+        //       %p.description #{resource.description_of_service}
+        //       .col-md-6
+        //         %ul{:class => "list-group"}
+        //           %li Address: #{resource.address}
+        //           %li Alternative Address: #{resource.alternative_address}
+        //           %li Phone: #{resource.phone_number}
+        //           %li Alternative Phone: #{resource.alternative_phone_number}
+        //           %li Website: #{resource.website}
+        //           %li Fax: #{resource.fax_number}
+        //           %li Contact Email: #{resource.contact_email}
+        //           %li Agency Email: #{resource.agency_email}
+        //           %li Name of Submitter: #{resource.name_of_submitter}
+        //       .col-md-6
+        //         = button_to 'Approve', { :action => 'modify_status' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-success', :method => 'post'}
+        //         = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}
+     
+        %div.tab-pane.fade#existing_tab
+          #accordion.panel-group
+          -@approved_resources.each do |category,resource_values|
+            .panel.panel-default
+              .panel-heading
+                %h4.panel-title
+                  %i.fa.fa-arrow-circle-down.fa-lg
+                  %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#item_#{category}"}
+                    #{category} (#{resource_values.length})
               .panel-collapse.collapse{:id => "item_#{category}"}
                 .panel-body
-                  .container
-                    .row
-                      .col-md-10
-                      .col-md-1
-                        %div.dropdown
-                          = button_to({:action => 'modify_status' ,:method => 'post',:decision =>"Rejected"}, {"data-toggle" =>"dropdown",:class => 'btn'}) do
-                            Sort By
-                            %span.fa.fa-sort.dropdown-toggle
-                          // %button.btn.btn-primary.dropdown-toggle{"type" => "button", "data-toggle" => "dropdown"}
-                          //   Sort By
-                          //   %span.fa.fa-sort
-                          %ul.dropdown-menu
-                            %li
-                              %a{:href => "#"} 
-                                Ascending resource Title
-                            %li
-                              %a{:href => "#"} 
-                                Descending resource title
-                        
                   - resource_values.each do |resource|
                     .row.resource_block
                       %h3 #{resource.title}

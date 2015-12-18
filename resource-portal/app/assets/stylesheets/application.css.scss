@@ -29,6 +29,7 @@
     color: #EEEEEE;
     padding: 0px 20px;
 }
+a:hover { background-color: transparent;  }
 .btn {
     @include shadow-round(6px);
     margin: 2px;

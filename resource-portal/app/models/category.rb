@@ -4,4 +4,8 @@ class Category < ActiveRecord::Base
     def self.get_categories
         Category.all
     end
+    
+    def self.get_category_names
+        Category.pluck("category_name")
+    end
 end

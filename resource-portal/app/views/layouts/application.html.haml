@@ -27,7 +27,7 @@
                   Log Out
                   %i.fa.fa-sign-out
     %div#body
-      / To enable flash messages, especially after submitting a resource form
+      / Enables flash messages on the home page, especially after submitting a resource form
       / Reference: https://www.railstutorial.org/book/sign_up#sec-the_flash
       - flash.each do |message_type, message|
         %div{:class => "alert alert-#{message_type}"}= message

@@ -44,21 +44,22 @@ def create
      redirect_to resources_path
 end
 
-def update
-end
 
 def destroy
 end
 
 def admin
-    #TODO : DRY out querries
-    @pending_resources = Resource.where(status: "Pending")
-    #@approved_resources = Resource.where(status: "Approved")
-    @approved_housing_resources =  Resource.joins(:category).where(categories: { category_name:"Housing" }).where(status: "Approved").order(:title)
-    @approved_employment_resources = Resource.joins(:category).where(categories: { category_name:"Employment" }).where(status: "Approved").order(:title)
-    @approved_food_groceries_resources = Resource.joins(:category).where(categories: { category_name:"Food and Groceries" }).where(status: "Approved").order(:title)
-    
-   @approved_categories = {:Employment => @approved_employment_resources, :Housing => @approved_housing_resources, :Food => @approved_food_groceries_resources}
+    @approved_resources = Hash.new
+    @pending_resources = Hash.new
+    category_names = Category.get_category_names
+    category_names.each do |name|
+        key = name
+        if key =="Food and Groceries" #TODO : Fix Hack for Food and Groceries. Has to do with Id in Admin views I think
+            key = "Food"
+        end  
+        @approved_resources[key] = query_resources(name,"Approved")
+        @pending_resources[key] = query_resources(name,"Pending")
+    end
 end
 
 def modify_status
@@ -74,7 +75,13 @@ def update
         flash[:success] = "Resource updated"
         redirect_to admin_path
     end
+    @resource.save!
 end
 
+
+private
+def query_resources(name,resource_status)
+   return  Resource.joins(:category).where(categories: { category_name: name }).where(status: resource_status).order(:title)
+end
 
 end
