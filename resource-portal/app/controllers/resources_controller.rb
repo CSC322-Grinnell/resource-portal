@@ -4,8 +4,6 @@ class ResourcesController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index,:new,:create]
   
 
-# Should params.require include :category and others?
-# {:category => []} (http://stackoverflow.com/questions/22613096/user-selects-multiple-items-using-check-box-form-helper-posts-data-as-array?rq=1)
 def resource_params
     params.require(:resource).permit(:category_name, :title, :address, :alternative_address, 
     :phone_number, :alternative_phone_number, :website, :fax_number, :contact_email,
@@ -33,9 +31,6 @@ def edit
 end
 
 def create
-    # Receives information from the view, passes it and stores it in the model.
-     #params[:category] = Category.create!(params[:category])
-     #CategoryResource.create!(resource_id:  resource_id, category_id: form_category.id)
      temp = Resource.create!(resource_params)
      # the easy way
      temp.category_ids = params[:category_ids] # [4, 9, 10]
@@ -83,5 +78,6 @@ private
 def query_resources(name,resource_status)
    return  Resource.joins(:category).where(categories: { category_name: name }).where(status: resource_status).order(:title)
 end
+
 
 end

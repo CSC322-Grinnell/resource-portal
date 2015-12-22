@@ -6,7 +6,7 @@ class CategoryController < ApplicationController
     
 def index
 
-end
+endat   
 
 def show
 end
