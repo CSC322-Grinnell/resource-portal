@@ -27,6 +27,11 @@
       .row
         .col-md-12 
           %h1{:style => "text-align: center"} Administrator Home
+      .row
+        .col-md-12#call-to-action
+          %a.btn.btn-default{:href => "/resources/new", :role => "button", :id => "enter-resource-button"}
+            Enter a new resource 
+            %i.fa.fa-plus 
     .container
       %ul.nav.nav-pills
         %li.active
@@ -35,8 +40,8 @@
         %li
           %a.fa.fa-database.fa-lg(href="#existing_tab" data-toggle="tab") 
             Edit Existing
-      %div.tab-content
-        %div.tab-pane#pending_tab.active
+      .tab-content
+        .tab-pane#pending_tab.active
           #accordion1.panel-group
           -@pending_resources.each do |category,resource_values|
             .panel.panel-default
