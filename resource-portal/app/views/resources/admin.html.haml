@@ -1,107 +1,82 @@
-!!! 5
-%html{:lang => "en"}
-  %head
-    %meta{:charset => "utf-8"}/
-    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE-edge"}/
-    %meta{"name" => "viewport", :content => "width=device-width, initial-scale=1"}/
-    %meta{"name" => "description", "content" => ""}/
-    %meta{"name" => "author", "content" => ""}/
-    %link{:href => "../../assets/ico/favicon.ico", :rel => "shortcut icon"}/
-
-    /%title Jumbotron Template for Twitter Bootstrap
-
-    / Bootstrap Core CSS
-    %link{:href => "scss/bootstrap.min.css", :rel => :stylesheet}/
-
-    / Custom Styles for this template
-    %link{:href => "css/jumbotron.css", :rel => :stylesheet}/
-
-    / HTML5 Shim and Respond.js IE8 Support of HTML5 elements and media queries.
-    / WARNING: Respond.js doesn't work if you view the page using file://
-    /[if IE9]
-      %script{:src => "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"}
-      %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.42/respond.min.js"}
-
-  %body
-    .container
-      .row
-        .col-md-12 
-          %h1{:style => "text-align: center"} Administrator Home
-      .row
-        .col-md-12#call-to-action
-          %a.btn.btn-default{:href => "/resources/new", :role => "button", :id => "enter-resource-button"}
-            Enter a new resource 
-            %i.fa.fa-plus 
-    .container
-      %ul.nav.nav-pills
-        %li.active
-          %a.fa.fa-spinner.fa-lg(href="#pending_tab" data-toggle="tab" aria-expanded="true") 
-            Pending Resources
-        %li
-          %a.fa.fa-database.fa-lg(href="#existing_tab" data-toggle="tab") 
-            Edit Existing
-      .tab-content
-        .tab-pane#pending_tab.active
-          #accordion1.panel-group
-          -@pending_resources.each do |category,resource_values|
-            .panel.panel-default
-              .panel-heading
-                %h4.panel-title
-                  %a{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#item_Pending_#{category}"}
-                    %i.fa.fa-arrow-circle-down.fa-lg
-                    #{category} (#{resource_values.length})
-              .panel-collapse.collapse{:id => "item_Pending_#{category}"}
-                .panel-body
-                  - resource_values.each do |resource|
-                    .row.resource_block
-                      %h3 #{resource.title}
-                      %p.description #{resource.description_of_service}
-                      .col-md-6
-                        %ul{:class => "list-group"}
-                          %li Address: #{resource.address}
-                          %li Alternative Address: #{resource.alternative_address}
-                          %li Phone: #{resource.phone_number}
-                          %li Alternative Phone: #{resource.alternative_phone_number}
-                          %li Website: #{resource.website}
-                          %li Fax: #{resource.fax_number}
-                          %li Contact Email: #{resource.contact_email}
-                          %li Agency Email: #{resource.agency_email}
-                          %li Name of Submitter: #{resource.name_of_submitter}
-                      .col-md-6
-                        = button_to 'Approve', { :action => 'modify_status' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-success', :method => 'post'}
-                        = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}                              
-     
-        %div.tab-pane.fade#existing_tab
-          #accordion.panel-group
-          -@approved_resources.each do |category,resource_values|
-            .panel.panel-default
-              .panel-heading
-                %h4.panel-title
-                  %i.fa.fa-arrow-circle-down.fa-lg
-                  %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#item_#{category}"}
-                    #{category} (#{resource_values.length})
-              .panel-collapse.collapse{:id => "item_#{category}"}
-                .panel-body
-                  - resource_values.each do |resource|
-                    .row.resource_block
-                      %h3 #{resource.title}
-                      %p.description #{resource.description_of_service}
-                      .col-md-6
-                        %ul{:class => "list-group"}
-                          %li Address: #{resource.address}
-                          %li Alternative Address: #{resource.alternative_address}
-                          %li Phone: #{resource.phone_number}
-                          %li Alternative Phone: #{resource.alternative_phone_number}
-                          %li Website: #{resource.website}
-                          %li Fax: #{resource.fax_number}
-                          %li Contact Email: #{resource.contact_email}
-                          %li Agency Email: #{resource.agency_email}
-                          %li Name of Submitter: #{resource.name_of_submitter}
-                      .col-md-6
-                        = button_to({ :action => 'edit' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-default', :method => 'get'}) do
-                          %i.fa.fa-pencil.fa-lg
-                          Edit
-                        = button_to({:action => 'modify_status' ,:method => 'post',:decision =>"Rejected", :id => resource.id}, {:class => 'btn btn-danger'}) do
-                          %i.fa.fa-trash-o.fa-lg   
-                          Delete
+.container
+  .row
+    .col-md-12 
+      %h1{:style => "text-align: center"} Administrator Home
+  .row
+    .col-md-12#call-to-action
+      %a.btn.btn-default{:href => "/resources/new", :role => "button", :id => "enter-resource-button"}
+        Enter a new resource 
+        %i.fa.fa-plus 
+.container
+  %ul.nav.nav-pills
+    %li.active
+      %a.fa.fa-spinner.fa-lg(href="#pending_tab" data-toggle="tab" aria-expanded="true") 
+        Pending Resources
+    %li
+      %a.fa.fa-database.fa-lg(href="#existing_tab" data-toggle="tab") 
+        Edit Existing
+  .tab-content
+    .tab-pane#pending_tab.active
+      #accordion1.panel-group
+      -@pending_resources.each do |category,resource_values|
+        .panel.panel-default
+          .panel-heading
+            %h4.panel-title
+              %a{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#item_Pending_#{category}"}
+                %i.fa.fa-arrow-circle-down.fa-lg
+                #{category} (#{resource_values.length})
+          .panel-collapse.collapse{:id => "item_Pending_#{category}"}
+            .panel-body
+              - resource_values.each do |resource|
+                .row.resource_block
+                  %h3 #{resource.title}
+                  %p.description #{resource.description_of_service}
+                  .col-md-6
+                    %ul{:class => "list-group"}
+                      %li Address: #{resource.address}
+                      %li Alternative Address: #{resource.alternative_address}
+                      %li Phone: #{resource.phone_number}
+                      %li Alternative Phone: #{resource.alternative_phone_number}
+                      %li Website: #{resource.website}
+                      %li Fax: #{resource.fax_number}
+                      %li Contact Email: #{resource.contact_email}
+                      %li Agency Email: #{resource.agency_email}
+                      %li Name of Submitter: #{resource.name_of_submitter}
+                  .col-md-6
+                    = button_to 'Approve', { :action => 'modify_status' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-success', :method => 'post'}
+                    = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}                              
+ 
+    %div.tab-pane.fade#existing_tab
+      #accordion.panel-group
+      -@approved_resources.each do |category,resource_values|
+        .panel.panel-default
+          .panel-heading
+            %h4.panel-title
+              %i.fa.fa-arrow-circle-down.fa-lg
+              %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#item_#{category}"}
+                #{category} (#{resource_values.length})
+          .panel-collapse.collapse{:id => "item_#{category}"}
+            .panel-body
+              - resource_values.each do |resource|
+                .row.resource_block
+                  %h3 #{resource.title}
+                  %p.description #{resource.description_of_service}
+                  .col-md-6
+                    %ul{:class => "list-group"}
+                      %li Address: #{resource.address}
+                      %li Alternative Address: #{resource.alternative_address}
+                      %li Phone: #{resource.phone_number}
+                      %li Alternative Phone: #{resource.alternative_phone_number}
+                      %li Website: #{resource.website}
+                      %li Fax: #{resource.fax_number}
+                      %li Contact Email: #{resource.contact_email}
+                      %li Agency Email: #{resource.agency_email}
+                      %li Name of Submitter: #{resource.name_of_submitter}
+                  .col-md-6
+                    = button_to({ :action => 'edit' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-default', :method => 'get'}) do
+                      %i.fa.fa-pencil.fa-lg
+                      Edit
+                    = button_to({:action => 'modify_status' ,:method => 'post',:decision =>"Rejected", :id => resource.id}, {:class => 'btn btn-danger'}) do
+                      %i.fa.fa-trash-o.fa-lg   
+                      Delete
                         
