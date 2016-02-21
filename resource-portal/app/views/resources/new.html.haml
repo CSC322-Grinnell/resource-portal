@@ -21,8 +21,8 @@
     / HTML5 Shim and Respond.js IE8 Support of HTML5 elements and media queries.
     / WARNING: Respond.js doesn't work if you view the page using file://
     /[if IE9]
-      %script{:src => "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"}
-      %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.42/respond.min.js"}
+    %script{:src => "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"}
+    %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.42/respond.min.js"}
 
   / The body of the form to submit resources.
   %body
@@ -33,7 +33,7 @@
     .container 
       .row
         = form_for @resource,:url => (@resource.new_record? ? resources_path : edit_resource(@resource)) do |f| 
-          %div.form-section.col-md-10
+          .form-section.col-md-10
             %p Tell us about your service...
             .row.top-buffer
               %form_group
@@ -56,9 +56,9 @@
                   %ul
                   / Automatically create check boxes according to the resources in the database.
                   - Category.all.each do |category|
-                    = check_box_tag 'category_ids[]', category.id, :required => true
+                    = check_box_tag 'category_ids[]', category.id, checked=false, :required => false
                     = category.category_name
-          %div.form-section.col-md-10
+          .form-section.col-md-10
             %p How community members can find your service...
             .row.top-buffer
               %form_group
@@ -102,7 +102,7 @@
                   = f.label :Agency_email, "Email"
                 .col-md-8
                   = f.text_field :agency_email, :class => "form-control"   
-          %div.form-section.col-md-10
+          .form-section.col-md-10
             %p How we can contact you...
             .row.top-buffer
               %form_group
@@ -116,5 +116,5 @@
                   = f.label :Submitter_name, "Name"
                 .col-md-8
                   = f.text_field :name_of_submitter, :class => "form-control"
-          %div.col-md-2
+          .col-md-2
             %button.btn.btn-success{:type => "submit", :confirm => "confirm"} Submit

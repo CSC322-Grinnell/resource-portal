@@ -54,8 +54,12 @@
                 .col-md-8
                   %ul
                   - Category.all.each do |category|
-                    = check_box_tag 'category_ids[]', category.id, :required => true
-                    = category.category_name
+                  - if category.id == 4
+                      = check_box_tag 'category_ids[]', category.id, checked=true, :required => false
+                      = category.category_name
+                    else
+                      = check_box_tag 'category_ids[]', category.id, checked=false, :required => false
+                      = category.category_name
           %div.form-section.col-md-10
             %p How community members can find your service...
             .row.top-buffer
