@@ -3,9 +3,17 @@
     .col-md-12 
       %h1{:style => "text-align: center"} Administrator Home
   .row
-    .col-md-12#call-to-action
+    .col-md-4#call-to-action 
       %a.btn.btn-default{:href => "/resources/new", :role => "button", :id => "enter-resource-button"}
         Enter a new resource 
+        %i.fa.fa-plus 
+    .col-md-4#call-to-action
+      %a.btn.btn-default{:href => "/admins/new", :role => "button", :id => "enter-resource-button"} 
+        Add an admin 
+        %i.fa.fa-plus 
+    .col-md-4#call-to-action
+      %a.btn.btn-default{:href => "/categories/new", :role => "button", :id => "enter-resource-button"}
+        Create a new Category 
         %i.fa.fa-plus 
 .container
   %ul.nav.nav-pills
