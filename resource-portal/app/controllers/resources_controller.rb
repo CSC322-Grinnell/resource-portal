@@ -4,7 +4,7 @@
 class ResourcesController < ApplicationController
   protect_from_forgery with: :exception
   skip_before_filter :verify_authenticity_token, :only => :create
-  before_action :authenticate_user!, :except => [:show, :index,:new,:create]
+  before_action :authenticate_user!, :except => [:show, :index, :new, :create]
   
   #Fetches all the parameters that are used for resource creation and editing
   #@return [void]
