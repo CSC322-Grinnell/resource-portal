@@ -1,69 +1,44 @@
-!!! 5
-%html{:lang => "en"}
-  %head
-    %meta{:charset => "utf-8"}/
-    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE-edge"}/
-    %meta{"name" => "viewport", :content => "width=device-width, initial-scale=1"}/
-    %meta{"name" => "description", "content" => ""}/
-    %meta{"name" => "author", "content" => ""}/
-    %link{:href => "../../assets/ico/favicon.ico", :rel => "shortcut icon"}/
+/ Main Jumbotron for a primary marketing message or call to action.
+.container
+  .row
+    .col-md-12 
+      %h1{:style => "text-align: center"} #{@category.category_name}
 
-    /%title Jumbotron Template for Twitter Bootstrap
-
-    / Bootstrap Core CSS
-    %link{:href => "css/bootstrap.min.css", :rel => :stylesheet}/
-
-    / Custom Styles for this template
-    %link{:href => "css/jumbotron.css", :rel => :stylesheet}/
-
-    / HTML5 Shim and Respond.js IE8 Support of HTML5 elements and media queries.
-    / WARNING: Respond.js doesn't work if you view the page using file://
-    /[if IE9]
-      %script{:src => "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"}
-      %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.42/respond.min.js"}
-
-  %body
-    / Main Jumbotron for a primary marketing message or call to action.
-    .container
-      .row
-        .col-md-12 
-          %h1{:style => "text-align: center"} #{@category.category_name}
-  
-    .container{:id => "all-resources"}
-      - @resources.each do |resource|
-      .row.resource_block
-        %h3 #{resource.title}
-        %p.description #{resource.description_of_service}
-        .col-md-6
-          %ul{:class => "list-group"}
-            / Original Resource address without linking to Google Maps
-            / %li Address: #{resource.address}
-            - edited_address = resource.address.gsub(' ', '+')
-            - edited_alternative_address = resource.alternative_address.gsub(' ', '+')
-            - if resource.address == "n/a"
-              %li Address: #{resource.address}
-            - else
-              %li Address: #{link_to resource.address, "http://www.google.com/maps/place/"+edited_address, :target => "_blank"}
-            - if resource.alternative_address == "n/a"
-              %li Alternative Address: #{resource.alternative_address}
-            - else
-              %li Alternative Address: #{link_to resource.alternative_address, "http://www.google.com/maps/place/"+edited_alternative_address, :target => "_blank"}
-            %li Phone: #{resource.phone_number}
-            %li Alternative Phone: #{resource.alternative_phone_number}
-            / This turns the displayed link into a hyperlink.
-            / Referenced: http://mixandgo.com/blog/how-to-use-link_to-in-rails
-            / http://stackoverflow.com/questions/5851999/how-do-i-put-text-and-ruby-code-from-link-to-on-the-same-line-in-haml
-            / http://stackoverflow.com/questions/8026619/how-to-write-if-condition-in-haml
-            - if resource.website == "n/a"
-              %li Website: #{resource.website}
-            - else
-              %li Website: #{link_to resource.website, "http://"+resource.website, :target => "_blank"}
-            %li Fax: #{resource.fax_number}
-            %li Contact Email: #{resource.contact_email}
-            %li Agency Email: #{resource.agency_email}
-            %li Name of Submitter: #{resource.name_of_submitter}
-        .col-md-6 
-          %img{:src =>"../images/poweshiek-county-map.png",:class =>"img-thumbnail",:height => "100%",:width =>"100px"}
-    -end unless @dont_show_things
-      /Examaple 2
-      %hr/
+.container{:id => "all-resources"}
+  - @resources.each do |resource|
+  .row.resource_block
+    %h3 #{resource.title}
+    %p.description #{resource.description_of_service}
+    .col-md-6
+      %ul{:class => "list-group"}
+        / Original Resource address without linking to Google Maps
+        / %li Address: #{resource.address}
+        - edited_address = resource.address.gsub(' ', '+')
+        - edited_alternative_address = resource.alternative_address.gsub(' ', '+')
+        - if resource.address == "n/a"
+          %li Address: #{resource.address}
+        - else
+          %li Address: #{link_to resource.address, "http://www.google.com/maps/place/"+edited_address, :target => "_blank"}
+        - if resource.alternative_address == "n/a"
+          %li Alternative Address: #{resource.alternative_address}
+        - else
+          %li Alternative Address: #{link_to resource.alternative_address, "http://www.google.com/maps/place/"+edited_alternative_address, :target => "_blank"}
+        %li Phone: #{resource.phone_number}
+        %li Alternative Phone: #{resource.alternative_phone_number}
+        / This turns the displayed link into a hyperlink.
+        / Referenced: http://mixandgo.com/blog/how-to-use-link_to-in-rails
+        / http://stackoverflow.com/questions/5851999/how-do-i-put-text-and-ruby-code-from-link-to-on-the-same-line-in-haml
+        / http://stackoverflow.com/questions/8026619/how-to-write-if-condition-in-haml
+        - if resource.website == "n/a"
+          %li Website: #{resource.website}
+        - else
+          %li Website: #{link_to resource.website, "http://"+resource.website, :target => "_blank"}
+        %li Fax: #{resource.fax_number}
+        %li Contact Email: #{resource.contact_email}
+        %li Agency Email: #{resource.agency_email}
+        %li Name of Submitter: #{resource.name_of_submitter}
+    .col-md-6 
+      %img{:src =>"../images/poweshiek-county-map.png",:class =>"img-thumbnail",:height => "100%",:width =>"100px"}
+-end unless @dont_show_things
+  /Examaple 2
+  %hr/
