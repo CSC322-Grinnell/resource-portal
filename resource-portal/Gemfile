@@ -37,8 +37,7 @@ gem 'autoprefixer-rails'
 gem "haml"
 gem "haml-rails"
 gem 'table_print'
-gem 'devise' 
-gem 'devise_invitable'############ 
+gem 'devise'
 #Admin authentication
   gem 'cancan'
 #gem 'font-awesome-sass', '~> 4.4.0'

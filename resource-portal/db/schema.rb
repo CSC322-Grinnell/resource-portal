@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160427034802) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+<<<<<<< 7bb1096dcaed6cae7a74eb0bca662595177bd767
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "invitation_token"
@@ -65,9 +66,17 @@ ActiveRecord::Schema.define(version: 20160427034802) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+<<<<<<< e44c7308fcfcc9ab4c20191c690a0ecb5927b033
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
     t.string   "role",                   default: "default"
+=======
+=======
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.string   "role",                   default: "default"
+>>>>>>> Add CanCan roles to user
+>>>>>>> Add CanCan roles to user
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
