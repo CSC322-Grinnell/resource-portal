@@ -50,6 +50,7 @@ GEM
     bootstrap_form (2.3.0)
     builder (3.2.2)
     byebug (6.0.2)
+    cancan (1.6.10)
     capistrano (3.5.0)
       airbrussh (>= 1.0.0)
       capistrano-harrow
@@ -249,14 +250,21 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
   bootstrap_form
   byebug
+<<<<<<< 9f4afa0249698958e2f5c965281dd0ac64bd234c
   capistrano (~> 3.4)
+=======
+  cancan
+>>>>>>> Add CanCan roles to user
   coffee-rails (~> 4.1.0)
   cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner
   devise
   devise_invitable
+<<<<<<< 9f4afa0249698958e2f5c965281dd0ac64bd234c
   elasticsearch
+=======
+>>>>>>> Add CanCan roles to user
   font-awesome-sass (~> 4.4.0)
   haml
   haml-rails
@@ -274,4 +282,8 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
+<<<<<<< 9f4afa0249698958e2f5c965281dd0ac64bd234c
    1.12.5
+=======
+   1.11.2
+>>>>>>> Add CanCan roles to user
