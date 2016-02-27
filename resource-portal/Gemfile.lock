@@ -50,14 +50,6 @@ GEM
     bootstrap_form (2.3.0)
     builder (3.2.2)
     byebug (6.0.2)
-    capistrano (3.5.0)
-      airbrussh (>= 1.0.0)
-      capistrano-harrow
-      i18n
-      rake (>= 10.0.0)
-      sshkit (>= 1.9.0)
-    capistrano-harrow (0.5.1)
-    cancan (1.6.10)
     capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -244,7 +236,11 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
   bootstrap_form
   byebug
+<<<<<<< 900921b2374b1a77dfd4ccd61c8698c56ec0ac04
 <<<<<<< 5a237ce32080286f91c2e392f049f275431d018e
+=======
+<<<<<<< 7bb1096dcaed6cae7a74eb0bca662595177bd767
+>>>>>>> Add CanCan roles to user
   capistrano (~> 3.4)
 =======
   cancan
@@ -254,9 +250,14 @@ DEPENDENCIES
   cucumber-rails-training-wheels
   database_cleaner
   devise
+<<<<<<< 900921b2374b1a77dfd4ccd61c8698c56ec0ac04
 <<<<<<< 5a237ce32080286f91c2e392f049f275431d018e
   devise_invitable (~> 1.5.2)
   elasticsearch
+=======
+<<<<<<< 7bb1096dcaed6cae7a74eb0bca662595177bd767
+  devise_invitable (~> 1.5.2)
+>>>>>>> Add CanCan roles to user
 =======
   devise_invitable
 >>>>>>> Add CanCan roles to user
