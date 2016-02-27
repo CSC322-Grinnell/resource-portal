@@ -255,15 +255,30 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
   bootstrap_form
   byebug
+<<<<<<< 62bf03f67d3d2da8659749788a1be7ac762df5bc
   cancan
+=======
+<<<<<<< 5a237ce32080286f91c2e392f049f275431d018e
+>>>>>>> Add CanCan roles to user
   capistrano (~> 3.4)
+=======
+  cancan
+>>>>>>> Add CanCan roles to user
   coffee-rails (~> 4.1.0)
   cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner
   devise
+<<<<<<< 62bf03f67d3d2da8659749788a1be7ac762df5bc
   devise_invitable
+=======
+<<<<<<< 5a237ce32080286f91c2e392f049f275431d018e
+  devise_invitable (~> 1.5.2)
+>>>>>>> Add CanCan roles to user
   elasticsearch
+=======
+  devise_invitable
+>>>>>>> Add CanCan roles to user
   font-awesome-sass (~> 4.4.0)
   haml
   haml-rails
@@ -281,4 +296,8 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
+<<<<<<< 5a237ce32080286f91c2e392f049f275431d018e
    1.12.5
+=======
+   1.11.2
+>>>>>>> Add CanCan roles to user
