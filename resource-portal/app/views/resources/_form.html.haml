@@ -1,5 +1,6 @@
 / Original format: http://getbootstrap.com/css/#forms
 / Translated from HTML to HAML with http://html2haml.herokuapp.com/
+/ This is the resource submission form 
 .container
   .row
     .col-md-10 
@@ -30,7 +31,10 @@
               %ul
               / Automatically create check boxes according to the resources in the database.
               - Category.all.each do |category|
-                = check_box_tag 'category_ids[]', category.id, checked=false, :required => false
+                = check_box_tag 'category_ids[]',
+                    category.id,
+                    @resource.category_ids.include?(category.id),
+                    :required => false
                 = category.category_name
                 
       .form-section.col-md-10
