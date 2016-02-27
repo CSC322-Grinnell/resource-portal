@@ -1,7 +1,10 @@
-%h1 Editing category
+.row
+  %h1 Editing category
 
-= render 'form'
+.row
+  = render 'form'
 
-= link_to 'Show', @category
-|
-= link_to 'Back', categories_path
+.row.actions
+  = link_to 'View', @category
+  |
+  = link_to 'View All Categories', categories_path
