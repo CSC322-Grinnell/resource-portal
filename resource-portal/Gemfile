@@ -36,7 +36,10 @@ gem 'bootstrap_form'
 gem 'autoprefixer-rails'
 gem "haml"
 gem 'table_print'
-gem 'devise'
+gem 'devise' 
+gem 'devise_invitable'############ 
+#Admin authentication
+  gem 'cancan'
 #gem 'font-awesome-sass', '~> 4.4.0'
 gem 'font-awesome-sass', '~> 4.4.0'
 #gem 'font-awesome-sass'
@@ -62,5 +65,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  
 end
 

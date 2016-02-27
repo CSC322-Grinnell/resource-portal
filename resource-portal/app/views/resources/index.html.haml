@@ -30,7 +30,8 @@
         %p 
           This is an online resource directory for the Poweshiek County of Iowa consisting of Food, Housing, 
           and Employment resources. This website is being built through a student project at Grinnell College.
-
+        = link_to "New User" , "/resources/new" if can? :read, User
+        
     .container
       .row
         - @categories.each do |category|
