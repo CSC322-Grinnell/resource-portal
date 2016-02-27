@@ -1,4 +1,5 @@
 / Main Jumbotron for a primary marketing message or call to action.
+/ Home Page 
 .jumbotron#main-page-jumbotron
   .container
     %h1 Poweshiek County Resource Portal
@@ -9,7 +10,7 @@
 .container
   .row
     - @categories.each do |category|
-      %div.col-md-4.option_buttons
+      .col-md-4.option_buttons
         %a.btn.btn-info{:href => "/resources/#{category.id}", :role => "button", :class => "option_button"} #{category.category_name} &raquo;
   %hr/
   .row 

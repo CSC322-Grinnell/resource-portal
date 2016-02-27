@@ -1,5 +1,5 @@
 #Class  that binds the resource model to the resource view
-#@author Albert Owusu-Asare , Blake Creasy, David Sanchez, Zhi Chen, Zoe Wolter
+#@author Albert Owusu-Asare , Blake Creasey, David Sanchez, Zhi Chen, Zoe Wolter
 #@since 0.0.1
 class ResourcesController < ApplicationController
   protect_from_forgery with: :exception

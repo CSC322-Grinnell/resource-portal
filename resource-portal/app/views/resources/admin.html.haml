@@ -52,8 +52,8 @@
                       %li Name of Submitter: #{resource.name_of_submitter}
                   .col-md-6
                     = button_to 'Approve', { :action => 'modify_status' ,:decision =>"Approved", :id => resource.id }, {:class => 'btn btn-success', :method => 'post'}
-                    = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}                              
- 
+                    = button_to 'Reject', { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id }, {:class => 'btn btn-danger', :method => 'post'}                                  
+
     %div.tab-pane.fade#existing_tab
       #accordion.panel-group
       -@approved_resources.each do |category,resource_values|
