@@ -8,7 +8,8 @@
   .row
     .col-md-4.form-group.form-section
       = f.label :category_name
-      = f.text_field :category_name, :class => "form-control", :required => true
+      = f.text_field :category_name, :class => "form-control", :required => true,
+      placeholder: 'Category Name'
   .row
     .col-md-2
       = f.submit 'Save', class: "btn btn-success"

@@ -16,13 +16,13 @@
               / Referenced: http://stackoverflow.com/questions/13003626/custom-text-for-rails-form-for-label
               = f.label :Agency_name, "Agency Name***"
             .col-md-8
-              = f.text_field :title, :class => "form-control", :required => true
+              = f.text_field :title, :class => "form-control", :required => true, placeholder: 'Agency Name'
         .row.top-buffer
           %form_group
             .col-md-2
               = f.label :Description_of_service, "Description of Service***"
             .col-md-8
-              = f.text_area :description_of_service, :class => "form-control", :rows => 3, :required => true
+              = f.text_area :description_of_service, :class => "form-control", :rows => 3, :required => true, placeholder: 'Description of Service'
         .row.top-buffer      
           %form_group
             .col-md-2
@@ -44,43 +44,43 @@
             .col-md-2
               = f.label :Address, "Address***"
             .col-md-8
-              = f.text_field :address, :class => "form-control", :required => true
+              = f.text_field :address, :class => "form-control", :required => true, placeholder: 'Address'
         .row.top-buffer
           %form_group
             .col-md-2
               = f.label :Alternative_Address, "Alternative Address"
             .col-md-8
-              = f.text_field :alternative_address, :class => "form-control"
+              = f.text_field :alternative_address, :class => "form-control", placeholder: 'Alternative Address'
         .row.top-buffer
           %form_group
             .col-md-2
               = f.label :Phone_number, "Phone Number"
             .col-md-8
-              = f.text_field :phone_number, :class => "form-control" 
+              = f.text_field :phone_number, :class => "form-control", placeholder: 'Phone Number' 
         .row.top-buffer
           %form_group
             .col-md-2
               = f.label :Alternative_Phone_number, "Alternative Phone Number"
             .col-md-8
-              = f.text_field :alternative_phone_number, :class => "form-control"  
+              = f.text_field :alternative_phone_number, :class => "form-control", placeholder: 'Alternative Phone Number'
         .row.top-buffer
           %form_group
             .col-md-2
               = f.label :Website, "Website (www.website.com)"
             .col-md-8
-              = f.text_field :website, :class => "form-control"   
+              = f.text_field :website, :class => "form-control", placeholder: 'Website'
         .row.top-buffer
           %form_group
             .col-md-2
               = f.label :Fax_number, "Fax Number"
             .col-md-8
-              = f.text_field :fax_number, :class => "form-control"
+              = f.text_field :fax_number, :class => "form-control", placeholder: 'Fax Number'
         .row.top-buffer
           %form_group
             .col-md-2
               = f.label :Agency_email, "Email"
             .col-md-8
-              = f.text_field :agency_email, :class => "form-control"  
+              = f.text_field :agency_email, :class => "form-control", placeholder: 'user@example.com'
               
       .form-section.col-md-10
         %p How we can contact you...
@@ -89,13 +89,13 @@
             .col-md-2
               = f.label :Contact_email, "Contact Email***"
             .col-md-8
-              = f.text_field :contact_email, :class => "form-control", :required => true  
+              = f.text_field :contact_email, :class => "form-control", :required => true, placeholder: 'user@example.com'
         .row.top-buffer
           %form_group
             .col-md-2
               = f.label :Submitter_name, "Name"
             .col-md-8
-              = f.text_field :name_of_submitter, :class => "form-control"
+              = f.text_field :name_of_submitter, :class => "form-control", placeholder: 'Full Name'
               
       .col-md-2
         %button.btn.btn-success{:type => "submit", :confirm => "confirm"} Submit
