@@ -1,0 +1,26 @@
+.row
+  %table.table
+    %thead
+      %tr
+        %th User Information
+        %th
+        %th
+        %th
+
+    %tbody
+      %tr
+        %td Email:
+        %td= @user.email
+      %tr
+        %td Sign in count:
+        %td= @user.sign_in_count
+      %tr
+        %td Last sign in at:
+        %td= @user.last_sign_in_at.strftime('%x %r %Z')
+      %tr
+        %td Created at:
+        %td= @user.created_at.strftime('%x %r %Z')
+
+  = link_to 'Edit', edit_user_path(@user)
+  \|
+  = link_to 'Back', users_path

@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   resources :resources # Creates get, post, delete mappings for resources controller
   resources :categories # " "
+  resources :users
+  
   # Example resource route with options:
   #   resources :products do
   #     member dog
