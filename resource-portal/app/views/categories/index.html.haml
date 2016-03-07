@@ -8,7 +8,7 @@
         %th
         %th
         %th
-  
+
     %tbody
       - @categories.each do |category|
         %tr
@@ -17,7 +17,6 @@
           %td= link_to 'Edit', edit_category_path(category)
           %td= link_to 'Delete', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
 .row
-  %a.btn{href: new_category_path, role: "button"}
-    Create a New Category 
-    / intentional space
-    %i.fa.fa-plus 
+  %a.btn.btn-success{href: new_category_path, role: "button"}
+    Create a New Category
+    %i.fa.fa-plus

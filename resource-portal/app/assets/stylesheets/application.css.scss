@@ -22,8 +22,8 @@
 @import "font-awesome";
 
 @mixin shadow-round($height) {
-    box-shadow: 0px 0px $height grey;
-    border-radius: 3px;
+  box-shadow: 0px 0px $height grey;
+  border-radius: 3px;
 }
 
 .navbar-text {
@@ -31,14 +31,14 @@
 }
 
 #log-out-link {
-    color: #EEEEEE;
-    padding: 0px 20px;
+  color: #EEEEEE;
+  padding: 0px 20px;
 }
 
 a:hover { background-color: transparent;  }
 
 .btn {
-    @include shadow-round(6px);
+  @include shadow-round(6px);
 }
 
 a:visited {
@@ -52,39 +52,39 @@ a:visited {
 }
 
 .option_button {
-    margin: 5px 10px;
-    font-size: 24px;
-    background-color:#68acca;
+  margin: 5px 10px;
+  font-size: 24px;
+  background-color:#68acca;
 
-    &:visited {
-      color: white;
-    }
+  &:visited {
+    color: white;
+  }
 }
 
 .option_buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .resource_block {
-    background-color:#FFFFFF;
-    margin: 25px;
-    padding: 0px 10px;
-    @include shadow-round(12px);
+  background-color:#FFFFFF;
+  margin: 25px;
+  padding: 0px 10px;
+  @include shadow-round(12px);
 }
 
 #all-resources {
-    background-color:#DCDCDC;
-    @include shadow-round(8px);
+  background-color:#DCDCDC;
+  @include shadow-round(8px);
 }
 
 .list-group {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .panel_style{
-    background-color:#2ecc71;
+  background-color:#2ecc71;
 }
 
 // Make the entire width of panel title
@@ -96,14 +96,14 @@ a:visited {
 }
 
 .top-buffer{
-    margin-top :10px;
+  margin-top :10px;
 }
 
 .default-padding{
-    padding-top :25px;
-    padding-right :100px;
-    padding-bottom :25px;
-    padding-left  :100px;
+  padding-top :25px;
+  padding-right :100px;
+  padding-bottom :25px;
+  padding-left  :100px;
 }
 
 .default center{
@@ -113,56 +113,56 @@ a:visited {
 }
 
 .form-section {
-    padding: 10px;
-    margin: 10px 5px;
-    background-color: #DEDEDE;
-    @include shadow-round(8px);
+  padding: 10px;
+  margin: 10px 5px;
+  background-color: #DEDEDE;
+  @include shadow-round(8px);
 }
 
 .jumbotron p {
-    line-height: inherit;
+  line-height: inherit;
 }
 
 /** Footer styling **/
 footer {
-    padding: 20px 0px 10px 0px;
-    margin-top: 30px;
-    background-color: #EEEEEE;
-    position: absolute;
-    bottom: 0;
-    height: 60px;
-    width: 100%;
+  padding: 20px 0px 10px 0px;
+  margin-top: 30px;
+  background-color: #EEEEEE;
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
 }
 
 #body {
-   padding:10px;
-   padding-bottom:80px;   /* Height of the footer */
-   height:100%;
+ padding:10px;
+ padding-bottom:80px;   /* Height of the footer */
+ height:100%;
 }
 
 #container {
-    min-height: 100%;
-    position: relative;
+  min-height: 100%;
+  position: relative;
 }
 
 #call-to-action {
-    display: flex;
-    justify-content: center;
-    padding: 50px 0px;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px;
 }
 
 #enter-resource-button {
-    font-size: 2em;
-    background-color:#a0c738;
+  font-size: 2em;
+  background-color:#a0c738;
 }
 
 #main-page-jumbotron {
-    background-image: url(../images/corn-field-white.jpg);
-    background-position: 0% 45%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: black;
-    min-height: 400px;
+  background-image: url(../images/corn-field-white.jpg);
+  background-position: 0% 45%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  min-height: 400px;
 }
 
 .actions {
