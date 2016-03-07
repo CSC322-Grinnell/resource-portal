@@ -9,14 +9,16 @@
         %th
         %th
         %th
-  
+
     %tbody
       - @users.each do |user|
         %tr
           %td= user.email
-          %td= link_to 'Show', user
-          %td= link_to 'Edit', edit_user_path(user)
-          %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %td= link_to 'View', user
+          %td= link_to 'Remove', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 .row.actions
-  = link_to 'New User', new_user_path
+  .col-md-12
+    %a.btn.btn-success{:href => "/users/invitation/new", :role => "button"}
+      Invite an Admin
+      %i.fa.fa-user-plus
