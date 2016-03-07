@@ -13,35 +13,54 @@
  *= require_tree .
  *= require_self
  */
- 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 /*@import "font-awesome-sprockets";
 @import "font-awesome";*/
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
 @mixin shadow-round($height) {
     box-shadow: 0px 0px $height grey;
     border-radius: 3px;
+}
+
+.navbar-text {
+  color: #EEEEEE;
 }
 
 #log-out-link {
     color: #EEEEEE;
     padding: 0px 20px;
 }
+
 a:hover { background-color: transparent;  }
+
 .btn {
     @include shadow-round(6px);
-    margin: 2px;
 }
+
+a:visited {
+  &.btn-primary,
+  &.btn-success,
+  &.btn-info,
+  &.btn-warning,
+  &.btn-danager {
+    color: #fff;
+  }
+}
+
 .option_button {
     margin: 5px 10px;
     font-size: 24px;
     background-color:#68acca;
+
+    &:visited {
+      color: white;
+    }
 }
-.option_button:visited {
-    color: white;
-}
+
 .option_buttons {
     display: flex;
     justify-content: center;
@@ -49,7 +68,7 @@ a:hover { background-color: transparent;  }
 }
 
 .resource_block {
-    background-color:#FFFFFF; 
+    background-color:#FFFFFF;
     margin: 25px;
     padding: 0px 10px;
     @include shadow-round(12px);
@@ -63,28 +82,39 @@ a:hover { background-color: transparent;  }
 .list-group {
     list-style-type: none;
 }
+
 .panel_style{
     background-color:#2ecc71;
+}
+
+// Make the entire width of panel title
+// clickable
+.panel-title a {
+  width: 100%;
+  text-align: left;
+  display: inline-block;
 }
 
 .top-buffer{
     margin-top :10px;
 }
+
 .default-padding{
     padding-top :25px;
     padding-right :100px;
     padding-bottom :25px;
     padding-left  :100px;
 }
+
 .default center{
-   margin: auto;
-    width: 60%;
-    padding: 10px
+  margin: auto;
+  width: 60%;
+  padding: 10px
 }
 
 .form-section {
     padding: 10px;
-    margin: 5px;
+    margin: 10px 5px;
     background-color: #DEDEDE;
     @include shadow-round(8px);
 }
@@ -120,6 +150,7 @@ footer {
     justify-content: center;
     padding: 50px 0px;
 }
+
 #enter-resource-button {
     font-size: 2em;
     background-color:#a0c738;
@@ -132,5 +163,16 @@ footer {
     background-repeat: no-repeat;
     color: black;
     min-height: 400px;
-    /*text-shadow: 0px 0px 4px black;*/
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.admin-actions {
+  margin: 40px 0;
+
+  .btn-group {
+    margin: 10px 0;
+  }
 }
