@@ -14,13 +14,15 @@
       %tr
         %td Sign in count:
         %td= @user.sign_in_count
-      %tr
-        %td Last sign in at:
-        %td= @user.last_sign_in_at.strftime('%x %r %Z')
+      = if (@user.sign_in_count > 0) then
+        %tr
+          %td Last sign in at:
+          %td= @user.last_sign_in_at.strftime('%x %r %Z')
       %tr
         %td Created at:
         %td= @user.created_at.strftime('%x %r %Z')
 
+.row.actions
   = link_to 'Edit', edit_user_path(@user)
   \|
   = link_to 'Back', users_path
