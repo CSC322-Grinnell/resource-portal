@@ -23,6 +23,4 @@
         %td= @user.created_at.strftime('%x %r %Z')
 
 .row.actions
-  = link_to 'Edit', edit_user_path(@user)
-  \|
   = link_to 'Back', users_path
