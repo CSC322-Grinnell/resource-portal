@@ -1,0 +1,56 @@
+[2016-03-13 19:10:29,541][INFO ][node                     ] [Thornn] version[2.2.0], pid[1019], build[8ff36d1/2016-01-27T13:32:39Z]
+[2016-03-13 19:10:29,544][INFO ][node                     ] [Thornn] initializing ...
+[2016-03-13 19:10:30,469][INFO ][plugins                  ] [Thornn] modules [lang-groovy, lang-expression], plugins [], sites []
+[2016-03-13 19:10:30,519][INFO ][env                      ] [Thornn] using [1] data paths, mounts [[/ (none)]], net usable_space [4.7gb], net total_space [5.2gb], spins? [possibly], types [aufs]
+[2016-03-13 19:10:30,519][INFO ][env                      ] [Thornn] heap size [989.8mb], compressed ordinary object pointers [true]
+[2016-03-13 19:10:33,713][INFO ][node                     ] [Thornn] initialized
+[2016-03-13 19:10:33,713][INFO ][node                     ] [Thornn] starting ...
+[2016-03-13 19:10:33,916][INFO ][transport                ] [Thornn] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2016-03-13 19:10:33,927][INFO ][discovery                ] [Thornn] elasticsearch/aB_S1oDGQ7G5CIteBFiTWQ
+[2016-03-13 19:10:36,970][INFO ][cluster.service          ] [Thornn] new_master {Thornn}{aB_S1oDGQ7G5CIteBFiTWQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-03-13 19:10:36,987][INFO ][http                     ] [Thornn] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2016-03-13 19:10:36,988][INFO ][node                     ] [Thornn] started
+[2016-03-13 19:10:37,099][INFO ][gateway                  ] [Thornn] recovered [2] indices into cluster_state
+[2016-03-13 19:10:37,165][DEBUG][action.search.type       ] [Thornn] All shards failed for phase: [query]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: IndexNotFoundException[no such index];
+Caused by: [resources_development_20160310030350919] IndexNotFoundException[no such index]
+	at org.elasticsearch.indices.IndicesService.indexServiceSafe(IndicesService.java:310)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:636)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:618)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:369)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+[2016-03-13 19:10:37,171][INFO ][rest.suppressed          ] /resources_development/_search Params: {index=resources_development}
+Failed to execute phase [query], all shards failed
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.onFirstPhaseResult(TransportSearchTypeAction.java:228)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$1.onFailure(TransportSearchTypeAction.java:174)
+	at org.elasticsearch.action.ActionListenerResponseHandler.handleException(ActionListenerResponseHandler.java:46)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.processException(TransportService.java:821)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.sendResponse(TransportService.java:799)
+	at org.elasticsearch.transport.TransportService$4.onFailure(TransportService.java:361)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:39)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+[2016-03-13 21:05:42,566][INFO ][node                     ] [Thornn] stopping ...
+[2016-03-13 21:05:42,699][INFO ][node                     ] [Thornn] stopped
+[2016-03-13 21:05:42,700][INFO ][node                     ] [Thornn] closing ...
+[2016-03-13 21:05:42,715][INFO ][node                     ] [Thornn] closed
+[2016-03-13 21:05:50,280][INFO ][node                     ] [Reptyl] version[2.2.0], pid[4257], build[8ff36d1/2016-01-27T13:32:39Z]
+[2016-03-13 21:05:50,283][INFO ][node                     ] [Reptyl] initializing ...
+[2016-03-13 21:05:51,312][INFO ][plugins                  ] [Reptyl] modules [lang-groovy, lang-expression], plugins [], sites []
+[2016-03-13 21:05:51,377][INFO ][env                      ] [Reptyl] using [1] data paths, mounts [[/ (none)]], net usable_space [4.7gb], net total_space [5.2gb], spins? [possibly], types [aufs]
+[2016-03-13 21:05:51,378][INFO ][env                      ] [Reptyl] heap size [989.8mb], compressed ordinary object pointers [true]
+[2016-03-13 21:05:54,608][INFO ][node                     ] [Reptyl] initialized
+[2016-03-13 21:05:54,609][INFO ][node                     ] [Reptyl] starting ...
+[2016-03-13 21:05:54,795][INFO ][transport                ] [Reptyl] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2016-03-13 21:05:54,807][INFO ][discovery                ] [Reptyl] elasticsearch/JLvKLGgcSI-k7Sw471O1hQ
+[2016-03-13 21:05:57,944][INFO ][cluster.service          ] [Reptyl] new_master {Reptyl}{JLvKLGgcSI-k7Sw471O1hQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-03-13 21:05:58,018][INFO ][http                     ] [Reptyl] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2016-03-13 21:05:58,018][INFO ][node                     ] [Reptyl] started
+[2016-03-13 21:05:58,224][INFO ][gateway                  ] [Reptyl] recovered [2] indices into cluster_state

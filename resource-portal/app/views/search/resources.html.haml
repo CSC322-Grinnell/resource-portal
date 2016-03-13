@@ -1,15 +1,17 @@
-.container
-  %br
+.container 
+  %center 
+    %font{:size => "7"} Search Resources
   .row
-    .col-md-2
-    .col-md-8
+    .col-md-3
+    .col-md-6
       = render partial: 'search/form'
+    .col-md-3
 
 .container
-  %h2 Results for "#{params[:q]}"
+  %h1 Search Results
 
-.container{:id => 'all-resources'}
-  /id needs to be different
+.container{:id => 'all-resources'} 
+  /id needs to be different 
   - @results.each do |result|
     .row.resource_block
       = render partial: 'resources/resource', locals: { resource: result }

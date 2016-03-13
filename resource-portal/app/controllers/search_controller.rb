@@ -1,11 +1,11 @@
 class SearchController < ApplicationController
 
-  def resources
+  def resources 
     @resources = Resource.search(params[:q])#:match :word_start#, suggest :true
 
     # combine the results
-    @results = @resources
+    @results = @resources #+ @categories
     # may be necessary to remove duplicates
-  end
+  end 
 
 end

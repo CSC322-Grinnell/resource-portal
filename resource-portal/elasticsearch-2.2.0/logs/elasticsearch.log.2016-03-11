@@ -1,0 +1,1 @@
+[2016-03-11 00:11:54,647][INFO ][monitor.jvm              ] [Sharon Friedlander] [gc][young][17237][8] duration [845ms], collections [1]/[1.4s], total [845ms]/[1.4s], memory [109.8mb]->[48.8mb]/[989.8mb], all_pools {[young] [68.3mb]->[624kb]/[273mb]}{[survivor] [8.1mb]->[8.5mb]/[34.1mb]}{[old] [33.3mb]->[39.7mb]/[682.6mb]}
