@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   resources :categories # " "
   resources :users
   
+  get '/search/resources' => 'search#resources'
+  
   # Example resource route with options:
   #   resources :products do
   #     member dog
