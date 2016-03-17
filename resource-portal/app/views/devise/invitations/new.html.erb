@@ -1,0 +1,21 @@
+<h2><%= t "devise.invitations.new.header" %></h2>
+
+<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="row">
+    <div class="col-md-4 form-group form-section">
+      <% resource.class.invite_key_fields.each do |field| -%>
+        <p><%= f.label field %><br />
+        <%= f.text_field field, placeholder: 'user@example.com', class: "form-control" %></p>
+      <% end -%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.submit t("devise.invitations.new.submit_button"), class: "btn btn-success" %>
+    </div>
+  </div>
+
+<% end %>

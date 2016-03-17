@@ -7,9 +7,11 @@ class Resource < ActiveRecord::Base
     has_and_belongs_to_many :category
     
     private
-        def default_values
-         self.status ||= 'Pending'
-       end
+    
+    def default_values
+      self.status ||= 'Pending'
+    end
+    
     def must_have_one_category
       errors.add(:items, 'You must select at least one category') unless category_ids.detect { |i| i != "0" } 
     end

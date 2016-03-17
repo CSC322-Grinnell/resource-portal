@@ -16,14 +16,16 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-get 'admin' => 'resources#admin'
-get 'Pending' => 'resources#Pending'
-get 'sign_up' => 'users#sign_up'
-#post 'admin/:id', to: 'resources#modify_status'
-post 'modify_status', to:  'resources#modify_status'
-#get '/admin/sign_out' => 'devise/sessions#destroy'
+  get 'admin' => 'resources#admin'
 
-resources :resources
+  #post 'admin/:id', to: 'resources#modify_status'
+  post 'modify_status', to:  'resources#modify_status'
+  #get '/admin/sign_out' => 'devise/sessions#destroy'
+
+  resources :resources # Creates get, post, delete mappings for resources controller
+  resources :categories
+  resources :users, :only => [:index, :show, :destroy]
+
   # Example resource route with options:
   #   resources :products do
   #     member dog

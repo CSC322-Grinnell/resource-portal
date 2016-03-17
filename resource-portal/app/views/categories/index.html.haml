@@ -1,0 +1,22 @@
+.row
+  %h1 Listing categories
+.row
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Category Name
+        %th
+        %th
+        %th
+
+    %tbody
+      - @categories.each do |category|
+        %tr
+          %td= category.category_name
+          %td= link_to 'View', category
+          %td= link_to 'Edit', edit_category_path(category)
+          %td= link_to 'Delete', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.row
+  %a.btn.btn-success{href: new_category_path, role: "button"}
+    Create a New Category
+    %i.fa.fa-plus
