@@ -59,17 +59,17 @@ class ResourcesController < ApplicationController
   #Querries resources Approved/Pending and stores resultin variables that can be
   #stored and accessed in the admin view
   def admin
-      @approved_resources = Hash.new
-      @pending_resources = Hash.new
-      category_names = Category.get_category_names
-      category_names.each do |name|
-          key = name
-          if key =="Food and Groceries" #TODO : Fix Hack for Food and Groceries. Has to do with Id in Admin views I think
-              key = "Food"
-          end
-          @approved_resources[key] = query_resources(name,"Approved")
-          @pending_resources[key] = query_resources(name,"Pending")
+    @approved_resources = Hash.new
+    @pending_resources = Hash.new
+    category_names = Category.get_category_names
+    category_names.each do |name|
+      key = name
+      if key =="Food and Groceries" #TODO : Fix Hack for Food and Groceries. Has to do with Id in Admin views I think
+        key = "Food"
       end
+      @approved_resources[key] = query_resources(name,"Approved")
+      @pending_resources[key] = query_resources(name,"Pending")
+    end
   end
 
   #Changes the status of a particular resources according to the decision param
@@ -82,12 +82,12 @@ class ResourcesController < ApplicationController
 
   #Updates a resource according to the prams. Redirects to the main admin page
   def update
-      @resource = Resource.find(params[:id])
-      if @resource.update_attributes(resource_params)
-          flash[:success] = "Resource updated"
-          redirect_to admin_path
-      end
-      @resource.save!
+    @resource = Resource.find(params[:id])
+    if @resource.update_attributes(resource_params)
+      flash[:success] = "Resource updated"
+      redirect_to admin_path
+    end
+    @resource.save!
   end
 
   #Queries the resources table by category name and status. Note that the resources are
@@ -96,8 +96,7 @@ class ResourcesController < ApplicationController
   #@pram [resource_status] the status to querry resources on
   private
   def query_resources(category_name,resource_status)
-     return  Resource.joins(:category).where(categories: { category_name: category_name }).where(status: resource_status).order(:title)
+    return  Resource.joins(:category).where(categories: { category_name: category_name }).where(status: resource_status).order(:title)
   end
-
 
 end
