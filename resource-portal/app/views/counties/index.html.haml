@@ -1,0 +1,15 @@
+/ Home page for all of the counties
+.jumbotron#main-page-jumbotron
+  .container
+    %h1   
+    %p 
+      Mid-Iowa Resource Portal for Marshall, Poweshiek, Story, Tama and Hardin counties 
+    
+.container
+  .row
+    - @counties.each do |county|
+      .col-md-4.option_buttons
+        %a.btn.btn-info{:href => "/counties/#{county.id}", :role => "button", :class => "option_button"} #{county.county_name} &raquo;
+
+
+
