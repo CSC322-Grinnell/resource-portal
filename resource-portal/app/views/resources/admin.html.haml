@@ -7,30 +7,32 @@
       .btn-group.btn-group-lg.btn-group-justified
         %a.btn.btn-success{:href => "/resources/new", :role => "button"}
           Enter a New Resource
-          %i.fa.fa-plus
+          %span.fa.fa-plus
     .col-md-4.col-sm-12
       .btn-group.btn-group-lg.btn-group-justified
         %a.btn.btn-success{:href => "/users/invitation/new", :role => "button"}
           Invite Admin
-          %i.fa.fa-user-plus
+          %span.fa.fa-user-plus
         %a.btn.btn-primary{:href => "/users", :role => "button"}
           Edit Admins
-          %i.fa.fa-user
+          %span.fa.fa-user
     .col-md-4.col-sm-12
       .btn-group.btn-group-lg.btn-group-justified
         %a.btn.btn-success{href: new_category_path, role: "button"}
           Create Category
-          %i.fa.fa-plus
+          %span.fa.fa-plus
         %a.btn.btn-primary{:href => "/categories", :role => "button"}
           Edit Categories
-          %i.fa.fa-folder-open
+          %span.fa.fa-folder-open
   .row
     %ul.nav.nav-pills
       %li.active
-        %a.fa.fa-spinner.fa-lg(href="#pending_tab" data-toggle="tab" aria-expanded="true")
+        %a(href="#pending_tab" data-toggle="tab" aria-expanded="true")
+          %span.fa.fa-spinner.fa-lg
           Pending Resources
       %li
-        %a.fa.fa-database.fa-lg(href="#existing_tab" data-toggle="tab")
+        %a(href="#existing_tab" data-toggle="tab")
+          %span.fa.fa-database.fa-lg
           Edit Existing
     .tab-content
       .tab-pane#pending_tab.active
@@ -40,7 +42,7 @@
             .panel-heading
               %h4.panel-title
                 %a{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#item_Pending_#{category}"}
-                  %i.fa.fa-arrow-circle-down.fa-lg
+                  %span.fa.fa-arrow-circle-down.fa-lg
                   #{category} (#{resource_values.length})
             .panel-collapse.collapse{:id => "item_Pending_#{category}"}
               .panel-body
@@ -65,12 +67,16 @@
 
                     .col-md-6
                       = button_to('Approve',
-                                  { :action => 'modify_status' ,:decision =>"Approved", :id => resource.id },
-                                  :class => 'btn btn-success')
+                                  { :action => 'modify_status',
+                                    :decision =>"Approved",
+                                    :id => resource.id },
+                                    :class => 'btn btn-success')
 
                       = button_to('Reject',
-                                  { :action => 'modify_status' ,:decision =>"Rejected", :id => resource.id },
-                                  :class => 'btn btn-danger')
+                                  { :action => 'modify_status',
+                                    :decision =>"Rejected",
+                                    :id => resource.id },
+                                    :class => 'btn btn-danger')
 
 
       .tab-pane.fade#existing_tab
@@ -80,7 +86,7 @@
             .panel-heading
               %h4.panel-title
                 %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#item_#{category}"}
-                  %i.fa.fa-arrow-circle-down.fa-lg
+                  %span.fa.fa-arrow-circle-down.fa-lg
                   #{category} (#{resource_values.length})
             .panel-collapse.collapse{:id => "item_#{category}"}
               .panel-body
@@ -107,11 +113,11 @@
                       = button_to({ :action => 'edit', :decision => 'Approved', :id => resource.id },
                                   :class => 'btn btn-default',
                                   :method => 'get') do
-                        %i.fa.fa-lg.fa-pencil
+                        %span.fa.fa-lg.fa-pencil
                         Edit
 
                       = button_to({ :action => 'modify_status', :decision =>"Rejected", :id => resource.id },
                                   :class => 'btn btn-danger',
                                   :data => { :confirm => "Are you sure? Deleting this category is permanent" }) do
-                        %i.fa.fa-lg.fa-trash-o
+                        %span.fa.fa-lg.fa-trash-o
                         Delete
