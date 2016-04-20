@@ -3,7 +3,7 @@
 /
 .jumbotron#main-page-jumbotron
   .container
-    %h1 #{@county.county_name} Resource Portal
+    %h1 #{@county.county_name} County Resource Portal
     %p 
       This is an online resource directory for the #{@county.county_name} County of Iowa consisting of Food, Housing, 
       and Employment resources. This website is being built through a student project at Grinnell College.
@@ -18,10 +18,11 @@
   .row
     - @categories.each do |category|
       .col-md-4.option_buttons
-        %a.btn.btn-info{:href => "/counties/#{@county.id}/categories/#{category.id}", :role => "button", :class => "option_button"} #{category.category_name} &raquo;
+        %a.btn.btn-info{:href => "/counties/#{@county.county_name}/categories/#{category.category_name}", 
+        :role => "button", :class => "option_button"} #{category.category_name} &raquo;
   %hr/
   .row 
     .col-md-12#call-to-action
-      %a.btn.btn-default{:href => "/counties/:county_id/resources/new", :role => "button", :id => "enter-resource-button"}
+      %a.btn.btn-default{:href => "/counties/#{@county.county_name}/resources/new", :role => "button", :id => "enter-resource-button"}
         Enter a new resource 
         %i.fa.fa-plus 

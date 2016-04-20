@@ -1,4 +1,4 @@
-/ Home page for all of the counties
+/ Home page for all of the counties - #{county.id}
 .jumbotron#main-page-jumbotron
   .container
     %h1   
@@ -9,7 +9,7 @@
   .row
     - @counties.each do |county|
       .col-md-4.option_buttons
-        %a.btn.btn-info{:href => "/counties/#{county.id}", :role => "button", :class => "option_button"} #{county.county_name} &raquo;
+        %a.btn.btn-info{:href => "/counties/#{county.county_name}", :role => "button", :class => "option_button"} #{county.county_name} &raquo;
 
 
 
