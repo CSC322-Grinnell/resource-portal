@@ -15,20 +15,16 @@ class ResourcesController < ApplicationController
                   :fax_number, :contact_email, :agency_email,
                   :description_of_service)
           .merge({ category_ids: params[:category_ids] })
-
   end
 
-
+  # Display a list of all resources
   def index
-    @categories = Category.get_categories
+    @resources = Resource.all
   end
 
-  #Gets all the resources for a particular category
-  #@return [void]
+  # Display an individual resource
   def show
-    category_id = params[:id] #note that categorynames are used as identifiers
-    @category = Category.find(category_id)
-    @resources = query_resources(@category.category_name,"Approved")
+    @resource = Resource.find params[:id]
   end
 
   #Creates a new resource
@@ -61,14 +57,14 @@ class ResourcesController < ApplicationController
   def admin
     @approved_resources = Hash.new
     @pending_resources = Hash.new
-    category_names = Category.get_category_names
-    category_names.each do |name|
-      key = name
+    @categories = Category.all
+    @categories.each do |category|
+      key = category.category_name
       if key =="Food and Groceries" #TODO : Fix Hack for Food and Groceries. Has to do with Id in Admin views I think
         key = "Food"
       end
-      @approved_resources[key] = query_resources(name,"Approved")
-      @pending_resources[key] = query_resources(name,"Pending")
+      @approved_resources[key] = category.resources.where(status: "Approved")
+      @pending_resources[key] = category.resources.where(status: "Pending")
     end
   end
 
@@ -88,15 +84,6 @@ class ResourcesController < ApplicationController
       redirect_to admin_path
     end
     @resource.save!
-  end
-
-  #Queries the resources table by category name and status. Note that the resources are
-  #   always queried in alphanetical order
-  #@param [category_name] the category to querry resources on
-  #@pram [resource_status] the status to querry resources on
-  private
-  def query_resources(category_name,resource_status)
-    return  Resource.joins(:category).where(categories: { category_name: category_name }).where(status: resource_status).order(:title)
   end
 
 end
