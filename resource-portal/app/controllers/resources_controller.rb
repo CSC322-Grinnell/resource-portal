@@ -28,13 +28,13 @@ class ResourcesController < ApplicationController
 
   #Creates a new resource according to the parameters specified in params
   #Flashes on the view a note to indicate success of resouces creation
-  #@return [void] but redirects to the index.
+  #@return [void] but redirects to the ingidex.
   def create
     resource = Resource.create!(resource_params)
 
     flash[:success] = "#{resource.title} was successfully submitted."
     redirect_to :root
-  endq
+  end
 
   def destroy
     @resource.destroy
