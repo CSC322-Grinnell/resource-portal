@@ -1,0 +1,72 @@
+.container
+  .row
+    .col-md-12
+      %h1{:style => "text-align: center"} Administrator Home
+  .row.admin-actions
+    .col-md-4.col-sm-12
+      .btn-group.btn-group-lg.btn-group-justified
+        %a.btn.btn-success{:href => "/resources/new", :role => "button"}
+          Enter a New Resource
+          %span.fa.fa-plus
+    .col-md-4.col-sm-12
+      .btn-group.btn-group-lg.btn-group-justified
+        %a.btn.btn-success{:href => "/users/invitation/new", :role => "button"}
+          Invite Admin
+          %span.fa.fa-user-plus
+        %a.btn.btn-primary{:href => "/users", :role => "button"}
+          Edit Admins
+          %span.fa.fa-user
+    .col-md-4.col-sm-12
+      .btn-group.btn-group-lg.btn-group-justified
+        %a.btn.btn-success{href: new_category_path, role: "button"}
+          Create Category
+          %span.fa.fa-plus
+        %a.btn.btn-primary{:href => "/categories", :role => "button"}
+          Edit Categories
+          %span.fa.fa-folder-open
+  .row
+    %ul.nav.nav-pills
+      %li.active
+        %a(href="#pending_tab" data-toggle="tab" aria-expanded="true")
+          %span.fa.fa-spinner.fa-lg
+          Pending Resources
+      %li
+        %a(href="#existing_tab" data-toggle="tab")
+          %span.fa.fa-database.fa-lg
+          Edit Existing
+    .tab-content
+      .tab-pane#pending_tab.active
+        #accordion1.panel-group
+        -@pending_resources.each do |category,resource_values|
+          - category_expander_id = "item_Pending_#{category.tr(' ', '_')}"
+          .panel.panel-default
+            .panel-heading
+              %h4.panel-title
+                %a{"data-parent" => "#accordion1",
+                   "data-toggle" => "collapse",
+                   :href => "#" + category_expander_id }
+                  %span.fa.fa-arrow-circle-down.fa-lg
+                  #{category} (#{resource_values.length})
+            .panel-collapse.collapse{:id => category_expander_id}
+              .panel-body
+                - resource_values.each do |resource|
+                  = render partial: "resources/resource",
+                           locals: { resource: resource, accessory: :pending_actions }
+
+      .tab-pane.fade#existing_tab
+        #accordion.panel-group
+        -@approved_resources.each do |category, resource_values|
+          - category_expander_id = "item_#{category.tr(' ', '_')}"
+          .panel.panel-default
+            .panel-heading
+              %h4.panel-title
+                %a{"data-parent" => "#accordion",
+                   "data-toggle" => "collapse",
+                     :href => "#" + category_expander_id }
+                  %span.fa.fa-arrow-circle-down.fa-lg
+                  #{category} (#{resource_values.length})
+            .panel-collapse.collapse{:id => category_expander_id}
+              .panel-body
+                - resource_values.each do |resource|
+                  = render partial: "resources/resource",
+                           locals: { resource: resource, accessory: :approved_actions }

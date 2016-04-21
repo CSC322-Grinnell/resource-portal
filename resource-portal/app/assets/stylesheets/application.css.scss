@@ -67,11 +67,15 @@ a:visited {
   flex-wrap: wrap;
 }
 
-.resource_block {
+.resource-block {
   background-color:#FFFFFF;
   margin: 25px;
   padding: 0px 10px;
   @include shadow-round(12px);
+
+  .resource-title {
+    color: black;
+  }
 }
 
 #all-resources {

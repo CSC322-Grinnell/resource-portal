@@ -1,14 +1,7 @@
-/ Main Jumbotron for a primary marketing message or call to action.
-/ Resource display page. Shows the information for each approved resource in a category.
+-# resource#show
+-# Display an individual resource
 .container
   .row
     .col-md-12
-      %h1{:style => "text-align: center"} #{@category.category_name}
-
-- if !@resources.empty?
-  .container{:id => "all-resources"}
-    - @resources.each do |resource|
-      = render :partial => 'resource', :locals => { :resource => resource }
-    - end unless @dont_show_things
-  /Examaple 2
+      = render :partial => 'resource', :locals => { :resource => @resource }
   %hr/

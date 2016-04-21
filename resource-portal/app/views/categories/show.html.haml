@@ -1,10 +1,12 @@
-.row
-  %p#notice= notice
-  
-  %h3 
-    = @category.category_name
+-# categories#show
+-# Displays the "contents" of a category, i.e. its resources
+.container
+  .row
+    .col-md-12
+      %h1{:style => "text-align: center"} #{@category.category_name}
 
-.row.actions
-  = link_to 'Edit', edit_category_path(@category)
-  \|
-  = link_to 'View All Categories', categories_path
+- if !@resources.empty?
+  .container{:id => "all-resources"}
+    - @resources.each do |resource|
+      = render :partial => 'resources/resource', :locals => { :resource => resource }
+  %hr
