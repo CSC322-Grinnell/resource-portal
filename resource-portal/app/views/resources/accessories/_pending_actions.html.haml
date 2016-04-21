@@ -1,0 +1,13 @@
+= button_to('Approve',
+            { :action => 'modify_status',
+              :controller => 'resources',
+              :decision =>"Approved",
+              :id => resource.id },
+            :class => 'btn btn-success')
+
+= button_to('Reject',
+            { :action => 'modify_status',
+              :controller => 'resources',
+              :decision =>"Rejected",
+              :id => resource.id },
+            :class => 'btn btn-danger')

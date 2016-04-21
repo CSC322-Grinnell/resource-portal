@@ -47,41 +47,11 @@
                    :href => "#" + category_expander_id }
                   %span.fa.fa-arrow-circle-down.fa-lg
                   #{category} (#{resource_values.length})
-
             .panel-collapse.collapse{:id => category_expander_id}
               .panel-body
                 - resource_values.each do |resource|
-                  .row.resource-block
-                    %h3 #{resource.title}
-                    %p.description #{resource.description_of_service}
-
-                    .col-md-6
-                      %ul{:class => "list-group"}
-                        %li Address: #{resource.address}
-                        %li Alternative Address: #{resource.alternative_address}
-                        %li Phone: #{resource.phone_number}
-                        %li Alternative Phone: #{resource.alternative_phone_number}
-                        %li Website: #{resource.website}
-                        %li Fax: #{resource.fax_number}
-                        %li Contact Email: #{resource.contact_email}
-                        %li Agency Email: #{resource.agency_email}
-                        %li Name of Submitter: #{resource.name_of_submitter}
-
-                    .col-md-6
-                      = button_to('Approve',
-                                  { :action => 'modify_status',
-                                    :controller => 'resources',
-                                    :decision =>"Approved",
-                                    :id => resource.id },
-                                  :class => 'btn btn-success')
-
-                      = button_to('Reject',
-                                  { :action => 'modify_status',
-                                    :controller => 'resources',
-                                    :decision =>"Rejected",
-                                    :id => resource.id },
-                                  :class => 'btn btn-danger')
-
+                  = render partial: "resources/resource",
+                           locals: { resource: resource, accessory: :pending_actions }
 
       .tab-pane.fade#existing_tab
         #accordion.panel-group
@@ -98,32 +68,5 @@
             .panel-collapse.collapse{:id => category_expander_id}
               .panel-body
                 - resource_values.each do |resource|
-                  .row.resource-block
-                    %h3 #{resource.title}
-                    %p.description #{resource.description_of_service}
-
-                    .col-md-6
-                      %ul{:class => "list-group"}
-                        %li Address: #{resource.address}
-                        %li Alternative Address: #{resource.alternative_address}
-                        %li Phone: #{resource.phone_number}
-                        %li Alternative Phone: #{resource.alternative_phone_number}
-                        %li Website: #{resource.website}
-                        %li Fax: #{resource.fax_number}
-                        %li Contact Email: #{resource.contact_email}
-                        %li Agency Email: #{resource.agency_email}
-                        %li Name of Submitter: #{resource.name_of_submitter}
-
-                    .col-md-6
-                      = button_to(edit_resource_path(resource),
-                                  :class => 'btn btn-default',
-                                  :method => 'get') do
-                        %span.fa.fa-lg.fa-pencil
-                        Edit
-
-                      = button_to(resource_path(resource),
-                                  :method => :delete,
-                                  :class => 'btn btn-danger',
-                                  :data => { :confirm => "Are you sure? Deleting this category is permanent" }) do
-                        %span.fa.fa-lg.fa-trash-o
-                        Delete
+                  = render partial: "resources/resource",
+                           locals: { resource: resource, accessory: :approved_actions }

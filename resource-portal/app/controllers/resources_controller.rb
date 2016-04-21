@@ -33,8 +33,8 @@ class ResourcesController < ApplicationController
     resource = Resource.create!(resource_params)
 
     flash[:success] = "#{resource.title} was successfully submitted."
-    redirect_to resources_path
-  end
+    redirect_to :root
+  endq
 
   def destroy
     @resource.destroy

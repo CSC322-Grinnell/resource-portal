@@ -1,0 +1,12 @@
+= button_to(edit_resource_path(resource),
+            :class => 'btn btn-default',
+            :method => 'get') do
+  %span.fa.fa-lg.fa-pencil
+  Edit
+
+= button_to(resource_path(resource),
+            :method => :delete,
+            :class => 'btn btn-danger',
+            :data => { :confirm => "Are you sure? Deleting this category is permanent" }) do
+  %span.fa.fa-lg.fa-trash-o
+  Delete
