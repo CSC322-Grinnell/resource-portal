@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root 'categories#homepage'
 
-  get 'admin' => 'resources#admin'
+  get 'admin' => 'users#admin', as: :admin
 
   post 'modify_status', to:  'resources#modify_status'
 
