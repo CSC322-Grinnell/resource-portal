@@ -31,11 +31,10 @@
               %ul.list-inline
                 -# Automatically create check boxes according to the resources in the database.
                 - Category.all.each do |category|
-                  %li
+                  %li.category-box-container
                     = check_box_tag 'category_ids[]',
                         category.id,
-                        @resource.category_ids.include?(category.id),
-                        :required => true
+                        @resource.category_ids.include?(category.id)
                     = category.category_name
 
       .form-section.col-md-10
