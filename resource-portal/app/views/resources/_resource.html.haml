@@ -1,5 +1,7 @@
-.row.resource_block
-  %h3 #{resource.title}
+.row.resource-block
+  %h3
+    = link_to resource, class: "resource-title", target: "_blank" do
+      = resource.title
 
   %p.description #{resource.description_of_service}
 
