@@ -59,12 +59,9 @@ class ResourcesController < ApplicationController
     @pending_resources = Hash.new
     @categories = Category.all
     @categories.each do |category|
-      key = category.category_name
-      if key =="Food and Groceries" #TODO : Fix Hack for Food and Groceries. Has to do with Id in Admin views I think
-        key = "Food"
-      end
-      @approved_resources[key] = category.resources.where(status: "Approved")
-      @pending_resources[key] = category.resources.where(status: "Pending")
+      name = category.category_name
+      @approved_resources[name] = category.resources.where(status: "Approved")
+      @pending_resources[name] = category.resources.where(status: "Pending")
     end
   end
 

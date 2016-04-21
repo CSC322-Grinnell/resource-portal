@@ -38,18 +38,20 @@
       .tab-pane#pending_tab.active
         #accordion1.panel-group
         -@pending_resources.each do |category,resource_values|
+          - category_expander_id = "item_Pending_#{category.tr(' ', '_')}"
           .panel.panel-default
             .panel-heading
               %h4.panel-title
-                %a{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#item_Pending_#{category}"}
+                %a{"data-parent" => "#accordion1",
+                   "data-toggle" => "collapse",
+                   :href => "#" + category_expander_id }
                   %span.fa.fa-arrow-circle-down.fa-lg
                   #{category} (#{resource_values.length})
-            .panel-collapse.collapse{:id => "item_Pending_#{category}"}
+
+            .panel-collapse.collapse{:id => category_expander_id}
               .panel-body
                 - resource_values.each do |resource|
-
                   .row.resource_block
-
                     %h3 #{resource.title}
                     %p.description #{resource.description_of_service}
 
@@ -70,30 +72,31 @@
                                   { :action => 'modify_status',
                                     :decision =>"Approved",
                                     :id => resource.id },
-                                    :class => 'btn btn-success')
+                                  :class => 'btn btn-success')
 
                       = button_to('Reject',
                                   { :action => 'modify_status',
                                     :decision =>"Rejected",
                                     :id => resource.id },
-                                    :class => 'btn btn-danger')
+                                  :class => 'btn btn-danger')
 
 
       .tab-pane.fade#existing_tab
         #accordion.panel-group
         -@approved_resources.each do |category, resource_values|
+          - category_expander_id = "item_#{category.tr(' ', '_')}"
           .panel.panel-default
             .panel-heading
               %h4.panel-title
-                %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#item_#{category}"}
+                %a{"data-parent" => "#accordion",
+                   "data-toggle" => "collapse",
+                     :href => "#" + category_expander_id }
                   %span.fa.fa-arrow-circle-down.fa-lg
                   #{category} (#{resource_values.length})
-            .panel-collapse.collapse{:id => "item_#{category}"}
+            .panel-collapse.collapse{:id => category_expander_id}
               .panel-body
                 - resource_values.each do |resource|
-
                   .row.resource_block
-
                     %h3 #{resource.title}
                     %p.description #{resource.description_of_service}
 
