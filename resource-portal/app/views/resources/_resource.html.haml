@@ -43,6 +43,8 @@
       %li Agency Email: #{resource.agency_email}
       %li Name of Submitter: #{resource.name_of_submitter}
 
+  -# render one of several optional accessory partial views on the right-hand
+  -# side of the resource (located in resources/accessories)
   .col-md-6
     - if defined? accessory
       = render partial: "resources/accessories/#{accessory}", locals: { resource: resource }
