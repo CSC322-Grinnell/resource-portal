@@ -37,17 +37,19 @@
               %span.icon-bar
               %span.icon-bar
               %span.icon-bar
-            %a.navbar-brand.fa.fa-home.fa-lg{:href => "/"}
+            %a.navbar-brand{:href => "/"}
+              %span.fa.fa-home.fa-lg
               Resource Portal
           .navbar-collapse.collapse
             .navbar-right
               %span.navbar-text= current_user.email if user_signed_in?
-              %a.btn.btn-default.navbar-btn.fa.fa-user{:href => "/admin", :role => "button"}
+              %a.btn.btn-default.navbar-btn{:href => "/admin", :role => "button"}
+                %span.fa.fa-user
                 Admin &raquo;
               - if user_signed_in?
                 = link_to destroy_user_session_path, :method => :delete, :id => "log-out-link" do
                   Log Out
-                  %i.fa.fa-sign-out
+                  %span.fa.fa-sign-out
     #body.container
       / Enables flash messages on the home page, especially after submitting a resource form
       / Reference: https://www.railstutorial.org/book/sign_up#sec-the_flash
