@@ -1,15 +1,30 @@
 -# Accessory for pending resources on the admin page
 -# Includes additional info and buttons to approve, edit, and reject
-= button_to('Approve',
-            { :action => 'modify_status',
-              :controller => 'resources',
-              :decision =>"Approved",
-              :id => resource.id },
-            :class => 'btn btn-success')
+.row.resource-categories
+  %p
+    This resource appears in these categories:
+    = resource.category.pluck(:category_name).join(", ")
 
-= button_to(resource_path(resource),
-            :class => 'btn btn-danger',
-            :method => :delete,
-            :data => { :confirm => "Are you sure? Deleting this category is permanent" }) do
-  %span.fa.fa-lg.fa-trash-o
-  Reject
+.row
+  = button_to({ :action => 'modify_status',
+                :controller => 'resources',
+                :decision =>"Approved",
+                :id => resource.id },
+              :class => 'btn btn-success') do
+    %span.fa.fa-lg.fa-check
+    Approve
+
+.row
+  = button_to(edit_resource_path(resource),
+              :class => 'btn btn-default',
+              :method => 'get') do
+    %span.fa.fa-lg.fa-pencil
+    Edit
+
+.row
+  = button_to(resource_path(resource),
+              :class => 'btn btn-danger',
+              :method => :delete,
+              :data => { :confirm => "Are you sure? Deleting this category is permanent" }) do
+    %span.fa.fa-lg.fa-trash-o
+    Reject

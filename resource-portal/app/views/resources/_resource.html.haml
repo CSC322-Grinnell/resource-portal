@@ -45,6 +45,6 @@
 
   -# render one of several optional accessory partial views on the right-hand
   -# side of the resource (located in resources/accessories)
-  .col-md-6
+  .col-md-6.accessory
     - if defined? accessory
       = render partial: "resources/accessories/#{accessory}", locals: { resource: resource }

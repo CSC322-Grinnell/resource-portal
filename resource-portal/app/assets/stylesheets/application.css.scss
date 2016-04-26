@@ -76,6 +76,10 @@ a:visited {
   .resource-title {
     color: black;
   }
+
+  .accessory .btn {
+    margin-bottom: 5px;
+  }
 }
 
 #all-resources {
@@ -87,7 +91,7 @@ a:visited {
   list-style-type: none;
 }
 
-.panel_style{
+.panel_style {
   background-color:#2ecc71;
 }
 
@@ -99,18 +103,18 @@ a:visited {
   display: inline-block;
 }
 
-.top-buffer{
+.top-buffer {
   margin-top :10px;
 }
 
-.default-padding{
+.default-padding {
   padding-top :25px;
   padding-right :100px;
   padding-bottom :25px;
   padding-left  :100px;
 }
 
-.default center{
+.default center {
   margin: auto;
   width: 60%;
   padding: 10px
