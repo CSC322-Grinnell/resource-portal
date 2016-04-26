@@ -1,3 +1,5 @@
+-# Accessory for pending resources on the admin page
+-# Includes additional info and buttons to approve, edit, and reject
 = button_to('Approve',
             { :action => 'modify_status',
               :controller => 'resources',
@@ -5,9 +7,9 @@
               :id => resource.id },
             :class => 'btn btn-success')
 
-= button_to('Reject',
-            { :action => 'modify_status',
-              :controller => 'resources',
-              :decision =>"Rejected",
-              :id => resource.id },
-            :class => 'btn btn-danger')
+= button_to(resource_path(resource),
+            :class => 'btn btn-danger',
+            :method => :delete,
+            :data => { :confirm => "Are you sure? Deleting this category is permanent" }) do
+  %span.fa.fa-lg.fa-trash-o
+  Reject
