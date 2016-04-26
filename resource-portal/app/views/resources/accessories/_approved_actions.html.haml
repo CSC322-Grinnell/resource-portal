@@ -1,14 +1,21 @@
 -# Accessory for approved resources on the admin page
 -# Includes buttons to edit and delete resource
-= button_to(edit_resource_path(resource),
-            :class => 'btn btn-default',
-            :method => 'get') do
-  %span.fa.fa-lg.fa-pencil
-  Edit
+.row.resource-categories
+  %p
+    This resource appears in these categories:
+    = resource.category.pluck(:category_name).join(", ")
 
-= button_to(resource_path(resource),
-            :class => 'btn btn-danger',
-            :method => :delete,
-            :data => { :confirm => "Are you sure? Deleting this category is permanent" }) do
-  %span.fa.fa-lg.fa-trash-o
-  Delete
+.row
+  = button_to(edit_resource_path(resource),
+              :class => 'btn btn-default',
+              :method => 'get') do
+    %span.fa.fa-lg.fa-pencil
+    Edit
+
+.row
+  = button_to(resource_path(resource),
+              :class => 'btn btn-danger',
+              :method => :delete,
+              :data => { :confirm => "Are you sure? Deleting this category is permanent" }) do
+    %span.fa.fa-lg.fa-trash-o
+    Delete
