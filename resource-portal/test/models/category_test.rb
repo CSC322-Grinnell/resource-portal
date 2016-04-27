@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  self.use_instantiated_fixtures = true
+
+  test "should require name" do
+    @employment.name = ""
+    assert_not @employment.save, "Saved a category without a name"
+  end
+
 end
