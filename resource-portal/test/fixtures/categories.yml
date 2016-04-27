@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  category_name: MyString
+food_and_groceries:
+  name: Food and Groceries
+  resources: chuong_garden
 
-two:
-  category_name: MyString
+employment:
+  name: Employment
+  resources: chuong_garden, mica
