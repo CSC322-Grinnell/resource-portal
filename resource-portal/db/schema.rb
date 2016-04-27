@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229004150) do
+ActiveRecord::Schema.define(version: 20160426235911) do
 
   create_table "categories", force: :cascade do |t|
-    t.string   "category_name"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories_resources", force: :cascade do |t|
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20160229004150) do
   end
 
   create_table "resources", force: :cascade do |t|
-    t.string   "title"
+    t.string   "name"
     t.string   "address"
     t.string   "alternative_address"
     t.string   "phone_number"
@@ -44,13 +44,6 @@ ActiveRecord::Schema.define(version: 20160229004150) do
     t.string   "reviewer_name"
     t.time     "date_reviewed"
     t.text     "reviewer_comment"
-  end
-
-  create_table "test_gens", force: :cascade do |t|
-    t.string   "game"
-    t.integer  "score"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
