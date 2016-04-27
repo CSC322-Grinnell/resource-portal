@@ -30,17 +30,23 @@ class ResourcesController < ApplicationController
   # Flashes on the view a note to indicate success of resouces creation
   #@return [void] but redirects to the ingidex.
   def create
+    # Set instance var so :new renders properly if validation fails
     @resource = Resource.new(resource_params)
 
     # Only admins can be signed in users at this point
     # If a user is signed in, then they are an admin
-    if user_signed_in?
-      @resource.status = "Approved"
-    end
+    @resource.status = "Approved" if user_signed_in?
 
     if @resource.save
       flash[:success] = "#{@resource.name} was successfully submitted."
-      redirect_to :root
+
+      if user_signed_in?
+        redirect_to admin_path
+      else
+        redirect_to :root
+      end
+    else
+      render :new
     end
   end
 
@@ -61,9 +67,11 @@ class ResourcesController < ApplicationController
 
   # Updates a resource according to the params. Redirects to the main admin page
   def update
-    if @resource.update_attributes(resource_params)
+    if @resource.update(resource_params)
       flash[:success] = "Resource updated"
       redirect_to admin_path
+    else
+      render :edit
     end
     @resource.save!
   end
