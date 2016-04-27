@@ -14,9 +14,9 @@
           %form_group
             .col-md-2
               -# Referenced: http://stackoverflow.com/questions/13003626/custom-text-for-rails-form-for-label
-              = f.label :Agency_name, "Agency Name***"
+              = f.label :name, "Agency Name***"
             .col-md-8
-              = f.text_field :title, :class => "form-control", :required => true, placeholder: 'Agency Name'
+              = f.text_field :name, :class => "form-control", :required => true, placeholder: 'Agency Name'
         .row.top-buffer
           %form_group
             .col-md-2
@@ -35,7 +35,7 @@
                     = check_box_tag 'category_ids[]',
                         category.id,
                         @resource.category_ids.include?(category.id)
-                    = category.category_name
+                    = category.name
 
       .form-section.col-md-10
         %p How community members can find your service...

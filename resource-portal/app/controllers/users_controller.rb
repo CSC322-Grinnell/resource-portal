@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @categories = Category.all
 
     @categories.each do |category|
-      name = category.category_name
+      name = category.name
       @approved_resources[name] = category.resources.where(status: "Approved")
       @pending_resources[name] = category.resources.where(status: "Pending")
     end

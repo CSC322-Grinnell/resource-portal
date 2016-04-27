@@ -3,7 +3,7 @@
 .row.resource-categories
   %p
     This resource appears in these categories:
-    = resource.category.pluck(:category_name).join(", ")
+    = resource.category.pluck(:name).join(", ")
 
 .row
   = button_to(edit_resource_path(resource),

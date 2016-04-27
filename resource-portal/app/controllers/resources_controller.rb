@@ -31,15 +31,14 @@ class ResourcesController < ApplicationController
   #@return [void] but redirects to the ingidex.
   def create
     resource = Resource.create!(resource_params)
-
-    flash[:success] = "#{resource.title} was successfully submitted."
+    flash[:success] = "#{resource.name} was successfully submitted."
     redirect_to :root
   end
 
   def destroy
     @resource.destroy
 
-    flash[:success] = "Destroyed #{@resource.title}"
+    flash[:success] = "Destroyed #{@resource.name}"
     redirect_to admin_path
   end
 
@@ -69,7 +68,7 @@ class ResourcesController < ApplicationController
   #@return [void]
   def resource_params
     params.require(:resource)
-          .permit(:category_name, :title, :address, :alternative_address,
+          .permit(:name, :address, :alternative_address,
                   :phone_number, :alternative_phone_number, :website,
                   :fax_number, :contact_email, :agency_email,
                   :description_of_service)

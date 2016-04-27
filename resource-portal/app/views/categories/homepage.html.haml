@@ -13,7 +13,7 @@
     - @categories.each do |category|
       .col-md-4.option_buttons
         %a.btn.btn-info{:href => category_path(category), :role => "button", :class => "option_button"}
-          = category.category_name
+          = category.name
           %span.fa.fa-angle-double-right
   %hr/
   .row
