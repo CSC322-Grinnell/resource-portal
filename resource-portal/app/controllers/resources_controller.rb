@@ -1,4 +1,4 @@
-#Class  that binds the resource model to the resource view
+# Class  that binds the resource model to the resource view
 #@author Albert Owusu-Asare , Blake Creasey, David Sanchez, Zhi Chen, Zoe Wolter
 #@since 0.0.1
 class ResourcesController < ApplicationController
@@ -17,22 +17,31 @@ class ResourcesController < ApplicationController
   def show
   end
 
-  #Creates a new resource
+  # Creates a new resource
   def new
     @resource = Resource.new
   end
 
-  #Gets a new resource by the id specified in params
+  # Gets the resource to edit by the id specified in params
   def edit
   end
 
-  #Creates a new resource according to the parameters specified in params
-  #Flashes on the view a note to indicate success of resouces creation
+  # Creates a new resource according to the parameters specified in params
+  # Flashes on the view a note to indicate success of resouces creation
   #@return [void] but redirects to the ingidex.
   def create
-    resource = Resource.create!(resource_params)
-    flash[:success] = "#{resource.name} was successfully submitted."
-    redirect_to :root
+    @resource = Resource.new(resource_params)
+
+    # Only admins can be signed in users at this point
+    # If a user is signed in, then they are an admin
+    if user_signed_in?
+      @resource.status = "Approved"
+    end
+
+    if @resource.save
+      flash[:success] = "#{@resource.name} was successfully submitted."
+      redirect_to :root
+    end
   end
 
   def destroy
@@ -42,7 +51,7 @@ class ResourcesController < ApplicationController
     redirect_to admin_path
   end
 
-  #Changes the status of a particular resources according to the decision param
+  # Changes the status of a particular resources according to the decision param
   def modify_status
     @resource.status = params[:decision]
     @resource.save!
@@ -50,7 +59,7 @@ class ResourcesController < ApplicationController
     redirect_to admin_path
   end
 
-  #Updates a resource according to the prams. Redirects to the main admin page
+  # Updates a resource according to the params. Redirects to the main admin page
   def update
     if @resource.update_attributes(resource_params)
       flash[:success] = "Resource updated"
@@ -64,7 +73,7 @@ class ResourcesController < ApplicationController
     @resource = Resource.find params[:id]
   end
 
-  #Fetches all the parameters that are used for resource creation and editing
+  # Fetches all the parameters that are used for resource creation and editing
   #@return [void]
   def resource_params
     params.require(:resource)
