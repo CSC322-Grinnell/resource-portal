@@ -3,7 +3,7 @@
 .container
   .row
     .col-md-12
-      %h1{:style => "text-align: center"} #{@category.category_name}
+      %h1{:style => "text-align: center"} #{@category.name}
 
 - if !@resources.empty?
   .container{:id => "all-resources"}
