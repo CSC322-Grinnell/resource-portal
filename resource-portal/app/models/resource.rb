@@ -7,6 +7,8 @@ class Resource < ActiveRecord::Base
 
   has_and_belongs_to_many :categories
 
+  default_scope { order('name ASC') } # Returns resources in Alphabetaical order via names
+
   private
 
   def default_values
