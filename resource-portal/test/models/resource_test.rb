@@ -23,10 +23,10 @@ class ResourceTest < ActiveSupport::TestCase
     assert_not @chuong_garden.save, "Saved a resource without a address"
   end
 
-  test "should require contact email" do
-    @chuong_garden.contact_email = ""
-    assert_not @chuong_garden.save, "Saved a resource without an email"
-  end
+#  test "should require contact email" do
+ #   @chuong_garden.contact_email = ""
+  #  assert_not @chuong_garden.save, "Saved a resource without an email"
+  #end
 
   test "should require at least one category" do
     @chuong_garden.categories = []

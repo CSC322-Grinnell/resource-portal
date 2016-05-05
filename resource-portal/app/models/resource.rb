@@ -1,7 +1,7 @@
 class Resource < ActiveRecord::Base
   after_initialize :default_values
 
-  validates :name, :description_of_service, :address, :contact_email,
+  validates :name, :description_of_service, :address, #:contact_email,
             presence: true
   validate :must_have_one_category
 
