@@ -9,6 +9,8 @@ class Resource < ActiveRecord::Base
 
   default_scope { order('name ASC') } # Returns resources in Alphabetaical order via names
 
+  searchkick
+
   private
 
   def default_values
