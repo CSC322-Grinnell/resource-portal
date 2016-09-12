@@ -1,28 +1,37 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Resource Portal
+ 
+This is the README for the Resource Portal Web Application built by students of 
+Grinnell College for CSC 322: Team Software Development for Community Partners.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Getting started
+
+To get started with the app, clone the repo and then install the needed gems:
+
+```
+$ bundle install
+```
+
+Next, migrate the database:
+
+```
+$ bundle exec rake db:migrate
+```
+
+Next, seed the database with sample data:
+
+```
+bundle exec rake db:seed
+```
+
+Finally, run the test suite to verify that everything is working correctly:
+
+```
+$ rails test
+```
+
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
