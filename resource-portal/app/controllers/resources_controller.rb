@@ -49,12 +49,12 @@ def create
      redirect_to resources_path
 end
 
-
+#Currently unavailable functionality, cannot delete resources
 def destroy
 end
 
 
-#Querries resources Approved/Pending and stores resultin variables that can be
+#Queries resources Approved/Pending and stores resulting variables that can be
 #stored and accessed in the admin view
 def admin
     @approved_resources = Hash.new
@@ -89,9 +89,9 @@ def update
 end
 
 #Queries the resources table by category name and status. Note that the resources are 
-#   always queried in alphanetical order
-#@param [category_name] the category to querry resources on
-#@pram [resource_status] the status to querry resources on
+#   always queried in alphabetical order
+#@param [category_name] the category to query resources on
+#@param [resource_status] the status to query resources on
 private
 def query_resources(category_name,resource_status)
    return  Resource.joins(:category).where(categories: { category_name: category_name }).where(status: resource_status).order(:title)

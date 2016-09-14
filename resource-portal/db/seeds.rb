@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# Create sample Categories in DB
 Category.create(category_name: 'Housing') 
 Category.create(category_name: 'Food and Groceries') 
 Category.create(category_name: 'Employment') 
