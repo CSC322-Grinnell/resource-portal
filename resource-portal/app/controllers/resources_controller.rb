@@ -84,11 +84,17 @@ class ResourcesController < ApplicationController
   # Fetches all the parameters that are used for resource creation and editing
   #@return [void]
   def resource_params
-    params.require(:resource)
-          .permit(:name, :address, :alternative_address,
-                  :phone_number, :alternative_phone_number, :website,
-                  :fax_number, :contact_email, :agency_email,
-                  :description_of_service)
-          .merge({ category_ids: params[:category_ids] })
+    the_params = params.require(:resource)
+                        .permit(:name, :address, :alternative_address,
+                                :phone_number, :alternative_phone_number,
+                                :website, :fax_number, :contact_email,
+                                :agency_email, :description_of_service)
+
+    # if category_ids is neither null nor empty
+    if !params[:category_ids].blank?
+      the_params.merge!({ category_ids: params[:category_ids] })
+    end
+
+    return the_params
   end
 end

@@ -1,27 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  category: MyString
-  address: MyString
-  alternative_address: MyString
-  phone_number: MyString
-  alternative_phone_number: MyString
-  website: MyString
-  fax_number: MyString
-  contact_email: MyString
-  agency_email: MyString
-  description_of_service: MyText
+chuong_garden:
+  name: Chuong Garden
+  categories: employment, food_and_groceries
+  address: Broad St.
+  alternative_address: Still Broad St.
+  phone_number: (555)555-5555
+  alternative_phone_number: (444)444-4444
+  website: chuong.garden.com
+  fax_number: (333)333-3333
+  contact_email: chuong@chuonggarden.com
+  agency_email: chuong@chuonggarden.com
+  description_of_service: We serve good food
 
-two:
-  title: MyString
-  category: MyString
-  address: MyString
-  alternative_address: MyString
-  phone_number: MyString
-  alternative_phone_number: MyString
-  website: MyString
-  fax_number: MyString
-  contact_email: MyString
-  agency_email: MyString
-  description_of_service: MyText
+mica:
+  name: MICA
+  categories: employment
+  address: Grinnell IA
+  alternative_address: Mashalltown IA
+  phone_number: (666)666-6666
+  alternative_phone_number: (666)666-6666
+  website: micaonline.org
+  fax_number: (666)666-6666
+  contact_email: danielle@micaonline.org
+  agency_email: mica@micaonline.org
+  description_of_service: We help people

@@ -10,12 +10,19 @@
 
 .container
   .row
+    .col-md-2
+    .col-md-8
+      = render 'search/form'
+    .col-md-2
+%br
+.container
+  .row
     - @categories.each do |category|
       .col-md-4.option_buttons
         %a.btn.btn-info{:href => category_path(category), :role => "button", :class => "option_button"}
           = category.name
           %span.fa.fa-angle-double-right
-  %hr/
+  %br
   .row
     .col-md-12#call-to-action
       %a.btn.btn-default{:href => new_resource_path, :role => "button", :id => "enter-resource-button"}

@@ -1,0 +1,5 @@
+= form_tag('/search/resources', method: 'get') do
+  .input-group.input-group-lg.search
+    = text_field_tag(:q, "", placeholder: 'I\'m looking for...', class: 'form-control')
+    %span.input-group-btn
+      = submit_tag('Search', class: "btn btn-success")
