@@ -26,6 +26,10 @@ class ResourcesController < ApplicationController
   def edit
   end
 
+  #Currently unavailable functionality, cannot delete resources
+  def destroy
+  end
+
   # Creates a new resource according to the parameters specified in params
   # Flashes on the view a note to indicate success of resouces creation
   #@return [void] but redirects to the ingidex.
@@ -47,6 +51,22 @@ class ResourcesController < ApplicationController
       end
     else
       render :new
+    end
+  end
+  
+  #Queries resources Approved/Pending and stores resulting variables that can be
+  #stored and accessed in the admin view
+  def admin
+    @approved_resources = Hash.new
+    @pending_resources = Hash.new
+    category_names = Category.get_category_names
+    category_names.each do |name|
+        key = name
+        if key =="Food and Groceries" #TODO : Fix Hack for Food and Groceries. Has to do with Id in Admin views I think
+            key = "Food"
+        end  
+        @approved_resources[key] = query_resources(name,"Approved")
+        @pending_resources[key] = query_resources(name,"Pending")
     end
   end
 
@@ -74,6 +94,15 @@ class ResourcesController < ApplicationController
       render :edit
     end
     @resource.save!
+  end
+  
+  #Queries the resources table by category name and status. Note that the resources are 
+  #   always queried in alphabetical order
+  #@param [category_name] the category to query resources on
+  #@param [resource_status] the status to query resources on
+  private
+  def query_resources(category_name,resource_status)
+     return  Resource.joins(:category).where(categories: { category_name: category_name }).where(status: resource_status).order(:title)
   end
 
   private

@@ -1,9 +1,3 @@
-# Resource Portal
- 
-This is the README for the Resource Portal Web Application built by students of 
-Grinnell College for CSC 322: Team Software Development for Community Partners.
-
-
 ## Getting started
 
 To get started with the app, clone the repo and then install the needed gems:
