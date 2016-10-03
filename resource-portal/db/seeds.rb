@@ -6,9 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Category.create(name: 'Housing')
-Category.create(name: 'Food and Groceries')
-Category.create(name: 'Employment')
+# Create sample Categories in DB
+Category.create(category_name: 'Housing') 
+Category.create(category_name: 'Food and Groceries') 
+Category.create(category_name: 'Employment') 
 
 # To create a sample entry in DB:
 #rails console

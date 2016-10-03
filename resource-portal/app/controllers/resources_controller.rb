@@ -82,28 +82,14 @@ class ResourcesController < ApplicationController
     @resource.status = params[:decision]
     @resource.save!
 
-    redirect_to admin_path
-  end
-
-  # Updates a resource according to the params. Redirects to the main admin page
-  def update
-    if @resource.update(resource_params)
-      flash[:success] = "Resource updated"
-      redirect_to admin_path
-    else
-      render :edit
-    end
-    @resource.save!
-  end
-  
-  #Queries the resources table by category name and status. Note that the resources are 
-  #   always queried in alphabetical order
-  #@param [category_name] the category to query resources on
-  #@param [resource_status] the status to query resources on
-  private
-  def query_resources(category_name,resource_status)
-     return  Resource.joins(:category).where(categories: { category_name: category_name }).where(status: resource_status).order(:title)
-  end
+#Queries the resources table by category name and status. Note that the resources are 
+#   always queried in alphabetical order
+#@param [category_name] the category to query resources on
+#@param [resource_status] the status to query resources on
+private
+def query_resources(category_name,resource_status)
+   return  Resource.joins(:category).where(categories: { category_name: category_name }).where(status: resource_status).order(:title)
+end
 
   private
   def set_resource
