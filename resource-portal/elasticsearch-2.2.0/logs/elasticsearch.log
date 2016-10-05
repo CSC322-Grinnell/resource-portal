@@ -54,3 +54,17 @@ Failed to execute phase [query], all shards failed
 [2016-03-13 21:05:58,018][INFO ][http                     ] [Reptyl] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
 [2016-03-13 21:05:58,018][INFO ][node                     ] [Reptyl] started
 [2016-03-13 21:05:58,224][INFO ][gateway                  ] [Reptyl] recovered [2] indices into cluster_state
+[2016-10-05 18:49:39,858][INFO ][node                     ] [Jaren] version[2.2.0], pid[18763], build[8ff36d1/2016-01-27T13:32:39Z]
+[2016-10-05 18:49:39,860][INFO ][node                     ] [Jaren] initializing ...
+[2016-10-05 18:49:41,117][INFO ][plugins                  ] [Jaren] modules [lang-groovy, lang-expression], plugins [], sites []
+[2016-10-05 18:49:41,227][INFO ][env                      ] [Jaren] using [1] data paths, mounts [[/ (none)]], net usable_space [1.4gb], net total_space [2.1gb], spins? [possibly], types [aufs]
+[2016-10-05 18:49:41,227][INFO ][env                      ] [Jaren] heap size [989.8mb], compressed ordinary object pointers [true]
+[2016-10-05 18:49:47,478][INFO ][node                     ] [Jaren] initialized
+[2016-10-05 18:49:47,479][INFO ][node                     ] [Jaren] starting ...
+[2016-10-05 18:49:47,916][INFO ][transport                ] [Jaren] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2016-10-05 18:49:47,955][INFO ][discovery                ] [Jaren] elasticsearch/QHRHnsTCSoGZswNwyu0Ktg
+[2016-10-05 18:49:51,100][INFO ][cluster.service          ] [Jaren] new_master {Jaren}{QHRHnsTCSoGZswNwyu0Ktg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-10-05 18:49:51,214][INFO ][http                     ] [Jaren] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2016-10-05 18:49:51,216][INFO ][node                     ] [Jaren] started
+[2016-10-05 18:49:51,447][INFO ][gateway                  ] [Jaren] recovered [2] indices into cluster_state
+[2016-10-05 18:54:24,617][INFO ][cluster.metadata         ] [Jaren] [resources_development_20160310030350919] update_mapping [resource]
