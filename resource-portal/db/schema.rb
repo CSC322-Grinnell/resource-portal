@@ -11,11 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< acacef6ea23d6ab94b048f81fa1f8837336a8ae4
 <<<<<<< 5a237ce32080286f91c2e392f049f275431d018e
 ActiveRecord::Schema.define(version: 20160427034802) do
 =======
 ActiveRecord::Schema.define(version: 20160225205345) do
 >>>>>>> Add CanCan roles to user
+=======
+ActiveRecord::Schema.define(version: 20161007181019) do
+>>>>>>> Can now invite admins to portal
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -48,6 +52,33 @@ ActiveRecord::Schema.define(version: 20160225205345) do
     t.text     "reviewer_comment"
   end
 
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["context"], name: "index_taggings_on_context"
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index "taggings", ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+  add_index "taggings", ["taggable_id"], name: "index_taggings_on_taggable_id"
+  add_index "taggings", ["taggable_type"], name: "index_taggings_on_taggable_type"
+  add_index "taggings", ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+  add_index "taggings", ["tagger_id"], name: "index_taggings_on_tagger_id"
+
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",        null: false
     t.string   "encrypted_password",     default: "",        null: false
@@ -59,6 +90,7 @@ ActiveRecord::Schema.define(version: 20160225205345) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+<<<<<<< acacef6ea23d6ab94b048f81fa1f8837336a8ae4
 <<<<<<< 900921b2374b1a77dfd4ccd61c8698c56ec0ac04
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
@@ -68,6 +100,10 @@ ActiveRecord::Schema.define(version: 20160225205345) do
 >>>>>>> Add CanCan roles to user
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+=======
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+>>>>>>> Can now invite admins to portal
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -76,11 +112,15 @@ ActiveRecord::Schema.define(version: 20160225205345) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+<<<<<<< acacef6ea23d6ab94b048f81fa1f8837336a8ae4
 =======
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
     t.string   "role",                   default: "default"
 >>>>>>> Add CanCan roles to user
+=======
+    t.string   "role",                   default: "default"
+>>>>>>> Can now invite admins to portal
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

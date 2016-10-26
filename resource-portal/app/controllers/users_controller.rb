@@ -44,4 +44,9 @@ class UsersController < ApplicationController
   def user_params
     params[:user]
   end
+  
+end
+
+class Users::InvitationsController < Devise::InvitationsController
+  
 end

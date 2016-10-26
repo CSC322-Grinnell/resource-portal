@@ -48,16 +48,16 @@ class UsersControllerTest < ActionController::TestCase
   end
 
 # Mail invite page access tests
-#  test "able to access mail invite page if not logged in" do
-#    sign_in @user
-#    get new_user_invitation_path
-#    assert_response :success
-#  end
+  test "able to access mail invite page if not logged in" do
+    sign_in @user
+    get new_user_invitation_path
+    assert_response :success
+  end
 
-#  test "unable to access mail invite page if not logged in" do
-#    get new_user_invitation_path
-#    assert_redirected_to new_user_session_path
-#  end
+  test "unable to access mail invite page if not logged in" do
+    get new_user_invitation_path
+    assert_redirected_to new_user_session_path
+  end
 
   # When a user attempts to send out an invite to an invalid address,
   # they get redirected to a new invite page. This test ensures that a
