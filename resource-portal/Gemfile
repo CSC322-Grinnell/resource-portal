@@ -38,7 +38,11 @@ gem "haml"
 gem "haml-rails"
 gem 'table_print'
 gem 'devise' 
+<<<<<<< HEAD
 gem 'devise_invitable'
+=======
+gem 'devise_invitable'############ 
+>>>>>>> 1a89b8d485f789bed4f7c2036a4921aac1af1902
 #Admin authentication
   gem 'cancan'
 #gem 'font-awesome-sass', '~> 4.4.0'

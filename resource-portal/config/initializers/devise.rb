@@ -148,6 +148,7 @@ Devise.setup do |config|
   # the user will need to manually log in after accepting the invite.
   # Default: false
   # config.allow_insecure_sign_in_after_accept = true
+<<<<<<< HEAD
 
   # ==> Configuration for :invitable
   # The period the generated invitation token is valid, after
@@ -196,6 +197,8 @@ Devise.setup do |config|
   # the user will need to manually log in after accepting the invite.
   # Default: true
   # config.allow_insecure_sign_in_after_accept = false
+=======
+>>>>>>> 1a89b8d485f789bed4f7c2036a4921aac1af1902
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without

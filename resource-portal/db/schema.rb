@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20161007181019) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+<<<<<<< HEAD
 <<<<<<< acacef6ea23d6ab94b048f81fa1f8837336a8ae4
 <<<<<<< 900921b2374b1a77dfd4ccd61c8698c56ec0ac04
     t.datetime "created_at",                                 null: false
@@ -98,6 +99,10 @@ ActiveRecord::Schema.define(version: 20161007181019) do
 =======
 <<<<<<< 7bb1096dcaed6cae7a74eb0bca662595177bd767
 >>>>>>> Add CanCan roles to user
+=======
+<<<<<<< HEAD
+<<<<<<< 7bb1096dcaed6cae7a74eb0bca662595177bd767
+>>>>>>> 1a89b8d485f789bed4f7c2036a4921aac1af1902
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
 =======
@@ -112,15 +117,25 @@ ActiveRecord::Schema.define(version: 20161007181019) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+<<<<<<< HEAD
 <<<<<<< acacef6ea23d6ab94b048f81fa1f8837336a8ae4
+=======
+>>>>>>> 1a89b8d485f789bed4f7c2036a4921aac1af1902
 =======
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
     t.string   "role",                   default: "default"
 >>>>>>> Add CanCan roles to user
 =======
+<<<<<<< HEAD
     t.string   "role",                   default: "default"
 >>>>>>> Can now invite admins to portal
+=======
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.string   "role",                   default: "default"
+>>>>>>> 8bd7376a1baf2393c3f910b55cb50eba8a72d401
+>>>>>>> 1a89b8d485f789bed4f7c2036a4921aac1af1902
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
