@@ -41,8 +41,15 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   # No user redirect test
-  test "signed out user is redirected to admin login if attempts to admin page page" do
+  test "signed out admin is redirected to admin login if attempts to access admin page" do
     get :admin
+    assert_redirected_to new_user_session_path
+    #assert_response :failure
+  end
+  
+   # No user redirect test
+  test "signed out user is redirected to default user login if attempts to access default user page" do
+    get :default
     assert_redirected_to new_user_session_path
     #assert_response :failure
   end
@@ -57,6 +64,7 @@ class UsersControllerTest < ActionController::TestCase
   test "unable to access mail invite page if not logged in" do
     get new_user_invitation_path
     assert_redirected_to new_user_session_path
+    assert_response :success
   end
 
   # When a user attempts to send out an invite to an invalid address,
@@ -69,8 +77,6 @@ class UsersControllerTest < ActionController::TestCase
   test "" do
 
   end
-
-  # Tests for mail user invitation accept?
 
 
 end
