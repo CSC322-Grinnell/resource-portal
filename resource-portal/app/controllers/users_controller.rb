@@ -46,7 +46,3 @@ class UsersController < ApplicationController
   end
   
 end
-
-class Users::InvitationsController < Devise::InvitationsController
-  
-end

@@ -38,22 +38,14 @@ gem "haml"
 gem "haml-rails"
 gem 'table_print'
 gem 'devise' 
-<<<<<<< HEAD
 gem 'devise_invitable'
-=======
-gem 'devise_invitable'############ 
->>>>>>> 1a89b8d485f789bed4f7c2036a4921aac1af1902
 #Admin authentication
   gem 'cancan'
 #gem 'font-awesome-sass', '~> 4.4.0'
 gem 'font-awesome-sass', '~> 4.4.0'
 #gem 'font-awesome-sass'
 gem 'database_cleaner'
-<<<<<<< acacef6ea23d6ab94b048f81fa1f8837336a8ae4
-gem 'devise_invitable', '~> 1.5.2'
-gem 'elasticsearch'
-=======
->>>>>>> Can now invite admins to portal
+
 gem 'searchkick'
 
 # Use ActiveModel has_secure_password
