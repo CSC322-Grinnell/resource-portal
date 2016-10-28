@@ -41,7 +41,7 @@ gem 'devise' # Authentication
 gem 'font-awesome-sass', '~> 4.4.0'
 #gem 'font-awesome-sass'
 gem 'database_cleaner'
-gem 'devise_invitable', '~> 1.5.2'
+gem 'devise_invitable'
 gem 'elasticsearch'
 gem 'searchkick'
 
