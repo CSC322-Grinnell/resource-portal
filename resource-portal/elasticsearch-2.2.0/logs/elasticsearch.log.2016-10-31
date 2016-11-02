@@ -1,0 +1,14 @@
+[2016-10-31 19:03:31,064][INFO ][node                     ] [Ned Horrocks] version[2.2.0], pid[3554], build[8ff36d1/2016-01-27T13:32:39Z]
+[2016-10-31 19:03:31,068][INFO ][node                     ] [Ned Horrocks] initializing ...
+[2016-10-31 19:03:32,355][INFO ][plugins                  ] [Ned Horrocks] modules [lang-groovy, lang-expression], plugins [], sites []
+[2016-10-31 19:03:32,493][INFO ][env                      ] [Ned Horrocks] using [1] data paths, mounts [[/ (none)]], net usable_space [1.4gb], net total_space [2.1gb], spins? [possibly], types [aufs]
+[2016-10-31 19:03:32,499][INFO ][env                      ] [Ned Horrocks] heap size [989.8mb], compressed ordinary object pointers [true]
+[2016-10-31 19:03:37,247][INFO ][node                     ] [Ned Horrocks] initialized
+[2016-10-31 19:03:37,248][INFO ][node                     ] [Ned Horrocks] starting ...
+[2016-10-31 19:03:40,993][INFO ][transport                ] [Ned Horrocks] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2016-10-31 19:03:41,013][INFO ][discovery                ] [Ned Horrocks] elasticsearch/mWhUIweTRT-zVWfZI97W9Q
+[2016-10-31 19:03:44,060][INFO ][cluster.service          ] [Ned Horrocks] new_master {Ned Horrocks}{mWhUIweTRT-zVWfZI97W9Q}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-10-31 19:03:44,083][INFO ][http                     ] [Ned Horrocks] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2016-10-31 19:03:44,084][INFO ][node                     ] [Ned Horrocks] started
+[2016-10-31 19:03:44,234][INFO ][gateway                  ] [Ned Horrocks] recovered [2] indices into cluster_state
+[2016-10-31 20:35:25,084][WARN ][monitor.jvm              ] [Ned Horrocks] [gc][young][5485][6] duration [2.9s], collections [1]/[3.4s], total [2.9s]/[4.1s], memory [94.7mb]->[30.4mb]/[989.8mb], all_pools {[young] [68.2mb]->[586.2kb]/[273mb]}{[survivor] [8.4mb]->[7.3mb]/[34.1mb]}{[old] [18mb]->[22.5mb]/[682.6mb]}
