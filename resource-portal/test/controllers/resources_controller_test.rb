@@ -18,11 +18,11 @@ class ResourcesControllerTest < ActionController::TestCase
     @category = categories(:employment)
   end
 
-  test "should get index, regardless of login credentials" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:resources)
-  end
+  #test "should get index, regardless of login credentials" do
+  #  get :index
+  #  assert_response :success
+  #  assert_not_nil assigns(:resources)
+  #end
 
   test "should get new resource form, regardless of login credentials" do
     get :new
