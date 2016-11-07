@@ -37,34 +37,16 @@ gem 'autoprefixer-rails'
 gem "haml"
 gem "haml-rails"
 gem 'table_print'
-<<<<<<< a2df96a7c54efd4322361f2ade3452525b9e9c2b
-gem 'devise'
-=======
 gem 'devise' 
-gem 'devise_invitable'
-<<<<<<< 93baf07d4f4a9faf5f1ec9a17c79511812988d30
->>>>>>> Can now invite admins to portal
-=======
->>>>>>> Successful redirect to root when default user signs in
 #Admin authentication
   gem 'cancan'
 #gem 'font-awesome-sass', '~> 4.4.0'
 gem 'font-awesome-sass', '~> 4.4.0'
 #gem 'font-awesome-sass'
 gem 'database_cleaner'
-<<<<<<< 93baf07d4f4a9faf5f1ec9a17c79511812988d30
-<<<<<<< a2df96a7c54efd4322361f2ade3452525b9e9c2b
 gem 'devise_invitable'
-=======
-<<<<<<< acacef6ea23d6ab94b048f81fa1f8837336a8ae4
-gem 'devise_invitable', '~> 1.5.2'
->>>>>>> Can now invite admins to portal
 gem 'elasticsearch'
-=======
->>>>>>> Can now invite admins to portal
-=======
 
->>>>>>> Successful redirect to root when default user signs in
 gem 'searchkick'
 
 # Use ActiveModel has_secure_password
