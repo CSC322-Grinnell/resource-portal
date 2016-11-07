@@ -43,6 +43,9 @@
           .navbar-collapse.collapse
             .navbar-right
               %span.navbar-text= current_user.email if user_signed_in?
+              /%a.btn.btn-default.navbar-btn{:href => "/users", :role => "button"}
+              /  %span.fa.fa-user
+              /  User &raquo;
               %a.btn.btn-default.navbar-btn{:href => "/admin", :role => "button"}
                 %span.fa.fa-user
                 Admin &raquo;
