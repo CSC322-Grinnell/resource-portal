@@ -39,12 +39,7 @@ class ResourcesController < ApplicationController
 
     if @resource.save
       flash[:success] = "#{@resource.name} was successfully submitted."
-
-      if user_signed_in?
-        redirect_to admin_path
-      else
-        redirect_to :root
-      end
+      redirect_to :root
     else
       render :new
     end
