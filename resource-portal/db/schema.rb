@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161007181019) do
+ActiveRecord::Schema.define(version: 20161031184650) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20161007181019) do
   create_table "categories_resources", force: :cascade do |t|
     t.integer "resource_id"
     t.integer "category_id"
+  end
+
+  create_table "favorite_resources", force: :cascade do |t|
+    t.integer  "resource_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "resources", force: :cascade do |t|
@@ -92,9 +99,13 @@ ActiveRecord::Schema.define(version: 20161007181019) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
     t.string   "role",                   default: "default"
   end
-  
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true
+  add_index "users", ["invitations_count"], name: "index_users_on_invitations_count"
+  add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id"
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
 end

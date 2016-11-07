@@ -184,3 +184,21 @@ footer {
     margin: 10px 0;
   }
 }
+
+@media print {
+  body { background-color: #FFF; }
+  #container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  #main-page-jumbotron { display: none; }
+  #btn#btn-default { display: none; }
+  
+  .noprint { display:none !important; }
+  a:link:after, a:visited:after {  
+    display: none;
+    content: "";    
+  }
+}

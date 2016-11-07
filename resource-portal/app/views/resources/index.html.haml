@@ -1,45 +1,9 @@
-!!! 5
-%html{:lang => "en"}
-  %head
-    %meta{:charset => "utf-8"}/
-    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE-edge"}/
-    %meta{"name" => "viewport", :content => "width=device-width, initial-scale=1"}/
-    %meta{"name" => "description", "content" => ""}/
-    %meta{"name" => "author", "content" => ""}/
-    %link{:href => "../../assets/ico/favicon.ico", :rel => "shortcut icon"}/
-
-    /%title Jumbotron Template for Twitter Bootstrap
-
-    / Bootstrap Core CSS
-    %link{:href => "scss/bootstrap.min.css", :rel => :stylesheet}/
-
-    / Custom Styles for this template
-    %link{:href => "css/jumbotron.css", :rel => :stylesheet}/
-
-    / HTML5 Shim and Respond.js IE8 Support of HTML5 elements and media queries.
-    / WARNING: Respond.js doesn't work if you view the page using file://
-    /[if IE9]
-      %script{:src => "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"}
-      %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.42/respond.min.js"}
-
-  %body
-    / Main Jumbotron for a primary marketing message or call to action.
-    .jumbotron#main-page-jumbotron
-      .container
-        %h1 Poweshiek County Resource Portal
-        %p 
-          This is an online resource directory for the Poweshiek County of Iowa consisting of Food, Housing, 
-          and Employment resources. This website is being built through a student project at Grinnell College.
-        = link_to "New User" , "/resources/new" if can? :read, User
-        
-    .container
-      .row
-        - @categories.each do |category|
-          %div.col-md-4.option_buttons
-            %a.btn.btn-info{:href => "/resources/#{category.id}", :role => "button", :class => "option_button"} #{category.category_name} &raquo;
-      %hr/
-      .row 
-        .col-md-12#call-to-action
-          %a.btn.btn-default{:href => "/resources/new", :role => "button", :id => "enter-resource-button"}
-            Enter a new resource 
-            %i.fa.fa-plus 
+-# resources#index
+-# Displays a list of all resources
+.jumbotron#main-page-jumbotron
+  .container
+    %h1 All Resources
+.container{:id => "all-resources"}
+  - @resources.each do |resource|
+    = render :partial => 'resource', :locals => { :resource => resource }
+%hr

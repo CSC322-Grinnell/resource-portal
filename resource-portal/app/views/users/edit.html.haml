@@ -1,0 +1,24 @@
+.row
+  %h1 Listing users
+
+.row
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Email
+        %th
+        %th
+        %th
+
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.email
+          %td= link_to 'View', user
+          %td= link_to 'Remove', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+.row.actions
+  .col-md-12
+    %a.btn.btn-success{:href => "/users/invitation/new", :role => "button"}
+      Invite an Admin
+      %i.fa.fa-user-plus

@@ -1,24 +1,15 @@
-.row
-  %h1 Listing users
-
-.row
-  %table.table.table-striped
-    %thead
-      %tr
-        %th Email
-        %th
-        %th
-        %th
-
-    %tbody
-      - @users.each do |user|
-        %tr
-          %td= user.email
-          %td= link_to 'View', user
-          %td= link_to 'Remove', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-.row.actions
-  .col-md-12
-    %a.btn.btn-success{:href => "/users/invitation/new", :role => "button"}
-      Invite an Admin
-      %i.fa.fa-user-plus
+-# users#index
+-# Displays a list of all user favorited resources
+-# Creates the PDF printable version of this page
+.jumbotron#main-page-jumbotron
+  .container
+    %h1 My Favorite Resources
+.container
+  %a.btn.btn-default{ :onclick => 'window.print(); return false;', :role => "button", :class => 'noprint' }
+    %span.fa.fa-print
+    Print Resource List &raquo;
+  %br
+.container{:id => "all-resources"}
+  - current_user.favorites.each do |resource|
+    = render :partial => 'resources/resource', :locals => { :resource => resource }
+%hr

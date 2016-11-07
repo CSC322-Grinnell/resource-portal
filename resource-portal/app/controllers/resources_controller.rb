@@ -76,6 +76,27 @@ class ResourcesController < ApplicationController
     @resource.save!
   end
 
+  def favorite 
+    @resource = Resource.find(params[:id])
+    type = params[:type]
+    if type == "favorite"
+      # If favoriting a resource, adds to favorites list and notifies user
+      begin
+        current_user.favorites << @resource
+        redirect_to :back, notice: "You favorited #{@resource.name}"
+      rescue ActiveRecord::RecordInvalid => e # error catching for duplicate favorites
+        e.record.errors.details
+      end
+    elsif type == "unfavorite"
+      # If unfavoriting a resource, removes from favorites list and notifies user
+      current_user.favorites.delete(@resource)
+      redirect_to :back, notice: "Unfavorited #{@resource.name}"
+    else
+      # Type missing, nothing happens
+      redirect_to :back, notice: 'Nothing happened.'
+    end
+  end
+
   private
   def set_resource
     @resource = Resource.find params[:id]
@@ -97,4 +118,5 @@ class ResourcesController < ApplicationController
 
     return the_params
   end
+  
 end

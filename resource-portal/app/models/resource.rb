@@ -8,6 +8,9 @@ class Resource < ActiveRecord::Base
   validate :must_have_one_category
 
   has_and_belongs_to_many :categories
+  
+  has_many :favorite_resources
+  has_many :favorited_by, through: :favorite_resources, source: :user
 
   default_scope { order('name ASC') } # Returns resources in Alphabetaical order via names
 

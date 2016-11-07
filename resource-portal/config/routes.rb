@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :invitations => 'users/invitations' } do
+  devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   # The priority is based upon order of creation: first created -> highest priority.
@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
   post 'modify_status', to:  'resources#modify_status'
 
-  resources :resources # Creates get, post, delete mappings for resources controller
+  resources :resources do # Creates get, post, delete mappings for resources controller
+    put :favorite, on: :member # Allow resources to be favorited by users
+  end
+  
   resources :categories
   resources :users, :only => [:index, :show, :destroy]
 

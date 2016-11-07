@@ -48,3 +48,21 @@
   .col-md-6.accessory
     - if defined? accessory
       = render partial: "resources/accessories/#{accessory}", locals: { resource: resource }
+  .col-md-6
+    - if current_user && !current_page?(controller: :users, action: :admin)
+      = button_to(favorite_resource_path(resource.id, type: "favorite"),
+              :class => 'btn btn-default noprint',
+              :method => 'put') do
+        %span.fa.fa-lg.fa-star
+        Favorite
+      = button_to(favorite_resource_path(resource.id, type: "favorite"),
+              :class => 'btn btn-default noprint',
+              :method => 'put') do
+        %span.fa.fa-lg.fa-times
+        Unfavorite
+    %br
+    - if current_page?(controller: :resources, action: :show)
+      %a.btn.btn-default{:onclick => 'window.print(); return false;', :role => "button", :class => 'noprint'}
+        %span.fa.fa-print
+        Print Resource &raquo;
+    %br
