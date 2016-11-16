@@ -3,15 +3,15 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
 
   setup do
-    @user = users(:one)
+    @admin_user = users(:admin)
+    @default_user = users(:default)
   end
 
   # Index tests
   test "should get index of users if signed in" do
-    sign_in @user
-    get :index
+    sign_in @admin_user
+    get :admin
     assert_response :success
-    assert_not_nil assigns(:users)
   end
 
   test "should not get index of users if not signed in" do
@@ -21,21 +21,21 @@ class UsersControllerTest < ActionController::TestCase
 
   # Show tests
   test "should show user if signed in" do
-    sign_in @user
-    get :show, id: @user
+    sign_in @admin_user
+    get :show, id: @admin_user
     assert_response :success
   end
 
   test "should not show user if not signed in" do
-    get :show, id: @user
+    get :show, id: @admin_user
     assert_redirected_to new_user_session_path
   end
 
   # Destroy Test
   test "should destroy user if logged in" do
-    sign_in @user
+    sign_in @admin_user
     assert_difference('User.count', -1) do
-      delete :destroy, id: @user
+      delete :destroy, id: @admin_user
     end
     assert_redirected_to users_path
   end
@@ -44,39 +44,19 @@ class UsersControllerTest < ActionController::TestCase
   test "signed out admin is redirected to admin login if attempts to access admin page" do
     get :admin
     assert_redirected_to new_user_session_path
-    #assert_response :failure
   end
   
-   # No user redirect test
-  #test "signed out user is redirected to default user login if attempts to access default user page" do
-  #  get :default
-  #  assert_redirected_to new_user_session_path
-    #assert_response :failure
-  #end
-
-# Mail invite page access tests
-  #test "able to access mail invite page if not logged in" do
-  #  sign_in @user
-  #  get new_user_invitation_path
-  #  assert_response :success
-  #end
-
-  #test "unable to access mail invite page if not logged in" do
-  #  get new_user_invitation_path
-  #  assert_redirected_to new_user_session_path
-  #  assert_response :success
-  #end
-
-  # When a user attempts to send out an invite to an invalid address,
-  # they get redirected to a new invite page. This test ensures that a
-  # one must be signed in to access it.
-  test "unable to access failed invitation invite page if not logged in" do
-
+  # Checking that if an admin is logged in, they can see their favorite resources still
+  test "admin user can see favorite resources" do
+    sign_in @admin_user
+    get :index
+    assert_response :success
   end
-
-  test "" do
-
+  
+  # Check that if user is logged in, they see their favorite resources not user list
+  test "users can see favorite resource list" do
+    sign_in @default_user
+    get :index
+    assert_response :success
   end
-
-
 end

@@ -51,13 +51,15 @@
       .col-md-3
         = button_to(favorite_resource_path(resource.id, type: "favorite"),
                 :class => 'btn btn-default noprint',
-                :method => 'put') do
+                :method => 'put',
+                :id => 'favorite') do
           %span.fa.fa-lg.fa-star
           Favorite
       .col-md-3
         = button_to(favorite_resource_path(resource.id, type: "favorite"),
                 :class => 'btn btn-default noprint',
-                :method => 'put') do
+                :method => 'put',
+                :id => 'unfavorite') do
           %span.fa.fa-lg.fa-times
           Unfavorite
   .col-md-4

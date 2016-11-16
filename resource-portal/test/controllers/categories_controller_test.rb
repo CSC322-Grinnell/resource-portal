@@ -4,7 +4,7 @@ class CategoriesControllerTest < ActionController::TestCase
   # Setup
   setup do
     @category = categories(:employment)
-    @user = users(:one)
+    @user = users(:admin)
   end
 
   # Index tests

@@ -14,7 +14,7 @@ class ResourcesControllerTest < ActionController::TestCase
 
   setup do
     @resource = resources(:mica)
-    @user = users(:one)
+    @user = users(:admin)
     @category = categories(:employment)
   end
 
@@ -86,6 +86,13 @@ class ResourcesControllerTest < ActionController::TestCase
     assert_difference('Resource.count') do # Make sure the resource was created
       post :create, resource_params
     end
-    assert_redirected_to :admin # After successful creation, redirected to admin page.
+    assert_redirected_to root_path # After successful creation, redirected to home page.
+  end
+  
+  test "users can favorite resources" do
+    sign_in @user
+    get :show, id: @resource
+    first('btn[id="favorite"]').click
+    assert_response :success
   end
 end
