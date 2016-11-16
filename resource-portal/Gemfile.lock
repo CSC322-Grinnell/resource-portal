@@ -43,6 +43,7 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.5.2)
       execjs
+    awesome_print (1.7.0)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -121,6 +122,9 @@ GEM
     font-awesome-sass (4.4.0)
       sass (>= 3.2)
     gherkin (4.0.0)
+    gingerice (1.2.2)
+      addressable
+      awesome_print
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -213,6 +217,7 @@ GEM
       elasticsearch (>= 1)
       hashie
     sexp_processor (4.7.0)
+    spellchecker (0.1.5)
     spring (2.0.0)
       activesupport (>= 4.2)
     sprockets (3.7.0)
@@ -265,6 +270,7 @@ DEPENDENCIES
   devise_invitable
   elasticsearch
   font-awesome-sass (~> 4.4.0)
+  gingerice
   haml
   haml-rails
   jbuilder (~> 2.0)
@@ -273,6 +279,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   searchkick
+  spellchecker (~> 0.1.5)
   spring
   sqlite3
   table_print
@@ -281,4 +288,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.12.5
+   1.13.6
