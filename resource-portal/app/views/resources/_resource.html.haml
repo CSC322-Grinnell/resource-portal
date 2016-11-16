@@ -2,6 +2,10 @@
   %h3
     = link_to resource, class: "resource-name", target: "_blank" do
       = resource.name
+    - if current_page?(resource_path(resource))
+      %a.btn.btn-default{:onclick => 'window.print(); return false;', :role => "button", :class => 'noprint'}
+        %span.fa.fa-print
+        Print Resource &raquo;
 
   %p.description #{resource.description_of_service}
 
@@ -42,27 +46,26 @@
       %li Contact Email: #{resource.contact_email}
       %li Agency Email: #{resource.agency_email}
       %li Name of Submitter: #{resource.name_of_submitter}
-
+      
+    - if current_user && !current_page?(admin_path)
+      .col-md-3
+        = button_to(favorite_resource_path(resource.id, type: "favorite"),
+                :class => 'btn btn-default noprint',
+                :method => 'put') do
+          %span.fa.fa-lg.fa-star
+          Favorite
+      .col-md-3
+        = button_to(favorite_resource_path(resource.id, type: "favorite"),
+                :class => 'btn btn-default noprint',
+                :method => 'put') do
+          %span.fa.fa-lg.fa-times
+          Unfavorite
+  .col-md-4
+    %div{:id => "map"}
+      = image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{resource.address}&size=300x300&zoom=17&markers=#{resource.latitude}%2C#{resource.longitude}"
+  
   -# render one of several optional accessory partial views on the right-hand
   -# side of the resource (located in resources/accessories)
-  .col-md-6.accessory
+  .col-md-2.accessory
     - if defined? accessory
       = render partial: "resources/accessories/#{accessory}", locals: { resource: resource }
-  .col-md-6
-    - if current_user && !current_page?(resource_path(resource))
-      = button_to(favorite_resource_path(resource.id, type: "favorite"),
-              :class => 'btn btn-default noprint',
-              :method => 'put') do
-        %span.fa.fa-lg.fa-star
-        Favorite
-      = button_to(favorite_resource_path(resource.id, type: "favorite"),
-              :class => 'btn btn-default noprint',
-              :method => 'put') do
-        %span.fa.fa-lg.fa-times
-        Unfavorite
-    %br
-    - if current_page?(resource_path(resource))
-      %a.btn.btn-default{:onclick => 'window.print(); return false;', :role => "button", :class => 'noprint'}
-        %span.fa.fa-print
-        Print Resource &raquo;
-    %br

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031184650) do
+ActiveRecord::Schema.define(version: 20161115210144) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -49,7 +49,10 @@ ActiveRecord::Schema.define(version: 20161031184650) do
     t.string   "reviewer_name"
     t.time     "date_reviewed"
     t.text     "reviewer_comment"
+    t.float    "latitude"
+    t.float    "longitude"
   end
+
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

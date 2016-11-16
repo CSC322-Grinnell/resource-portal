@@ -26,9 +26,9 @@ resources = [
 
 
 # Populate database with categories
-categories.each do |category|
-    Category.create! (category)
-end
+#categories.each do |category|
+#    Category.create! (category)
+#end
 
 =begin
 # Populate database with resources

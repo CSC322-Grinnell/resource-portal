@@ -10,6 +10,9 @@ class Resource < ActiveRecord::Base
   
   has_many :favorite_resources
   has_many :favorited_by, through: :favorite_resources, source: :user
+  
+  geocoded_by :address
+  after_validation :geocode, if: ->(obj){obj.address.present? and obj.address_changed?}
 
   default_scope { order('name ASC') } # Returns resources in Alphabetaical order via names
 
