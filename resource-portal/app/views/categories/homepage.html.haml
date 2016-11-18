@@ -12,14 +12,11 @@
 
 .container
   .row
-    .col-md-6
+    .col-md-2
+    .col-md-8
       .row
         = render 'search/form'
-    .col-md-6
-      %div
-        %a.btn.btn-default{:href => new_resource_path, :role => "button", :id => "enter-resource-button"}
-          Enter a new resource
-          %span.fa.fa-plus
+    .col-md-2
 %br
 .container
   .row
@@ -28,5 +25,11 @@
         %a.btn.btn-info{:href => category_path(category), :role => "button", :class => "option_button"}
           = category.name
           %span.fa.fa-angle-double-right
-
-      
+%br
+.container
+  .row
+    .col-md-12#call-tp-action
+      %div
+        %a.btn.btn-default{:href => new_resource_path, :role => "button", :id => "enter-resource-button"}
+          Enter a new resource
+          %span.fa.fa-plus
