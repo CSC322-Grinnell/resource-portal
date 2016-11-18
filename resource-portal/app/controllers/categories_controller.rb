@@ -5,6 +5,10 @@ class CategoriesController < ApplicationController
   def homepage
     @categories = Category.all
   end
+  
+  def splash
+    @categories = Category.all
+  end
 
   # GET /categories
   def index
