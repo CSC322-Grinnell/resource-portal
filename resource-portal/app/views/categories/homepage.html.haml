@@ -2,18 +2,24 @@
 -# Home Page
 .jumbotron#main-page-jumbotron
   .container
-    %h1 Poweshiek County Resource Portal
+    %h2 Poweshiek County Resource Portal
     %p
       This is an online resource directory for the Poweshiek County of Iowa consisting of Food, Housing,
       Employment, and many other resources. This website was built through a collaboration between
       Grinnell College and MICA.
+      
+      -# make this shorter
 
 .container
   .row
-    .col-md-2
-    .col-md-8
-      = render 'search/form'
-    .col-md-2
+    .col-md-6
+      .row
+        = render 'search/form'
+    .col-md-6
+      %div
+        %a.btn.btn-default{:href => new_resource_path, :role => "button", :id => "enter-resource-button"}
+          Enter a new resource
+          %span.fa.fa-plus
 %br
 .container
   .row
@@ -22,9 +28,5 @@
         %a.btn.btn-info{:href => category_path(category), :role => "button", :class => "option_button"}
           = category.name
           %span.fa.fa-angle-double-right
-  %br
-  .row
-    .col-md-12#call-to-action
-      %a.btn.btn-default{:href => new_resource_path, :role => "button", :id => "enter-resource-button"}
-        Enter a new resource
-        %span.fa.fa-plus
+
+      
