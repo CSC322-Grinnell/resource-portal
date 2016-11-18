@@ -100,6 +100,8 @@ class ResourcesController < ApplicationController
   # Fetches all the parameters that are used for resource creation and editing
   #@return [void]
   def resource_params
+    parser = Gingerice::Parser.new
+    parser.parse :description_of_service
     the_params = params.require(:resource)
                         .permit(:name, :address, :alternative_address,
                                 :phone_number, :alternative_phone_number,

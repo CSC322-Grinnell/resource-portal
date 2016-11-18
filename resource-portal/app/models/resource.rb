@@ -1,5 +1,4 @@
 #require 'elasticsearch/model'
-
 class Resource < ActiveRecord::Base
   after_initialize :default_values
 
