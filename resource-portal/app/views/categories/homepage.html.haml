@@ -12,11 +12,11 @@
 
 .container
   .row
-    .col-md-6
+    .col-md-8
       .row
         = render 'search/form'
-    .col-md-6
-      %div
+    .col-md-4
+      %div{:id => 'new-resource'}
         %a.btn.btn-default{:href => new_resource_path, :role => "button", :id => "enter-resource-button"}
           Enter a new resource
           %span.fa.fa-plus
