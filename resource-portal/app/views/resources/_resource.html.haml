@@ -45,7 +45,8 @@
       %li Fax: #{resource.fax_number}
       %li Contact Email: #{resource.contact_email}
       %li Agency Email: #{resource.agency_email}
-      %li Name of Submitter: #{resource.name_of_submitter}
+      - if current_user.role == "admin"
+        %li{:class => "noprint"} Name of Submitter: #{resource.name_of_submitter}
       
     - if current_user && !current_page?(admin_path)
       .col-md-3
