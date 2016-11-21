@@ -1,0 +1,22 @@
+.row
+  %h1 Listing categories
+.row
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Tag Name
+        %th
+        %th
+        %th
+
+    %tbody
+      - @tags.each do |tag|
+        %tr
+          %td= tag.name
+          %td= link_to 'View', tag
+          %td= link_to 'Edit', edit_tag_path(tag)
+          %td= link_to 'Delete', tag, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.row
+  %a.btn.btn-success{href: new_tag_path, role: "button"}
+    Create a New Tag
+    %i.fa.fa-plus

@@ -1,0 +1,19 @@
+.container
+  = form_for @tag do |f|
+    - if @tag.errors.any?
+      .alert.alert-danger
+        %h4 #{pluralize(@tag.errors.count, "error")} prohibited this category from being saved:
+        %ul
+          - @tag.errors.full_messages.each do |msg|
+            %li= msg
+    .row
+      .col-md-4.form-group.form-section
+        %p
+          = f.label :name
+          = f.text_field :name,
+                         class: "form-control",
+                         required: true,
+                         placeholder: 'Tag Name'
+    .row
+      .col-md-2
+        = f.submit 'Save', class: "btn btn-success"

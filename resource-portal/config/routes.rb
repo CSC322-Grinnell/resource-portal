@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   root 'categories#homepage'
-  
-  get 'categories/splash' => 'categories#splash'
 
   get 'search/resources' => 'search#resources'
   get 'admin' => 'users#admin', as: :admin
@@ -19,6 +17,7 @@ Rails.application.routes.draw do
   end
   
   resources :categories
+  resources :tags
   resources :users, :only => [:index, :show, :destroy]
 
 end
