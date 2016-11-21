@@ -13,7 +13,18 @@
           = f.text_field :name,
                          class: "form-control",
                          required: true,
-                         placeholder: 'Tag Name'
+                         placeholder: 'Tag'
+        %form_group
+          .col-md-2
+            = f.label :Category, "Category"
+          .col-md-8
+            %ul.list-inline
+              -# Automatically create check boxes according to the categories in the database.
+              - Category.all.each do |category|
+                %li.category-box-container
+                  = radio_button_tag 'category_ids[]',
+                      category.id
+                  = category.name
     .row
       .col-md-2
         = f.submit 'Save', class: "btn btn-success"
