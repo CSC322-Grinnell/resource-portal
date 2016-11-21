@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20161117190639) do
-=======
 ActiveRecord::Schema.define(version: 20161121194558) do
->>>>>>> Tags so far, redone with dev updated code
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -57,8 +53,6 @@ ActiveRecord::Schema.define(version: 20161121194558) do
     t.float    "longitude"
   end
 
-<<<<<<< HEAD
-=======
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -86,7 +80,6 @@ ActiveRecord::Schema.define(version: 20161121194558) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
->>>>>>> Tags so far, redone with dev updated code
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
