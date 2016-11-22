@@ -9,6 +9,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   def index
     @categories = Category.all
+    @tags = @category.tag_list
   end
 
   # GET /categories/1
