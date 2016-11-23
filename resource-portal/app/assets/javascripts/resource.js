@@ -1,17 +1,15 @@
+/*global $*/
 $(document).ready(function() {
-    /*
     
     // OPTION 1
     $('.category-box-container input:radio[type=radio_button]').change( function(){
         var c = $(".category-box-container input[type=check_box]:checked").val();
-        console.log("HELLO");
-        console.log(c);
         if($('.' + c + '_selection').is(":checked"))   
             $('.' + c + '_tag').show();
         else
             $('.' + c + '_tag').hide();
     });
-    
+    /*
     // OPTION 2
     $('.category-box-container input:radio[type=radio_button]').change( function() {
         $('.category-box-container input[id=' + this.value + ']').toggle(this.checked);

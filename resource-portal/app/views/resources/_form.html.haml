@@ -49,6 +49,8 @@
               = f.label :tag_list, "Tags***"
             .col-md-8
               %ul.list-inline
+                -# Automatically generate checkboxes for tags based on category selected
+                -# Filtering of tags is done in resource.js (this code generates all tags)
                 - Category.all.each do |category|
                   - category.tag_list.each do |tag|
                     %li.category-box-container{:id => "#{category.name}_tags"}
@@ -56,7 +58,6 @@
                           tag,
                           @resource.tag_list.include?(tag)
                       = tag
-                  
       .form-section.col-md-10
         %p How community members can find your service...
         .row.top-buffer

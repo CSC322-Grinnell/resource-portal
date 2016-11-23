@@ -111,15 +111,13 @@ class ResourcesController < ApplicationController
                                 :phone_number, :alternative_phone_number,
                                 :website, :fax_number, :contact_email,
                                 :agency_email, :description_of_service,
-                                :category_ids, :tag_list,
-                                :name_of_submitter)
+                                :tag_list, :name_of_submitter,
+                                :category_ids => [])
 
     # if category_ids is neither null nor empty
-    if !params[:resource][:category_ids].blank?
-      the_params[:category_ids].merge!({ category_ids: params[:resource][:category_ids] })
-    end
-  
-    puts "NewCatIDs: " + the_params[:category_ids];
+    #if !params[:resource][:category_ids].blank?
+    #  the_params[:category_ids].merge!({ category_ids: params[:resource][:category_ids] })
+    #end
 
     return the_params
   end
