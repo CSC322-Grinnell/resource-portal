@@ -13,3 +13,8 @@ f.tag_list.add("Parents", "School", "New Parents", "Infants", "Daycare")
 m.tag_list.add("Medication", "Doctors", "Hospitals")
 l.tag_list.add("Divorce", "Family", "Civil")
 o.tag_list.add("Meals", "Groceries", "Transportation")
+
+f.save
+m.save
+l.save
+o.save

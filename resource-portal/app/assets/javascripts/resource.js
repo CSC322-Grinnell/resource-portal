@@ -1,12 +1,13 @@
 $(document).ready(function() {
 
 $('.category-box-container input:radio[type=radio_button]').change( function(){
-    var category = $(".category-box-container input[type=radio_button]:checked").val();
-    
-    if($('.' + category + '_selection').is(":checked"))   
-        $('.' + category + '_tag').show();
+    var c = $(".category-box-container input[type=radio_button]:checked").val();
+    console.log("HELLO");
+    console.log(c);
+    if($('.' + c + '_selection').is(":checked"))   
+        $('.' + c + '_tag').show();
     else
-        $('.' + category + '_tag').hide();
+        $('.' + c + '_tag').hide();
   });
 
 });

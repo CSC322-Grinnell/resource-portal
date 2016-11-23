@@ -38,7 +38,7 @@
               %ul.list-inline
                 -# Automatically create check boxes according to the resources in the database.
                 - Category.all.each do |category|
-                  %li.category-box-container{:id => '#{category}_selection'}
+                  %li.category-box-container{:id => "#{category.name}_selection"}
                     = radio_button_tag 'resource[category_ids][]',
                         category.id,
                         @resource.category_ids.include?(category.id)
@@ -49,14 +49,14 @@
               = f.label :tag_list, "Tags***"
             .col-md-8
               %ul.list-inline
-                -# Automatically create check boxes according to the resources in the database.
                 - Category.all.each do |category|
-                  %li.category-box-container{:id => '#{category}_tag'}
-                    - category.tag_list.each do |tag|
-                      %li.category-box-container
-                        = check_box_tag 'category[tag_list]'
-                        = tag.name
-
+                  - category.tag_list.each do |tag|
+                    %li.category-box-container{:id => "#{category.name}_tags"}
+                      = check_box_tag 'resource[tag_list][]',
+                          tag,
+                          @resource.tag_list.include?(tag)
+                      = tag
+                  
       .form-section.col-md-10
         %p How community members can find your service...
         .row.top-buffer
