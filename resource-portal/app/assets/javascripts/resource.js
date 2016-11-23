@@ -2,7 +2,7 @@
 $(document).ready(function() {
     
     // OPTION 1
-    $('.category-box-container input:radio[type=radio_button]').change( function(){
+    $('.category-box-container input:radio').change( function(){
         var c = $(".category-box-container input[type=check_box]:checked").val();
         if($('.' + c + '_selection').is(":checked"))   
             $('.' + c + '_tag').show();
