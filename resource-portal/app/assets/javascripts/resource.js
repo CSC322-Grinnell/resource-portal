@@ -1,13 +1,12 @@
 $(document).ready(function() {
 
-  $("form.new_resource, form.edit_resource").on("submit", function(event) {
-    var checkboxes = $(".category-box-container input[type=checkbox]");
-    var selectedCheckboxes = checkboxes.filter(":checked");
-
-    if (selectedCheckboxes.length == 0) {
-      event.preventDefault();
-      alert("You need to select at least one category!");
-    }
+$('.category-box-container input:radio[type=radio_button]').change( function(){
+    var category = $(".category-box-container input[type=radio_button]:checked").val();
+    
+    if($('.' + category + '_selection').is(":checked"))   
+        $('.' + category + '_tag').show();
+    else
+        $('.' + category + '_tag').hide();
   });
 
 });
