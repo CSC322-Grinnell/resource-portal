@@ -111,8 +111,8 @@ class ResourcesController < ApplicationController
                                 :phone_number, :alternative_phone_number,
                                 :website, :fax_number, :contact_email,
                                 :agency_email, :description_of_service,
-                                :tag_list, :name_of_submitter,
-                                :category_ids => [])
+                                :name_of_submitter, :category_ids => [],
+                                :tag_list => [])
 
     # if category_ids is neither null nor empty
     #if !params[:resource][:category_ids].blank?
