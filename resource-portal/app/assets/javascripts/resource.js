@@ -1,31 +1,19 @@
 /*global $*/
 $(document).ready(function() {
-    
-    // OPTION 1
-    $('.category-box-container input:radio').change( function(){
-        var c = $(".category-box-container input[type=check_box]:checked").val();
-        if($('.' + c + '_selection').is(":checked"))   
-            $('.' + c + '_tag').show();
-        else
-            $('.' + c + '_tag').hide();
-    });
-    /*
-    // OPTION 2
-    $('.category-box-container input:radio[type=radio_button]').change( function() {
-        $('.category-box-container input[id=' + this.value + ']').toggle(this.checked);
-    }).change();
-    
-    // OPTION 3
-    
-    $(function(){
-    var $tags = $('.' + c + '_tag').parent();
-    $tags.hide();
 
-    $('.category-box-container').on('click',$('.' + c + '_selection'),function(){
-        if ( $(this).is(':checked') ) {
-            $tags.show();
-        } else{
-            $tags.hide();
-        }
-    }); */
+    // On the change for the radio button
+    $('input:radio').change(function(){
+        // Get the id of the container of that radio button
+        var c = $('input:radio:checked').attr('id');
+        // Loop through the tag checkboxes and show the ones that match the radio button
+        $('input:checkbox').each(function(index, myCheckbox) {
+            var tagName = c + '_tag';
+            // If the checkbox has the right id
+            if($(myCheckbox).attr('id') == tagName) {
+                console.log("show " + $(myCheckbox).val());
+                // Show the checkbox and its label
+                $('#' + tagName).parent().show();
+            }
+        });
+    });
 }); 
