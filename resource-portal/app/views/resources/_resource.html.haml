@@ -45,7 +45,12 @@
       %li Fax: #{resource.fax_number}
       %li Contact Email: #{resource.contact_email}
       %li Agency Email: #{resource.agency_email}
-      %li Name of Submitter: #{resource.name_of_submitter}
+      - if user_signed_in? && current_user.role == "admin"
+        %li{:class => "noprint"} Name of Submitter: #{resource.name_of_submitter}
+      %li 
+        Tags:
+        - resource.tag_list.each do |tag|
+          = link_to tag, tag_path(tag)
       
     - if current_user && !current_page?(admin_path)
       .col-md-3
@@ -56,7 +61,7 @@
           %span.fa.fa-lg.fa-star
           Favorite
       .col-md-3
-        = button_to(favorite_resource_path(resource.id, type: "favorite"),
+        = button_to(favorite_resource_path(resource.id, type: "unfavorite"),
                 :class => 'btn btn-default noprint',
                 :method => 'put',
                 :id => 'unfavorite') do

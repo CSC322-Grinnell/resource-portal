@@ -10,7 +10,11 @@ class ResourcesController < ApplicationController
 
   # Display a list of all resources
   def index
-    @resources = Resource.all
+    if params[:tag]
+       @resources = Resource.tagged_with(params[:tag])
+     else
+       @resources = Resource.all
+     end
   end
 
   # Display an individual resource
@@ -32,6 +36,10 @@ class ResourcesController < ApplicationController
   def create
     # Set instance var so :new renders properly if validation fails
     @resource = Resource.new(resource_params)
+    
+    puts "TEST"
+    puts resource_params
+    
 
     # Only admins can be signed in users at this point
     # If a user is signed in, then they are an admin
@@ -100,16 +108,20 @@ class ResourcesController < ApplicationController
   # Fetches all the parameters that are used for resource creation and editing
   #@return [void]
   def resource_params
+    parser = Gingerice::Parser.new
+    parser.parse :description_of_service
     the_params = params.require(:resource)
                         .permit(:name, :address, :alternative_address,
                                 :phone_number, :alternative_phone_number,
                                 :website, :fax_number, :contact_email,
-                                :agency_email, :description_of_service)
+                                :agency_email, :description_of_service,
+                                :name_of_submitter, :category_ids => [],
+                                :tag_list => [])
 
     # if category_ids is neither null nor empty
-    if !params[:category_ids].blank?
-      the_params.merge!({ category_ids: params[:category_ids] })
-    end
+    #if !params[:resource][:category_ids].blank?
+    #  the_params[:category_ids].merge!({ category_ids: params[:resource][:category_ids] })
+    #end
 
     return the_params
   end

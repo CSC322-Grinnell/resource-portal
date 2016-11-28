@@ -1,9 +1,8 @@
 #require 'elasticsearch/model'
-
 class Resource < ActiveRecord::Base
   after_initialize :default_values
 
-  validates :name, :description_of_service, :address, #:contact_email,
+  validates :name, :description_of_service, :address,
             presence: true
   validate :must_have_one_category
 
@@ -17,6 +16,7 @@ class Resource < ActiveRecord::Base
 
   default_scope { order('name ASC') } # Returns resources in Alphabetaical order via names
 
+  acts_as_taggable
   searchkick
 
   private
@@ -26,9 +26,13 @@ class Resource < ActiveRecord::Base
   end
 
   def must_have_one_category
-    if !(category_ids.length > 0)
-      errors[:base] << 'You must select at least one category'
+    if (category_ids.length != 1)
+      errors[:base] << 'You must select one category'
     end
+  end
+  
+  def resource_params
+    params.permit(:name_of_submitter, :tag_list)
   end
 end
 
