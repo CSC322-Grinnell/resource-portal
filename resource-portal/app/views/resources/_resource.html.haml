@@ -45,7 +45,7 @@
       %li Fax: #{resource.fax_number}
       %li Contact Email: #{resource.contact_email}
       %li Agency Email: #{resource.agency_email}
-      - if current_user.role == "admin"
+      - if user_signed_in? && current_user.role == "admin"
         %li{:class => "noprint"} Name of Submitter: #{resource.name_of_submitter}
       %li 
         Tags:

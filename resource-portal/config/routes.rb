@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get 'search/resources' => 'search#resources'
   get 'admin' => 'users#admin', as: :admin
+  get 'tags/:tag', to: 'resources#index', as: :tag
 
   post 'modify_status', to:  'resources#modify_status'
 
