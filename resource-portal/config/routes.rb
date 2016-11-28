@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   end
   
   resources :categories
-  resources :tags
   resources :users, :only => [:index, :show, :destroy]
-
+  resources :tags
 end

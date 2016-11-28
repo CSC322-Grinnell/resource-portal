@@ -14,6 +14,14 @@
                          class: "form-control",
                          required: true,
                          placeholder: 'Category Name'
+      .col-md-4.form-group.form-section
+        %p
+          = f.label :tags 
+          = f.text_field :tag_list, 
+            value: f.object.tag_list.to_s, 
+            class: "form-control", 
+            required: true, 
+            placeholder: 'Tags'
     .row
       .col-md-2
         = f.submit 'Save', class: "btn btn-success"

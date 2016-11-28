@@ -7,6 +7,7 @@ $(document).ready(function() {
         // Hide all tag checkboxes
         $('.all_tags').hide();
         // Get the id of the selected category radio button and show that container
+        console.log($('input:radio:checked').attr('id'));
         $('#' + $('input:radio:checked').attr('id') + '_tags').show();
     });
 });
