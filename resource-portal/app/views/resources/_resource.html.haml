@@ -47,6 +47,7 @@
       %li Agency Email: #{resource.agency_email}
       - if current_user.role == "admin"
         %li{:class => "noprint"} Name of Submitter: #{resource.name_of_submitter}
+      %li Tags: #{resource.tag_list.join(", ")}
       
     - if current_user && !current_page?(admin_path)
       .col-md-3
