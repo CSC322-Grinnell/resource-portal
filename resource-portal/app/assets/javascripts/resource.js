@@ -1,7 +1,6 @@
 /*global $*/
 // Code that shows and hides tag checkboxes based on the category selected
 $(document).ready(function() {
-    $('#' + $('input:radio:checked').attr('id') + '_tags').show();
     // On the change for the radio button
     $('input:radio').change(function(){
         // Hide all tag checkboxes

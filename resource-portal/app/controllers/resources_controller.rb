@@ -10,7 +10,11 @@ class ResourcesController < ApplicationController
 
   # Display a list of all resources
   def index
-    @resources = Resource.all
+    if params[:tag]
+       @resources = Resource.tagged_with(params[:tag])
+     else
+       @resources = Resource.all
+     end
   end
 
   # Display an individual resource

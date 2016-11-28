@@ -1,9 +1,9 @@
--# tag#show
+-# tags#show
 -# Displays the "contents" of a tag, i.e. its resources
 .container
   .row
     .col-md-12
-      %h1{:style => "text-align: center"} #{@tag.name}
+      %h1{:style => "text-align: center"} #{@tag}
 
 - if !@resources.empty?
   .container{:id => "all-resources"}
