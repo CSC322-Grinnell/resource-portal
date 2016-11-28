@@ -41,7 +41,8 @@
                   %li.category-box-container
                     = check_box_tag 'resource[category_ids][]',
                         category.id,
-                        @resource.category_ids.include?(category.id)
+                        @resource.category_ids.include?(category.id),
+                        :id => "#{category.name}"
                     = category.name
         .row.top-buffer
           %form-group
@@ -49,11 +50,16 @@
               = f.label :tag_list, "Tags***"
             .col-md-8
               %ul.list-inline
-                -# Automatically create check boxes according to the resources in the database.
-                - Category.find_by(@resource.category_ids).tag_list.each do |tag|
-                  %li.category-box-container
-                    = check_box_tag 'category[tag_list]'
-                    = tag.name
+                -# Automatically generate checkboxes for tags based on categories
+                -# Filtering of tags based on selected category done in resource.js
+                - Category.all.each do |category|
+                  %li{:id => "#{category.name}_tags", :class=> "all_tags", :style => "display:none"}
+                    - category.tag_list.each do |tag|
+                      %div.tag-box-container
+                        = check_box_tag 'resource[tag_list][]',
+                            tag,
+                            @resource.tag_list.include?(tag)
+                        = tag
       .form-section.col-md-10
         %p How community members can find your service...
         .row.top-buffer
@@ -61,31 +67,31 @@
             .col-md-2
               = f.label :Address, "Address***"
             .col-md-8
-              = f.text_field :address, :class => "form-control", :required => true, placeholder: 'Address'
+              = f.text_field :address, :class => "form-control", :required => true, placeholder: '1234 Example St, Grinnell, IA 50112'
         .row.top-buffer
           %form_group
             .col-md-2
               = f.label :Alternative_Address, "Alternative Address"
             .col-md-8
-              = f.text_field :alternative_address, :class => "form-control", placeholder: 'Alternative Address'
+              = f.text_field :alternative_address, :class => "form-control", placeholder: '1234 Example St, Grinnell, IA 50112'
         .row.top-buffer
           %form_group
             .col-md-2
               = f.label :Phone_number, "Phone Number"
             .col-md-8
-              = f.text_field :phone_number, :class => "form-control", placeholder: 'Phone Number'
+              = f.text_field :phone_number, :class => "form-control", placeholder: 'xxx-xxx-xxx'
         .row.top-buffer
           %form_group
             .col-md-2
               = f.label :Alternative_Phone_number, "Alternative Phone Number"
             .col-md-8
-              = f.text_field :alternative_phone_number, :class => "form-control", placeholder: 'Alternative Phone Number'
+              = f.text_field :alternative_phone_number, :class => "form-control", placeholder: 'xxx-xxx-xxx'
         .row.top-buffer
           %form_group
             .col-md-2
-              = f.label :Website, "Website (www.website.com)"
+              = f.label :Website, "Website"
             .col-md-8
-              = f.text_field :website, :class => "form-control", placeholder: 'Website'
+              = f.text_field :website, :class => "form-control", placeholder: 'www.website.com'
         .row.top-buffer
           %form_group
             .col-md-2

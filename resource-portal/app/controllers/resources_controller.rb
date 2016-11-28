@@ -10,7 +10,11 @@ class ResourcesController < ApplicationController
 
   # Display a list of all resources
   def index
-    @resources = Resource.all
+    if params[:tag]
+       @resources = Resource.tagged_with(params[:tag])
+     else
+       @resources = Resource.all
+     end
   end
 
   # Display an individual resource
@@ -111,15 +115,13 @@ class ResourcesController < ApplicationController
                                 :phone_number, :alternative_phone_number,
                                 :website, :fax_number, :contact_email,
                                 :agency_email, :description_of_service,
-                                :category_ids, :tag_list,
-                                :name_of_submitter)
+                                :name_of_submitter, :category_ids => [],
+                                :tag_list => [])
 
     # if category_ids is neither null nor empty
-    if !params[:resource][:category_ids].blank?
-      the_params[:category_ids].merge!({ category_ids: params[:resource][:category_ids] })
-    end
-  
-    puts "NewCatIDs: " + the_params[:category_ids];
+    #if !params[:resource][:category_ids].blank?
+    #  the_params[:category_ids].merge!({ category_ids: params[:resource][:category_ids] })
+    #end
 
     return the_params
   end

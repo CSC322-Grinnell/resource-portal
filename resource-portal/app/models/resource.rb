@@ -27,7 +27,7 @@ class Resource < ActiveRecord::Base
 
   def must_have_one_category
     if (category_ids.length != 1)
-      errors[:base] << 'You must select only one category'
+      errors[:base] << 'You must select one category'
     end
   end
   
