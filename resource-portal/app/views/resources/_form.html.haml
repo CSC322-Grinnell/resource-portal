@@ -53,7 +53,7 @@
                 -# Automatically generate checkboxes for tags based on categories
                 -# Filtering of tags based on selected category done in resource.js
                 - Category.all.each do |category|
-                  %li{:id => "#{category.name}_tags", :class=> "all_tags", :style => "display:none"}
+                  %li{:id => "#{category.name}_tags", :class => "all_tags", :style => "display:none"}
                     - category.tag_list.each do |tag|
                       %div.tag-box-container
                         = check_box_tag 'resource[tag_list][]',

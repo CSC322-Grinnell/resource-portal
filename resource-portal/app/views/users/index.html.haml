@@ -4,7 +4,7 @@
 .jumbotron#main-page-jumbotron
   .container
     %h1 My Favorite Resources
-.container
+.container{:style => 'padding_bottom:10px' }
   %a.btn.btn-default{ :onclick => 'window.print(); return false;', :role => "button", :class => 'noprint' }
     %span.fa.fa-print
     Print Resource List &raquo;
