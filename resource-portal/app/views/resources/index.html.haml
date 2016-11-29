@@ -1,10 +1,13 @@
 -# resources#index
 -# Displays a list of all resources, or all resources with a certain tag
-.jumbotron#main-page-jumbotron
+- if params[:tag]
   .container
-    - if params[:tag]
-      %h1 Resources
-    - else
+    .row
+      .col-md-12
+        %h1{:style => "text-align:center"} Tagged Resources
+- else
+  .jumbotron#main-page-jumbotron
+    .container
       %h1 All Resources
 .container{:id => "all-resources"}
   - @resources.each do |resource|
