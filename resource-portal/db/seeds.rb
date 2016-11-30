@@ -18,3 +18,14 @@ Category.create(name: "Miscellaneous")
 
 User.create(email: "admin@example.com", password: "12345678", role: "admin")
 User.create(email: "user@example.com", password: "12345678", role: "default")
+
+
+# None of these are connected to categories, categories are in comments
+Resource.create(name: "WIC Clinics (Well Child)", description_of_service: "WIC gives vouchers for forumla, milk, and nutritious food supplies, and medical referrals for income-elibible pregnant women, nursing mothers, and children to give of age. Clinics are run out of the MICA office in Marshalltown. The current hours are listed below. Call in advance to sign up and to check times. In Grinnell at Light Center for Community Health: 3rd Tuesday 8:30am - 3:30pm, 4th Tuesday 8:30am - 5pm. In Brooklyn at the United Methodist Church, 3rd Monday 9am - 2pm.", 
+                address: "306 4th Ave, Grinnell, IA 50112", 
+                alternative_address: "603 Clay Street", phone_number: "800-390-5293", 
+                alternative_phone_number: "641-753-4816") # Food
+Resource.create(name: "Grinnell Senior Center", phone_number: "641-522-5400", 
+                address: "925 East St., Grinnell, IA 50112", 
+                description_of_service: "Meals on Wheels and Congrgate (on side) Meals", 
+                tag_list: "Meals on Wheels") # Food
