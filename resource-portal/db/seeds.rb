@@ -12,13 +12,9 @@ User.create(email: "user@example.com", password: "12345678", role: "default")
 f.tag_list.add("Parents", "School", "New Parents", "Infants", "Daycare")
 m.tag_list.add("Medication", "Doctors", "Hospitals")
 l.tag_list.add("Divorce", "Family", "Civil")
-<<<<<<< HEAD
-o.tag_list.add("Meals", "Groceries", "Transportation")
-=======
 o.tag_list.add("Meals", "Groceries", "Transportation")
 
 f.save
 m.save
 l.save
 o.save
->>>>>>> b768f181d8d49c1971af08953d9219617ab59e53
