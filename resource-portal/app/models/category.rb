@@ -3,7 +3,7 @@ class Category < ActiveRecord::Base
 
   has_and_belongs_to_many :resources
   
-  acts_as_taggable 
+  acts_as_taggable_on :tags
 
   default_scope { order('name ASC') } # Returns resources in Alphabetaical order via names
     searchkick
