@@ -1,10 +1,5 @@
 -# Accessory for approved resources on the admin page
 -# Includes buttons to edit and delete resource
-.row.resource-categories
-  %p
-    This resource appears in these categories:
-    = resource.categories.pluck(:name).join(", ")
-
 .row
   = button_to(edit_resource_path(resource),
               :class => 'btn btn-default',

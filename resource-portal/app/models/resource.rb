@@ -16,7 +16,7 @@ class Resource < ActiveRecord::Base
 
   default_scope { order('name ASC') } # Returns resources in Alphabetaical order via names
 
-  acts_as_taggable
+  acts_as_taggable_on :tags
   searchkick
 
   private

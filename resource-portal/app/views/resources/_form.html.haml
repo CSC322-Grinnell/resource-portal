@@ -16,6 +16,7 @@
     = form_for @resource,:url => (@resource.new_record? ? resources_path : resource_url(@resource)) do |f|
 
       .form-section.col-md-10
+        %p *** means the field is required
         %p Tell us about your service...
         .row.top-buffer
           %form_group

@@ -18,10 +18,9 @@
         %p
           = f.label :tags 
           = f.text_field :tag_list, 
-            value: f.object.tag_list.to_s, 
-            class: "form-control", 
-            required: true, 
-            placeholder: 'Tags separated by commas'
+            value: f.object.tag_list.to_s,
+            class: "form-control",
+            placeholder: 'Tags'
     .row
       .col-md-2
         = f.submit 'Save', class: "btn btn-success"
