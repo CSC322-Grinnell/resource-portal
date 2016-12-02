@@ -1,8 +1,14 @@
 -# resources#index
--# Displays a list of all resources
-.jumbotron#main-page-jumbotron
+-# Displays a list of all resources, or all resources with a certain tag
+- if params[:tag]
   .container
-    %h1 All Resources
+    .row
+      .col-md-12
+        %h1{:style => "text-align:center"} Tagged Resources
+- else
+  .jumbotron#main-page-jumbotron
+    .container
+      %h1 All Resources
 .container{:id => "all-resources"}
   - @resources.each do |resource|
     = render :partial => 'resource', :locals => { :resource => resource }

@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:homepage, :show]
+  before_action :tag_cloud
 
   def homepage
     @categories = Category.all
@@ -61,6 +62,10 @@ class CategoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def tag_cloud
+    @tags = Category.tag_counts_on(:tags)
+  end
 
   private
 
@@ -71,6 +76,6 @@ class CategoriesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :tag_list)
   end
 end
