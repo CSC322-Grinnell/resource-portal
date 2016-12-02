@@ -1,0 +1,17 @@
+= form_tag tag_path(@tag), method: 'get', class: 'form-control' do
+  = select_tag "tag", options_from_collection_for_select(ActsAsTaggableOn::Tag.all, 'id', 'name', @tag)
+  = submit_tag('Go', class: "btn btn-success")
+
+
+
+
+
+
+/= form_tag('/tags/', method: 'get') do
+/ .row
+/    %p 
+/    If you know the type of resource you are looking for, select a specific tag:
+/    = f.collection_select :tag, ActsAsTaggableOn::Tag, :to_s, :to_s, 
+/        :class => 'form-control', placeholder: 'Choose a tag...'
+/    %span.input-group-btn
+/      = submit_tag('Go', class: "btn btn-success")

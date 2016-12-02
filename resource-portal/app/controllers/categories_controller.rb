@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:homepage, :show]
+  before_action :tag_cloud
 
   def homepage
     @categories = Category.all
@@ -60,6 +61,10 @@ class CategoriesController < ApplicationController
       format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def tag_cloud
+    @tags = Category.tag_counts_on(:tags)
   end
 
   private
