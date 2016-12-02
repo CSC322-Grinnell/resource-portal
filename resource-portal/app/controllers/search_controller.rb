@@ -17,11 +17,8 @@ class SearchController < ApplicationController
   end 
   
   def tags
-     if params[:search].present?
-        @tags = Tag.search(params[:search], page: params[:page], per_page: 15 )
-    else
-        @tags = Tag.all
-    end
+    @tags = Tag.search(params[:q])#:match :word_start#, suggest :true
+
     # combine the results
     @results = @tags
     # may be necessary to remove duplicates

@@ -5,7 +5,7 @@ class Category < ActiveRecord::Base
 
   default_scope { order('name ASC') } # Returns resources in Alphabetaical order via names
     searchkick
-    acts_as_taggable :tags
+    acts_as_taggable
     
     def self.get_categories
         Category.all
