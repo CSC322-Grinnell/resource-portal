@@ -80,13 +80,12 @@ resources = [
     {name: "Mid-Iowa Community Action (MICA)", phone_number: "641-236-3923", 
                 address: "611 4th Ave, Grinnell", 
                 description_of_service: "Operates an emergency food pantry for those in need; distributes vouchers for milk and bread provided by local churches; distributes fresh produce from local farmers. Mon – Fri, 8:30 am – 4:30 pm", 
-                tag_list: "Food Pantry"} 
+                tag_list: "Food Pantry"},
     # HOUSING
     {name: "Grinnell Housing Authority", phone_number: "641-236-2611",
                 address: "927 4th Avenue, Grinnell, IA 50112",
                 contact_email: "rentassist@iowatelecom.net",
-                description_of_service: "Rent assistance for income-eligible elderly, disabled, and families, funded by HUD. Eligible families select their own rental units anywhere in Poweshiek County. Applications are accepted continuously.",
-                tag_list: ""},
+                description_of_service: "Rent assistance for income-eligible elderly, disabled, and families, funded by HUD. Eligible families select their own rental units anywhere in Poweshiek County. Applications are accepted continuously."},
     
     {name: "Fair Housing", phone number: "800-669-3247", description_of_service: "Deals with issues of discrimination and with landlord-tenant issues."},
     
@@ -179,6 +178,40 @@ resources = [
     {name: "Hometown Energy Fund", phone_number: "866-255-4268)",
                 description_of_service: "This program is for home owners whose income falls within the federal guidelines of 200 – 300% poverty, and who receive both gas and electric from Alliant Energy. Applicants pays 10% of cost of energy savings upgrade and Alliant pays 90%. Applications are accepted when funds are available. Call MICA (641-236-3923) for information and to apply",
                 website: "www.AlliantEnergy.com", tag_list: "Home Owners"},
+                
+    {name: "Second Mile", phone_number: "641-236-7892", address: "515 3rd Ave., Grinnell, IA 50112", 
+                description_of_service: "Inexpensive used clothing, furniture, and much more. Contact: Deanna Vogt.",
+                tag_list: "Furniture, Clothing"},
+                
+    {name: "Goodwill Industries", phone_number: "641-236-7312", address: "230 West St., Grinnell, IA 50112", 
+                description_of_service: "Inexpensive used clothing and furniture",
+                tag_list: "Furniture, Clothing"},
+    
+    {name: "Anderson's Used Furniture", phone_number: "641-236-3466", address: "1018 Washington Ave., Grinnell, IA 50112", 
+                description_of_service: "Inexpensive used furniture. Open Fri. 1 – 6 pm and Sat. 9 am – 5 pm",
+                tag_list: "Furniture"},
+    
+    {name: "Phase II Consignment", phone_number: "641-236-8126", address: "912 Main St., Grinnell, IA 50112", 
+                description_of_service: "Consignment", tag_list: "Furniture, Clothing"},
+    
+    {name: "Montezuma Free Clothes Closet", phone_number: "641-623-3275", address: "411 E Main, Montezuma, IA", 
+                description_of_service: "Mon. 10:00 am – 12:30 pm, Wed. 2:00 – 4:30 pm, Thurs. 4:30 – 6:30 pm. Every 3rd Sat., 10:00 am – Noon",
+                tag_list: "Clothing"},
+    
+    {name: "Tracy's Treasures", phone_number: "641-990-2944", address: "403 E. Main St., Montezuma, IA", 
+                description_of_service: "Mostly clothes, but call to check if she has furniture",
+                tag_list: "Furniture, Clothing"},
+    
+    {name: "White's Consignment", phone_number: "641-623-2208", address: "806 S. Front St., Montezuma, IA", 
+                description_of_service: "Consignment", tag_list: "Furniture, Clothing"},
+    
+    {name: "Once and Again Consignment", phone_number: "641-522-2333", address: "102 N. Orchard St., Brooklyn, IA", 
+                description_of_service: "Consignment", tag_list: "Furniture, Clothing"},
+    
+    {name: "Salvation Army Poweshiek County Service Extension #261", phone_number: "641-623-3275", address: "303 E. Washington, Montezuma, IA", 
+                description_of_service: "Consignment", website: "www.centralusa.salvationarmy.org",
+                tag_list: "Furniture, Clothing"},
+    
 ]
 
 categories.each do |category|
