@@ -52,13 +52,13 @@ resources = [
                 
     {name: "Grinnell Food SHARE", phone_number: "641-236-3972",
                 name_of_submitter: "Robin Young",
-                website: "www.shareiowa.com", address: "None",
+                website: "www.shareiowa.com", address: "n/a",
                 description_of_service: "Order and pay for food the first Tues. of each month at Grinnell Senior Center, 12:30 – 1:30 pm. Pick up food on 4th Sat. at St. Mary’s Religious Ed Center, 1013 Broad St., Grinnell", 
                 tag_list: "Co-op",
                 categories: ['Food']}, 
                 
     {name: "Bountiful Baskets Food Co-op",
-                website: "www.bountifulbaskets.org", address: "None",
+                website: "www.bountifulbaskets.org", address: "n/a",
                 description_of_service: "For an introduction, select the tab “New Participant Instructions” Find local information by selecting the tab “Locations” and entering IA for the state.", 
                 tag_list: "Co-op",
                 categories: ['Food']},
@@ -70,7 +70,7 @@ resources = [
                 
     {name: "ISU Extension and Outreach", website: "https://spendsmart.extension.iastate.edu/recipes/", 
                 description_of_service: "This website offers recipes that are low-cost and nutritious", 
-                tag_list: "Recipes", address: "None",
+                tag_list: "Recipes", address: "n/a",
                 categories: ['Food']},
                 
     {name: "Meals on Wheels (Grinnell)", phone_number: "641-236-2612", 
@@ -86,7 +86,7 @@ resources = [
                 categories: ['Food']},               
                 
     {name: "Montezuma Nursing and Rehab", phone_number: "641-623-5497", 
-                tag_list: "Meals on Wheels", address: "None",
+                tag_list: "Meals on Wheels", address: "n/a",
                 description_of_service: "Nursing and rehabilitation facility.",
                 categories: ['Food']},
                 
@@ -102,7 +102,7 @@ resources = [
                 description_of_service: "Rent assistance for income-eligible elderly, disabled, and families, funded by HUD. Eligible families select their own rental units anywhere in Poweshiek County. Applications are accepted continuously.",
                 categories: ['Housing']},
     
-    {name: "Fair Housing", phone_number: "800-669-3247", address: "None",
+    {name: "Fair Housing", phone_number: "800-669-3247", address: "n/a",
                 description_of_service: "Deals with issues of discrimination and with landlord-tenant issues.",
                 categories: ['Housing']},
     
@@ -147,37 +147,37 @@ resources = [
                 phone_number: "641-236-0102", tag_list: "Income-Based, Elderly, Disabled",
                 categories: ['Housing']},
     
-    {name: "Barnes City Housing, Financial Service Group, Inc", address: "None",
+    {name: "Barnes City Housing, Financial Service Group, Inc", address: "n/a",
                 description_of_service: "Income-based Housing for Elderly and Disabled (outside Grinnell)",
                 phone_number: "319-664-3002", tag_list: "Income-Based, Elderly, Disabled",
                 categories: ['Housing']},
     
-    {name: "Brooklyn Housing, Inc., Karen McNaul", address: "None",
+    {name: "Brooklyn Housing, Inc., Karen McNaul", address: "n/a",
                 description_of_service: "Income-based Housing for Elderly and Disabled (outside Grinnell)",
                 phone_number: "641-623-5026", tag_list: "Income-Based, Elderly, Disabled",
                 categories: ['Housing']},
     
-    {name: "Deep River Housing, Financial Service Group, Inc", address: "None",
+    {name: "Deep River Housing, Financial Service Group, Inc", address: "n/a",
                 description_of_service: "Income-based Housing for Elderly and Disabled (outside Grinnell)",
                 phone_number: "319-664-3002", tag_list: "Income-Based, Elderly, Disabled",
                 categories: ['Housing']},
     
-    {name: "Malcom Manor, Karen McNaul", address: "None",
+    {name: "Malcom Manor, Karen McNaul", address: "n/a",
                 description_of_service: "Income-based Housing for Elderly and Disabled (outside Grinnell)",
                 phone_number: "641-623-5026", tag_list: "Income-Based, Elderly, Disabled",
                 categories: ['Housing']},
     
-    {name: "Montezuma, Sunny View Square, Grinnell Area Housing", address: "None",
+    {name: "Montezuma, Sunny View Square, Grinnell Area Housing", address: "n/a",
                 description_of_service: "Income-based Housing for Elderly and Disabled (outside Grinnell)",
                 phone_number: "641-236-6679", tag_list: "Income-Based, Elderly, Disabled",
                 categories: ['Housing']},
     
-    {name: "Searsboro Manor Apartments, Financial Service Group, Inc", address: "None",
+    {name: "Searsboro Manor Apartments, Financial Service Group, Inc", address: "n/a",
                 description_of_service: "Income-based Housing for Elderly and Disabled (outside Grinnell)",
                 phone_number: "319-664-3002", tag_list: "Income-Based, Elderly, Disabled",
                 categories: ['Housing']},
     
-    {name: "Victor Senior Housing, National Management", address: "None",
+    {name: "Victor Senior Housing, National Management", address: "n/a",
                 description_of_service: "Income-based Housing for Elderly and Disabled (outside Grinnell)",
                 phone_number: "515-223-0300", tag_list: "Income-Based, Elderly, Disabled",
                 categories: ['Housing']},
@@ -193,26 +193,26 @@ resources = [
                 address: "2015 Grand Ave., Des Moines, Iowa 50312", tag_list: "Home Owners",
                 categories: ['Housing']},
     
-    {name: "REGION 6 Housing Trust Fund", phone_number: "641-752-0717", address: "None",
+    {name: "REGION 6 Housing Trust Fund", phone_number: "641-752-0717", address: "n/a",
                 description_of_service: "Income-based funding for new home buyers, existing home owners, rental property owners, and other affordable housing projects may qualify.",
                 website: "www.region6planning.org/housing_trust_fund", tag_list: "Home Owners",
                 categories: ['Housing']},
                 
-    {name: "Single Family Home Loan Guarantees", phone_number: "515-284-4667", address: "None",
+    {name: "Single Family Home Loan Guarantees", phone_number: "515-284-4667", address: "n/a",
                 description_of_service: "Program assists approved lenders in providing low- and moderate-income households the opportunity to own a home. Work directly with approved lender.",
                 website: "www.rd.usda.gov/programs-services/single-family-housing-guaranteed-loan-program/ia", 
                 tag_list: "Home Owners, Families", categories: ['Housing']},
     
-    {name: "Single Family Housing Direct Home Loans", phone_number: "641-932-3031", address: "None",
+    {name: "Single Family Housing Direct Home Loans", phone_number: "641-932-3031", address: "n/a",
                 description_of_service: "Program assists low- and very-low-income applicants obtain homeownership. Contact local USDA office – Poweshiek County Area 5. Contact Albia Area Office",
                 website: "www.rd.usda.gov/programs-services/single-family-housing-direct-home-loans/ia", 
                 tag_list: "Home Owners, Families", categories: ['Housing']},
     
-    {name: "Weatherization program", phone_number: "641-236-3923", address: "None",
+    {name: "Weatherization program", phone_number: "641-236-3923", address: "n/a",
                 description_of_service: "To apply for this government-funded program, applicants must first apply for LIHEAP. Even if income is above limit for LIHEAP, you may qualify for weatherization. Funds are both for home owners and for renters. Applications are accepted year-around.", 
                 tag_list: "Home Owners", categories: ['Housing']},
     
-    {name: "Hometown Energy Fund", phone_number: "866-255-4268)", address: "None",
+    {name: "Hometown Energy Fund", phone_number: "866-255-4268)", address: "n/a",
                 description_of_service: "This program is for home owners whose income falls within the federal guidelines of 200 – 300% poverty, and who receive both gas and electric from Alliant Energy. Applicants pays 10% of cost of energy savings upgrade and Alliant pays 90%. Applications are accepted when funds are available. Call MICA (641-236-3923) for information and to apply",
                 website: "www.AlliantEnergy.com", tag_list: "Home Owners",
                 categories: ['Housing']},
@@ -278,6 +278,10 @@ resources.each do |resource|
     # Replace list of category names with categories
     resource[:categories] = category_id
     # Create resource
-    resource.status = "Approved"
     Resource.create! (resource)
+end
+
+Resource.all.each do |resource|
+    resource.status = "Approved"
+    resource.save
 end
