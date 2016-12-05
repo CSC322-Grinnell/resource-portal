@@ -6,11 +6,11 @@ categories = [
     {name: "Housing", tag_list: "Furniture, Clothing, Home Owners, Income-Based, Families, Elderly, Disabled"},
     {name: "Families", tag_list: "Expectant Mothers, New Parents, Children/Youth, After School Programs, Youth Activities"},
     {name: "Elderly", tag_list: "Housing, Services, Activites, Meals on Wheels, Income-Based"},
-    {name: "Education", tag_list: "Preschools, Schools, Education Agencies, Food in Schools"},
-    {name: "Health and Medical", tag_list: "Hospitals, Health Centers, GRMC Programs, Non-GRMC Services, Dental, Vision, Support Groups, Medical Equipment, Medical Insurance, Mental Health, Substance Abuse"},
+    {name: "Education", tag_list: "Preschools, Schools, Education Agencies, Food in Schools"}, #ME
+    {name: "Health and Medical", tag_list: "Hospitals, Health Centers, GRMC Programs, Non-GRMC Services, Dental, Vision, Support Groups, Medical Equipment, Medical Insurance, Mental Health, Substance Abuse"}, #ME
     {name: "Employment"},
     {name: "Legal"},
-    {name: "Transportation"},
+    {name: "Transportation"}, #ME
     {name: "Financial"},
     {name: "Domestic Violence and Sexual Assault", tag_list: "Support Groups, Mental Health"},
     {name: "Disability"},
@@ -23,6 +23,7 @@ User.create(email: "user@example.com", password: "12345678", role: "default")
 
 # REQUIRED: name, description_of_service, categories: [''], address
 resources = [
+    
     # FOOD
     {name: "WIC Clinics (Well Child)", description_of_service: "WIC gives vouchers for forumla, milk, and nutritious food supplies, and medical referrals for income-elibible pregnant women, nursing mothers, and children to give of age. Clinics are run out of the MICA office in Marshalltown. The current hours are listed below. Call in advance to sign up and to check times. In Grinnell at Light Center for Community Health: 3rd Tuesday 8:30am - 3:30pm, 4th Tuesday 8:30am - 5pm. In Brooklyn at the United Methodist Church, 3rd Monday 9am - 2pm.", 
                 address: "306 4th Ave, Grinnell, IA 50112", 
@@ -36,7 +37,7 @@ resources = [
                 tag_list: "Meals on Wheels",
                 categories: ['Food']}, 
                 
-    {name: "Grinnell Community Meal", phone_number: "", 
+    {name: "Grinnell Community Meal",
                 address: "Davis Elementary School Cafeteria, 818 Hamilton Ave., Grinnell", 
                 contact_email: "SJAG@grinnell.edu",
                 description_of_service: "Free meal prepared by community members and Grinnell College Social Justice Action Group. Open to anyone.Tuesdays, served from 5:45 to 6:15 pm; year around except for a few weeks in late summer and in mid-winter.", 
@@ -277,5 +278,6 @@ resources.each do |resource|
     # Replace list of category names with categories
     resource[:categories] = category_id
     # Create resource
+    resource.status = "Approved"
     Resource.create! (resource)
 end
