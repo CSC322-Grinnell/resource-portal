@@ -6,7 +6,7 @@ categories = [
     {name: "Housing", tag_list: "Furniture, Clothing, Home Owners, Income-Based, Families, Elderly, Disabled"},
     {name: "Families", tag_list: "Expectant Mothers, New Parents, Children/Youth, After School Programs, Youth Activities"},
     {name: "Elderly", tag_list: "Housing, Services, Activites, Meals on Wheels, Income-Based"},
-    {name: "Education", tag_list: "Preschools, Schools, Education Agencies, Food in Schools"}, #ME
+    {name: "Education", tag_list: "Preschool, Elementary School, Middle School, High School, Education Agencies, Food in Schools, School District"}, 
     {name: "Health and Medical", tag_list: "Hospitals, Health Centers, GRMC Programs, Non-GRMC Services, Dental, Vision, Support Groups, Medical Equipment, Medical Insurance, Mental Health, Substance Abuse"}, #ME
     {name: "Employment", tag_list: "Job, Hotline"},
     {name: "Legal", tag_list: "Law,Referral"},
@@ -414,6 +414,122 @@ Lawyers found through this service charge $25 for the first 30 minute consultati
                 description_of_service: "Investigates grievances about state and local governments.",
                 tag_list: "Law",
                 categories: ['Legal']},
+# EDUCATION
+{name: "Head Start", 
+			description_of_service: "Head Start is a federally-funded preschool program for children ages three through five, providing children the social, educational, health and nutritional services they need to grow up healthy, happy, and confident. Contact the Head Start Specialist at MICA.", 
+			address: "611 4th Ave., Grinnell, IA 50112", phone_number: "641-236-3923", 
+			tag_list: "Preschool", categories: ['Education']},
+
+{name: "Grinnell Community Daycare and Preschool",
+			description_of_service: "(private)", 
+			phone_number: "641-236-7214", address: "1436 Penrose, Grinnell, IA 50112", contact_email: "grinnelldaycare@iowatelecom.net", categories: ['Education'], tag_list: "Preschool"},
+
+{name: "Grinnell Newburg Preschool", 
+			description_of_service: "(public) at Fairview School", 
+			phone_number: "641-236-2780", address: "1310 Hobart St., Grinnell, IA 50112", categories: ['Education'], tag_list: "Preschool"},
+
+{name: "Community Preschool",
+			description_of_service: "(private)",
+			phone_number: "641-236-3111", address: "UCC Congressional Church, 902 Broad Street, Grinnell, IA 50112", 
+			categories: ['Education'], tag_list: "Preschool"},
+
+{name: "Grinnell College Preschool", description_of_service: "(private)",
+			phone_number: "641-236-3320", address: "1207 Park Street, Grinnell, IA 50112", categories: ['Education'], tag_list: "Preschool"},
+
+{name: "Brooklyn Preschool", address: "1090 Jackson Street, Brooklyn, IA 52211",
+			description_of_service: "(public)", phone_number: "641-522-7058",
+			categories: ['Education'], tag_list: "Preschool"},
+
+{name: "Montezuma Preschool", description_of_service: "(public)",
+			phone_number: "641-623-5129", address: "504 N. 4th Street, Montezuma, IA 50171", categories: ['Education'], tag_list: "Preschool"},
+
+{name: "Fairview Elementary School", 
+			description_of_service: "Grinnell – Newburg Community School District, grades preschool-2. Alternative address is the administrative office for the school district, and alternative phone number is that of the admin office.", 
+			phone_number: "641-236-2780", address: "1310 Hobart St.",
+			alternative_address: "1333 Sunset, Grinnell, IA 50112",
+			website: "www.grinnell-k12.org", alternative_phone_number: "641-236-2700",
+			categories: ['Education'], tag_list: "Preschool, Elementary School"},
+
+{name: "Bailey Park Elementary School", 
+			description_of_service: "Grinnell – Newburg Community School District, grades K-2. Alternative address is the administrative office for the school district, and alternative phone number is that of the admin office.", 
+			phone_number: "641-236-2770", address: "210 Eighth Ave",
+			alternative_address: "1333 Sunset, Grinnell, IA 50112",
+			website: "www.grinnell-k12.org", alternative_phone_number: "641-236-2700",
+			categories: ['Education'], tag_list: "Preschool, Elementary School"},
+
+{name: "Davis Elementary School", 
+			description_of_service: "Grinnell – Newburg Community School District, grades 3-4. Alternative address is the administrative office for the school district, and alternative phone number is that of the admin office.", 
+			phone_number: "641-236-2790", address: "818 Hamilton Ave",
+			alternative_address: "1333 Sunset, Grinnell, IA 50112",
+			website: "www.grinnell-k12.org", alternative_phone_number: "641-236-2700",
+			categories: ['Education'], tag_list: "Elementary School"},
+
+{name: "Grinnell Middle School", 
+			description_of_service: "Grinnell – Newburg Community School District, grades 5-8. Alternative address is the administrative office for the school district, and alternative phone number is that of the admin office.", 
+			phone_number: "641-236-2750", address: "132 East Street South",
+			alternative_address: "1333 Sunset, Grinnell, IA 50112",
+			website: "www.grinnell-k12.org", alternative_phone_number: "641-236-2700",
+			categories: ['Education'], tag_list: "Middle School"},
+
+{name: "Grinnell High School", 
+			description_of_service: "Grinnell – Newburg Community School District, grades 9–12. Alternative address is the administrative office for the school district, and alternative phone number is that of the admin office.", 
+			phone_number: "641-236-2720", address: "1333 Sunset Grinnell, IA 50112",
+			website: "www.grinnell-k12.org", alternative_phone_number: "641-236-2700",
+			categories: ['Education'], tag_list: "High School"},
+
+{name: "Independent Learning Center", 
+			description_of_service: "Formerly New Horizons Alternative H.S. and School-Within-A-School. Grinnell – Newburg Community School District. Alternative address is the administrative office for the school district, and alternative phone number is that of the admin office.", 
+			phone_number: "641-236-2720", address: "1333 Sunset Grinnell, IA 50112",
+			website: "www.grinnell-k12.org", alternative_phone_number: "641-236-2700",
+			categories: ['Education']},
+
+{name: "Central Iowa Christian School",
+			description_of_service: "Grades K-8, private",
+			phone_number: "641-236-3000", address: "201 380th Avenue, Grinnell, IA 50112", website: "www.centraliowachristian.org",
+			categories: ['Education'], tag_list: "Elementary School, Middle School, High School"},
+
+{name: "Iowa Valley Community College District (IVCCD)", 
+			description_of_service: "Call or see website for programs including High School Equivalency Diploma (HSED, formerly GED), ESL tutoring, continuing ed. classes.",
+			phone_number: "641-236-0513", address: "123 6th Avenue West, Grinnell",
+			website: "www.iavalley.edu", categories: ['Education']},
+
+{name: "Brooklyn – Guernsey – Malcom Community School District",
+			description_of_service: "School District",
+			phone_number: "641-522-7058", address: "1090 Jackson Street, Brooklyn, IA 52211",
+			website: "www.brooklyn.k12.ia.us", categories: ['Education'],
+			tag_list: "Elementary School, Middle School, High School, School District"},
+
+{name: "Lynnville – Sully Community School District",
+			description_of_service: "School District",
+			phone_number: "641-594-4445", address: "12476 Hwy F62 E., Sully, IA 50251",
+			website: "www.lshawks.org", categories: ['Education'],
+			tag_list: "School District"},
+
+{name: "Montezuma Community School District",
+			description_of_service: "School District",
+			phone_number: "641-623-5129", address: "504 N. 4th Street, Montezuma, IA 50171",
+			website: "www.montezuma-schools.org", categories: ['Education'],
+			tag_list: "School District"},
+
+{name: "Area Education Agency (AEA 267)", phone_number: "888-735-1539",
+			description_of_service: "(The Grinnell office closed June 30, 2016.)Early Childhood services, services for children with disabilities; work experience. ",
+			address: "909 South 12th Street, Marshalltown, IA 50158",
+			website: "www.aea267.k12.ia.us", categories: ['Education'], 
+			tag_list: "Education Agencies"},
+
+{name: "English as a Second Language (ESL) – Kids", phone_number: "641-236-6324",
+			description_of_service: "ESL - Kids",
+			address: "n/a",
+			contact_email: "trosenow@grinnell.k12.ia.us", categories: ['Education'], 
+			tag_list: "Education Agencies"},
+
+{name: "Network of Iowa Christian Home Educators (NICHE)", 
+			phone_number: "515-830-1614", alternative_phone_number: "800-723-0438",
+			description_of_service: "NICHE",
+			address: "PO Box 158, Dexter 50070",
+			contact_email: "info@the-niche.org", website: "www.the-NICHE.org",
+			categories: ['Education'], tag_list: "Education Agencies"},
+>>>>>>> eeed1cbaea5b2fd136c892d53b9221698c7a5fbf
 ]
 
 # Populate database with categories
