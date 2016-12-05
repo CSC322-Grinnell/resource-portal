@@ -67,9 +67,10 @@
           %span.fa.fa-lg.fa-times
           Unfavorite
   .col-md-4
-    %div{:id => "map"}
-      = image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{resource.address}&size=300x300&zoom=17&markers=#{resource.latitude}%2C#{resource.longitude}"
-  
+    - if resource.address != "n/a" && resource.address != "None"
+      %div{:id => "map"}
+        = image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{resource.address}&size=300x300&zoom=17&markers=#{resource.latitude}%2C#{resource.longitude}"
+    
   -# render one of several optional accessory partial views on the right-hand
   -# side of the resource (located in resources/accessories)
   .col-md-2.accessory
