@@ -37,7 +37,7 @@
       / Referenced: http://mixandgo.com/blog/how-to-use-link_to-in-rails
       / http://stackoverflow.com/questions/5851999/how-do-i-put-text-and-ruby-code-from-link-to-on-the-same-line-in-haml
       / http://stackoverflow.com/questions/8026619/how-to-write-if-condition-in-haml
-      - if resource.website == "n/a"
+      - if resource.website == "n/a" || resource.website == nil
         %li Website: #{resource.website}
       - else
         %li Website: #{link_to resource.website, "http://"+resource.website, :target => "_blank"}
