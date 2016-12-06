@@ -15,7 +15,7 @@ categories = [
     {name: "Domestic Violence and Sexual Assault", tag_list: "Support Groups, Mental Health"},
     {name: "Disability"},
     {name: "Food", tag_list: "Meals on Wheels, Food in Schools, Food Pantry, Community Meal, Co-op, Recipes"},
-    {name: "Miscellaneous"}
+    {name: "Miscellaneous", tag_list: "Lifeline"}
 ]
 
 User.create(email: "admin@example.com", password: "12345678", role: "admin")
@@ -881,7 +881,140 @@ resources = [
     
     {name: "ACME Cab Company", phone_number: "641-260-6371", address: "n/a", 
     			description_of_service: "Cab Company", categories: ['Transportation']},
-
+    
+    # DISABILITY
+    {name: "Central Iowa Community Services – Poweshiek County Office",
+    			phone_number: "641-236-9199", website: "www.poweshiekcounty.org/central-point-of-coordination/",
+    			alternative_phone_number: "641-236-1349 (fax)", address: "200 4th Ave West, PO Box 936, Grinnell, IA 50112",
+    			contact_email: "bdaily@poweshiekcounty.org or brenda.daily@cicsmhds.org",
+    			description_of_service: "General Assistance, Mental health funding for income-eligible. Service coordination, and services and support for people with disabilities in Poweshiek County.",
+    			categories: ['Disability']},
+    
+    {name: "CIRSI", phone_number: "641-236-1382", address: "821 5th Ave. #205, Grinnell, IA 50112",
+    			description_of_service: "Community-based services for the mentally disabled.",
+    			categories: ['Disability']},
+    
+    {name: "Diamond Life Health Care", phone_number: "641-623-5715",
+    			address: "4912 Barnes City Rd, PO Box 820, Montezuma, IA 50171",
+    			description_of_service: "Residential Care Facility (RCF) for the mentally ill and mentally disabled. Contact: Debbie Van Wyk",
+    			categories: ['Disability']},
+    
+    {name: "Lutheran Services in Iowa", phone_number: "641-792-1541",
+    			address: "109 N. 2nd Ave. E., Newton, IA",
+    			description_of_service: "Services for people with mental illness or mental disability.",
+    			categories: ['Disability']},
+    
+    {name: "Genesis Development", phone_number: "641-236-0230",
+    			website: "www.GenesisDevelopment.com", address: "925 Broad St., Grinnell",
+    			description_of_service: "Provides support for people with disabilities, including supported community living services.",
+    			categories: ['Disability']},
+    
+    {name: "The Arc of Poweshiek County", description_of_service: "Advocacy for children and adults with intellectual and developmental disabilities. Contact: Karen Veerhusen-Langerud.",
+    			contact_email: "veerhuse@grinnell.edu",
+    			address: "n/a",
+    			categories: ['Disability']},
+    
+    {name: "The Arc of East Central Iowa", phone_number: "800-843-0272",
+    			website: "www.arceci.org", alternative_phone_number: "319-365-0487 ext. 1053",
+    			address: "680 2nd Street S.E., Suite 200, Cedar Rapids, IA 52401",
+    			description_of_service: "Advocacy for children and adults with intellectual and developmental disabilities.",
+    			categories: ['Disability']},
+    
+    {name: "Goodwill Industries", phone_number: "515-265-5323",
+    			description_of_service: "Des Moines Headquarters. Supported training and employment for mentally ill and mentally disabled.",
+    			address: "n/a",
+    			categories: ['Disability']},
+    
+    {name: "Special Olympics Iowa", phone_number: "515-986-5520",
+    			address: "551 Dovetail Rd., PO Box 620, Grimes, IA 50111",
+    			contact_email: "rschwarzkopf@soiowa.org",
+    			description_of_service: "Special Olympics Iowa",
+    			categories: ['Disability']},
+    
+    {name: "DHS Department for the Blind", phone_number: "515-281-1333",
+    			address: "524 4th St., Des Moines, IA 50309",
+    			description_of_service: "Department for the Blind",
+    			categories: ['Disability']},
+    
+    {name: "Iowa Vocational Rehabilitation Services", phone_number: "641-352-7942",
+    			website: "www.ivrs.iowa.gov", address: "204 W. State Street, Marshalltown, IA 50158",
+    			description_of_service: "The mission of Iowa Vocational Rehabilitation Services is to work for and with individuals who have disabilities to achieve their employment, independence, and economic goals. IVRS works with sophomores in high school through adults. Services offered include: college funding, job training, employment search, assistive technology, medical and psychological assessment, physical/mental restoration services which may include therapy, wheelchairs, hearing aids, etc., job coaching, career guidance and counseling. For more information about the full spectrum of services offered, visit the website.",
+    			categories: ['Disability']},
+    
+    # MISCELLANEOUS
+    {name: "National Runaway Service Crisis Line", phone_number: "800-621-4000",
+    			address: "n/a",
+    			description_of_service: "Crisis Line",
+    			categories: ['Miscellaneous'], tag_list: "Lifeline"},
+    
+    {name: "National Suicide Prevention Lifeline", phone_number: "800-273-8255",
+    			alternative_phone_number: "515-233-2330", 
+    			description_of_service: "Alternative phone number 2: 800-600-2330",
+    			address: "n/a",
+    			categories: ['Miscellaneous'], tag_list: "Lifeline"},
+    
+    {name: "Habitat for Humanity", phone_number: "515-250-8857",
+    			address: "PO Box 782, 402 E 1st Avenue, Newton, IA 50208",
+    			contact_email: "jaspercountyhabitat@gmail.com",
+    			description_of_service: "Call to donate building items, or to check if items are available for purchase.",
+    			categories: ['Miscellaneous'], tag_list: "Volunteering"},
+    
+    {name: "United Way Fund", phone_number: "641-236-7575",
+    			address: "PO Box 121, Grinnell, IA 50112",
+    			description_of_service: "United Way Fund",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Social Security Administration", phone_number: "800-772-1213",
+    			address: "n/a", description_of_service: "Social Security",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Marshalltown Social Security", phone_number: "877-819-2595",
+    			address: "2502 South 2nd St., Marshalltown, IA 50158",
+    			description_of_service: "Social Security",
+    			categories: ['Miscellaneous']},
+    
+    {name: "American Red Cross", phone_number: "800-951-5600",
+    			website: "www.redcross.org/local/ia",
+    			description_of_service: "This phone number will direct you to the Des Moines chapter, which is the closest chapter to Poweshiek County.",
+    			address: "n/a",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Poweshiek County Extension Office", phone_number: "641-623-5188",
+    			website: "www.extension.iastate.edu/poweshiek",
+    			address: "114 S. 3rd St., PO Box 70, Montezuma, IA",
+    			description_of_service: "Poweshiek County Extension can assist you with making decisions that affect your family, community, business, or farm. They rely on ISU Extension for unbiased, research-based information and education to help you make better decisions.",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Conflict Resolution Center of Iowa", phone_number: "641-236-3939",
+    			address: "PO Box 925, Grinnell, IA 50112",
+    			description_of_service: "Mediation services (formerly Iowa Peace Institute)",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Assurance Wireless", phone_number: "888-321-5880",
+    			website: "www.AssuranceWireless.com",
+    			description_of_service: "Federal lifeline assistance providing free cell phones to income-eligible people.",
+    			address: "n/a",
+    			categories: ['Miscellaneous'], tag_list: "Lifeline"},
+    
+    {name: "House of Compassion Shelter", phone_number: "641-752-5999",
+    			address: "211 W. Church St., Marshalltown, IA 50158",
+    			description_of_service: "Homeless shelter (men, women, and families) and soup kitchen.",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Drake Community Library", phone_number: "641-236-2661",
+    			website: "www.grinnell.lib.ia.us", address: "930 Park St., Grinnell, IA 50112",
+    			description_of_service: "Library",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Christmas Shares", phone_number: "641-236-7402",
+    			description_of_service: "Program to help low-income families by purchasing gift items. Families should call to sign up for the program. Contact: Pam Montgomery, Grinnell.",
+    			address: "n/a",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Christmas Joy", phone_number: "641-623-3275", 
+    			description_of_service: "Program offered through the Montezuma Ministerial Association to help low-income families living within the Montezuma school district with gifts for custodial children. Program collaborates with Christmas Share in Grinnell: families may sign up for one or the other program but not both. Sign up at the First Presbyterian Evangelical Church October the 4th weekend of the month: bring identification to serve as current address verification. Call for more information.",
+    			address: "n/a",
+    			categories: ['Miscellaneous']},
 ]
 
 # Populate database with categories
@@ -900,6 +1033,8 @@ resources.each do |resource|
     category_id.push(c_id)
     # Replace list of category names with categories
     resource[:categories] = category_id
+    # Print resource name for debugging purposes
+    puts resource[:name]
     # Create resource
     Resource.create! (resource)
 end
