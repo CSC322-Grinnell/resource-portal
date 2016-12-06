@@ -519,7 +519,7 @@ resources = [
 				categories: ['Health and Medical'], tag_list: "Hospitals and Health Centers"},
 
 	{name: "Light Center for Community Health - GRMC Public Health",
-				desciption_of_service: "Immunization clinics, communicable disease control, community care clinic, lead tests.",
+				description_of_service: "Immunization clinics, communicable disease control, community care clinic, lead tests.",
 				phone_number: "641-236-2385", address: "306 4th Avenue, Grinnell, IA 50112",
 				website: "www.grmc.us/services/public-health",
 				categories: ['Health and Medical'], tag_list: "Hospitals and Health Centers"},
@@ -783,6 +783,7 @@ resources = [
 				categories: ['Health and Medical'], tag_list: "Mental Health, Substance Abuse"},
 
 	{name: "Collaborative & Strength-Based Counseling", phone_number: "641-236-8811",
+	            address: "n/a",
 				website: "www.grinnellcounseling.com", description_of_service: "Kun-Hong Lu, LISW",
 				categories: ['Health and Medical'], tag_list: "Mental Health"},
 
@@ -848,7 +849,38 @@ resources = [
 
 	{name: "Moms off Meth", phone_number: "641-673-0336", address: "n/a",
 				description_of_service: "Contact Jackie Allen Black, Crisis Intervention Services", contact_email: "jackie@cismc.org",
-				categories: ['Health and Medical'], tag_list: "Substance Abuse, Support Groups"}
+				categories: ['Health and Medical'], tag_list: "Substance Abuse, Support Groups"},
+	
+	# TRANSPORTATION
+    {name: "People Rides", phone_number: "888-616-4298", website: "www.region6planning.org",
+    			address: "903 E Main, Marshalltown, IA 50158",
+    			alternative_phone_number: "641-752-6202",
+    			contact_email: "Peoplerides@region6planning.org",
+    			description_of_service: "Transportation within Grinnell 7:30 am – 3:30 pm, $2.50 one way. Transportation to out-of-town medical appointments is offered subject to driver availability. A shuttle is available to Iowa City on the first Thursday of the month, $10 each way; $20 total. Departs from Marshalltown, with pickups in Grinnell or locations en-route. ETA to Iowa City no sooner than 9:30 am; return no later than 3:30 pm (early if all clients are ready). Vehicles are handicapped-accessible. Call for rates, or visit the website. All services are open to the general public, including persons with disabilities. Dispatch hours: M – F, 7:30 am – 4:30 pm, answering machine available for afterhours messages. 24 hour advance notice preferred.",
+    			categories: ['Transportation']},
+    
+    {name: "Access2Care", phone_number: "866-572-7662",
+    			description_of_service: "(formerly TMS Transportation) For Medicaid Non-Emergency Medical Transportation Program. Call center hours: M – F, 8 am – 5 pm. Call at least 3 days prior to the appointment to schedule transportation. Access2Care can act as a broker, helping transportation providers to receive Medicaid reimbursement for services.",
+    			categories: ['Transportation'], address: "n/a"},
+    
+    {name: "Presbyterian Church Drivers Program", phone_number: "641-236-6059",
+    			description_of_service: "Rides to scheduled medical and dental appointments. Please call 2 weeks in advance if possible.",
+    			address: "n/a", categories: ['Transportation']},
+    
+    {name: "Grinnell United Methodist Church Drivers Program", phone_number: "641-236-3757",
+    			description_of_service: "Rides to scheduled medical and dental appointments. Please call 2 weeks in advance if possible.",
+    			address: "n/a", categories: ['Transportation']},
+    
+    {name: "Poweshiek County Healthy Lifestyles Center", phone_number: "641-236-3757",
+    			address: "925 East St. (First Baptist Church)",
+    			description_of_service: "(formerly NEI3A)", categories: ['Transportation']},
+    
+    {name: "Community Hope Church", phone_number: "641-623-4673",
+    			description_of_service: "Van Ministry between Montezuma and Grinnell only. Office hours: M—Th, 8:30—4:30.",
+    			address: "n/a", categories: ['Transportation']},
+    
+    {name: "ACME Cab Company", phone_number: "641-260-6371", address: "n/a", 
+    			description_of_service: "Cab Company", categories: ['Transportation']},
 
 ]
 
