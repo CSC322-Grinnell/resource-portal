@@ -4,18 +4,18 @@
 
 categories = [
     {name: "Housing", tag_list: "Furniture, Clothing, Home Owners, Income-Based, Families, Elderly, Disabled"},
-    {name: "Families", tag_list: "Expectant Mothers, New Parents, Children/Youth, After School Programs, Youth Activities"},
+    {name: "Families", tag_list: "Expectant Mothers, New Parents, Children/Youth, After School Programs, Youth Activities, Financial, Shelter"},
     {name: "Elderly", tag_list: "Housing, Services, Activites, Meals on Wheels, Income-Based"},
     {name: "Education", tag_list: "Preschool, Elementary School, Middle School, High School, Education Agencies, Food in Schools, School District"}, 
-    {name: "Health and Medical", tag_list: "Hospitals, Health Centers, GRMC Programs, Non-GRMC Services, Dental, Vision, Support Groups, Medical Equipment, Medical Insurance, Mental Health, Substance Abuse"}, #ME
+    {name: "Health and Medical", tag_list: "Hospitals and Health Centers, Non-GRMC Services, GRMC Programs, Dental, Vision, Support Groups, Medical Equipment, Medical Insurance, Mental Health, Substance Abuse"},
     {name: "Employment", tag_list: "Job, Hotline"},
     {name: "Legal", tag_list: "Law,Referral"},
-    {name: "Transportation"}, #ME
+    {name: "Transportation"},
     {name: "Financial"},
     {name: "Domestic Violence and Sexual Assault", tag_list: "Support Groups, Mental Health"},
     {name: "Disability"},
     {name: "Food", tag_list: "Meals on Wheels, Food in Schools, Food Pantry, Community Meal, Co-op, Recipes"},
-    {name: "Miscellaneous"}
+    {name: "Miscellaneous", tag_list: "Lifeline"}
 ]
 
 User.create(email: "admin@example.com", password: "12345678", role: "admin")
@@ -512,7 +512,627 @@ resources = [
     			address: "PO Box 158, Dexter 50070",
     			contact_email: "info@the-niche.org", website: "www.the-NICHE.org",
     			categories: ['Education'], tag_list: "Education Agencies"},
+    # Health and Medical
+	{name: "Grinnell Regional Medical Center", description_of_service: "GRMC",
+				phone_number: "641-236-7511", alternative_phone_number: "E.R. 641-236-2380",
+				website: "grmc.us", address: "210 4th Ave, Grinnell, IA 50112",
+				categories: ['Health and Medical'], tag_list: "Hospitals and Health Centers"},
 
+	{name: "Light Center for Community Health - GRMC Public Health",
+				description_of_service: "Immunization clinics, communicable disease control, community care clinic, lead tests.",
+				phone_number: "641-236-2385", address: "306 4th Avenue, Grinnell, IA 50112",
+				website: "www.grmc.us/services/public-health",
+				categories: ['Health and Medical'], tag_list: "Hospitals and Health Centers"},
+
+	{name: "Postels Community Health Park",
+				description_of_service: "Massage and relaxation therapies, physical therapy, reflexology, etc.",
+				phone_number: "641-236-2953", address: "807 Broad St., Grinnell, IA 50112",
+				website: "www.grmc.us/services/integrated-medicine",
+				categories: ['Health and Medical'], tag_list: "Hospitals and Health Centers"},
+
+	{name: "Paul W. Ahrens Fitness Center",
+				description_of_service: "Exercise classes with on-site childcare. Immediate family members of inpatients may use the PWA Fitness Center at no cost. Located at Postels Community Health Park",
+				phone_number: "641-236-2999", website: "www.grmc.us/services/wellness-services",
+				address: "824 Commercial St., Grinnell, IA 50112",
+				categories: ['Health and Medical'], tag_list: "Hospitals and Health Centers"},
+
+	{name: "Manatt Family Urgent Care Clinic",
+				description_of_service: "Check in on first floor of the Ahrens Medical Arts Building, 210 4th Ave. Mon—Fri, 7 am – 7 pm., Sat, 9 am – noon.",
+				phone_number: "641-236-2378", address: "210 4th Ave, Grinnell, IA 50112",
+				categories: ['Health and Medical'], tag_list: "GRMC Programs"},
+
+	{name: "Grinnell Regional Community Care Clinic (Free Clinic)",
+				description_of_service: "Light Center. 2nd and 4th Thurs., 2 – 4 pm. Call for an appointment. Free medical services for uninsured, low-income residents of Poweshiek County.",
+				phone_number: "641-236-2385",
+				address: "n/a",
+				categories: ['Health and Medical'], tag_list: "GRMC Programs"},
+
+	{name: "Blood Pressure Clinic",
+				description_of_service: "Light Center. Thurs. 1 – 2 pm.",
+				phone_number: "641-236-2385", address: "n/a",
+				categories: ['Health and Medical'], tag_list: "GRMC Programs"},
+
+	{name: "Grinnell Regional Home Care", address: "n/a",
+				description_of_service: "Light Center. A home health agency.",
+				phone_number: "641-236-2542",
+				categories: ['Health and Medical'], tag_list: "GRMC Programs",
+				website: "http://www.grmc.us/services/home-care"},
+
+	{name: "Adult Foot Care Clinic", description_of_service: "Light Center. 2nd, 3rd, and 4th Wed., 9:00 – noon. Call Grinnell Regional Home Care for an appointment.",
+				phone_number: "641-236-2385", address: "n/a",
+				categories: ['Health and Medical'], tag_list: "GRMC Programs"},
+
+	{name: "Grinnell Regional Women’s Health Clinic", phone_number: "641-236-2905",
+				categories: ['Health and Medical'], tag_list: "GRMC Programs",
+				description_of_service: "Ahrens Medical Arts Building, 2nd floor.",
+				address: "n/a"},
+
+	{name: "Grinnell Regional Hospice", description_of_service: "Support with end-of-life care, both in-home and in the hospital (GRMC).",
+				phone_number: "641-236-2418", address: "n/a",
+				categories: ['Health and Medical'], tag_list: "GRMC Programs"},
+
+	{name: "Midwest Ambulance Service of Iowa", phone_number: "641-236-4080",
+				description_of_service: "In an emergency, call 911.",
+				address: "n/a", categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "Iowa Department of Public Health", phone_number: "515-281-7689",
+				alternative_phone_number: "866-227-9878", address: "321 E. 12th Street, Des Moines 50319-0075",
+				website: "http://www.idph.iowa.gov/", description_of_service: "Public Health",
+				categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "Central Iowa Family Planning", address: "717 5th Ave. Suite 4, Grinnell",
+				phone_number: "641-236-7787", website: "http://www.cifp.org/",
+				description_of_service: "Confidential and affordable reproductive health care services for men and women, including yearly exams, testing and treatment of sexually transmitted infections, birth control method options counseling, emergency contraception, pregnancy testing and counseling. All clients are accepted regardless of their income/insurance status. See website for hours.",
+				categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "Referral Source", address: "n/a", website: "www.211.org", phone_number: "211",
+				description_of_service: "Through United Way. They offer free and confidential information for help with food, housing, employment, health care, counseling, and more.",
+				categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "Partnership for Prescription Assistance", description_of_service: "Single-source prescription assistance",
+				phone_number: "888-477-2669", website: "www.pparx.org", address: "n/a",
+				categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "SafeNet Rx", description_of_service: "(Formerly Iowa Prescription Drug Corp.) $3 Medication Voucher Program",
+				phone_number: "866-282-5817", address: "n/a", website: "www.safenetrx.org",
+				categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "NeedyMeds", description_of_service: "Prescription drug card offers discounts at certain pharmacies.",
+				phone_number: "800-503-6897", address: "n/a", website: "www.needymeds.org",
+				categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "Home Health Agencies", phone_number: "641-236-7717",
+				address: "2021 4th Ave., Grinnell", description_of_service: "Community Services of St. Francis",
+				categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "Iowa Department of Human Services (DHS)", phone_number: "800-342-0829",
+				description_of_service: "Financial services include SNAP (food stamps) and medical assistance, and services for children and families. Local Child/Adult Abuse Hotline - 641-792-1955. State-wide child/dependent adult Abuse Hotline: 800-362-2178",
+				contact_email: "CJaspe01@dhs.state.ia.us", address: "717 5th Ave., Suite 6",
+				website: "www.dhs.iowa.gov",
+				categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "Iowa Brain Injury Information Center", description_of_service: "Brain Injury Association of Iowa",
+				phone_number: "800-444-6443", address: "317 East 6th Street, Des Moines 50309",
+				categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "Iowa Poison Control Center", description_of_service: "Main phone number is for EMERGENCIES.",
+				phone_number: "712-279-3710", address: "401 Douglas Street., Ste. 501, Sioux City 51101", website: "www.iowapoison.org",
+				categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "Total Rehab", address: "234 West St, Grinnell", phone_number: "641-236-4506",
+				description_of_service: "Orthopedic & sports specialists, physical therapy, strength & conditioning, work posture education.",
+				categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "Visiting Nurse Services (VNS) of Iowa", description_of_service: "VNS",
+				phone_number: "515-288-1516", website: "www.vnsia.org",
+				address: "1111 9th St. Ste. 320, Des Moines 50314",
+				categories: ['Health and Medical'], tag_list: "Non-GRMC Services"},
+
+	{name: "I-Smile", website: "http://www.ismiledentalhome.iowa.gov/", 
+				phone_number: "515-557-9023", address: "n/a", 
+				description_of_service: "Child dental screenings at the Light Center the 3rd and 4th Tuesdays of the month.",
+				categories: ['Health and Medical'], tag_list: "Dental"},
+
+	{name: "Mother-Child Wellness Program", phone_number: "641-236-2006",
+				address: "n/a", description_of_service: "Serves families in Mahaska, Poweshiek, and Jasper Counties who have household income of 200 percent of poverty level or under. They can assist in finding dental care and screenings.",
+				categories: ['Health and Medical'], tag_list: "Dental"},
+
+	{name: "Poweshiek County Dental Coalition", contact_email: "PoweshiekDentalCoilition@gmail.com",
+				phone_number: "515-650-1877", address: "n/a",
+				description_of_service: "Promotes screening and dental clinics for children 0 – 18. Voucher funds are available for dental care for children who are underserved.",
+				categories: ['Health and Medical'], tag_list: "Dental"},
+
+	{name: "Broadlawns Medical Center—Dental Clinic", phone_number: "515-282-2421",
+				description_of_service: "Dental services primarily for aged, unemployed or low-income adults",
+				website: "http://www.broadlawns.org/dental-clinic.cfm", address: "n/a",
+				categories: ['Health and Medical'], tag_list: "Dental, Hospitals and Health Centers"},
+
+	{name: "Center for Disabilities & Development (U of IA Children’s Hospital)", 
+				phone_number: "319-356-1613", website: "http://www.uichildrens.org/dentistry#MarketingContent",
+				alternative_phone_number: "319-353-6711", address: "100 Hawkins Dr, Iowa City, IA 52242",
+				description_of_service: "Dental services for infants, children, and young adults (under age 21), including patients with special health needs. Call for an appointment. Other phone number: 877-686-0031",
+				categories: ['Health and Medical'], tag_list: "Dental, Hospitals and Health Centers"},
+
+	{name: "Dental Lifeline Network Iowa", phone_number: "515-251-8000",
+				description_of_service: "Donated dental services. Applicants must lack adequate income, have a permanent disability or are elderly (age 65 or older) or qualify as medically fragile. Contact Diane Wells, coordinator.",
+				website: "http://www.dentallifeline.org/iowa/", address: "9000 Northpark Drive, Johnston, IA 50131", contact_email: "dwells@DentalLifeline.org",
+				categories: ['Health and Medical'], tag_list: "Dental"},
+
+	{name: "Lion’s Club", address: "n/a",
+				description_of_service: "Referrals are through school nurses and support staff. They do screenings in Head Start and other preschool classrooms and help provide glasses to children from low-income families.",
+				categories: ['Health and Medical'], tag_list: "Vision"},
+
+	{name: "Prevent Blindness Iowa", phone_number: "515-244-4341",
+				address: "1111 9th St. #250, Des Moines 50314", website: "http://iowa.preventblindness.org/",
+				description_of_service: "Sight for Students program. Referrals and applications are available through school nurses and support staff.",
+				categories: ['Health and Medical'], tag_list: "Vision"},
+
+	{name: "Iowa KidSight", phone_number: "319-353-7616",
+				website: "www.IowaKidSight.org", address: "2431 Coral Court #5, Coralville, IA 52241",
+				description_of_service: "Targets 6 months of age through kindergarten. (Joint project of Lions Clubs of Iowa and UI Children’s Hospital, Dept. of Opthalmology and Visual Sciences.)",
+				categories: ['Health and Medical'], tag_list: "Vision"},
+
+	{name: "Infantsee", website: "www.infantsee.org", address: "n/a",
+				description_of_service: "Participating optometrists provide a one-time comprehensive infant eye assessment for children between 6 and 12 months of age, as a no-cost public service. Use the website to locate participating optometrists.",
+				categories: ['Health and Medical'], tag_list: "Vision"},
+
+	{name: "Bariatric Surgery Patient Support Group", phone_number: "641-236-2998",
+				address: "Tomasek Conference Center, GRMC", description_of_service: "1st Saturday, 9 – 11 am. This group provides education for GRMC patients who have had gastric bypass surgery.",
+				categories: ['Health and Medical'], tag_list: "Support Groups, GRMC Programs"},
+
+	{name: "Breastfeeding Class", description_of_service: "Given once per quarter. Call for information.", 
+				address: "n/a", phone_number: "641-236-2324",
+				categories: ['Health and Medical'], tag_list: "Support Groups"},
+
+	{name: "Breastfeeding Support Group", description_of_service: "Light Center, First Tues. of each month, 10:30 am.",
+				phone_number: "641-236-2385", address: "n/a",
+				categories: ['Health and Medical'], tag_list: "Support Groups"},
+
+	{name: "Cancer Support Group", phone_number: "641-236-2568",
+				address: "GRMC", contact_email: "LRomero@grmc.us",
+				description_of_service: "Every Tuesday, 9:30 – 10:30 am.",
+				categories: ['Health and Medical'], tag_list: "Support Groups, GRMC Programs"},
+
+	{name: "Caregivers Support Group",
+				description_of_service: "Fourth Tues. of each month, 10 – 11 am.",
+				contact_email: "BGallegos@grmc.us", address: "1025 5th Ave, Grinnell",
+				categories: ['Health and Medical'], tag_list: "Support Groups, GRMC Programs"},
+
+	{name: "Diabetes Living Support Group", phone_number: "641-236-2488",
+				description_of_service: "2nd Monday of odd months, 7 – 8 pm. This support group meets monthly and is open to all people with diabetes.",
+				address: "Tomasek Conference Center, GRMC",
+				categories: ['Health and Medical'], tag_list: "Support Groups, GRMC Programs"},
+
+	{name: "Grief Support Group", contact_email: "bgallegos@grmc.us",
+				address: "930 Park St., Grinnell, IA 50112", description_of_service: "2nd Wed. of each month, 10 – 11 a.m",
+				categories: ['Health and Medical'], tag_list: "Support Groups, GRMC Programs"},
+
+	{name: "Meet and Eat Bereavement Support", phone_number: "641-236-2418",
+				description_of_service: "This bereavement support group provides social opportunities for widows and widowers. Individuals gather for a meal and social activities. 1st Sunday of the month, 5:30 pm.", 
+				address: "Tomasek Conference Center, GRMC", contact_email: "shuls@grmc.us",
+				categories: ['Health and Medical'], tag_list: "Support Groups, GRMC Programs"},
+
+	{name: "Lyme Disease Support Group", address: "n/a",
+				description_of_service: "Support group for those who suffer from Lyme disease and their family or support persons. The group provides educational speakers, support, and discussion of treatment modalities. Contact: Dale Lamb, Lamb Law Office",
+				categories: ['Health and Medical'], tag_list: "Support Groups"},
+
+	{name: "ANAD: Nat’l Assoc. of Anorexia Nervosa and Associated Disorders",
+				phone_number: "641-510-1141", address: "410 Washington, Lot 31, Grinnell, IA 50112",
+				description_of_service: "Mon. 7:30 – 8:30 pm. Contact: Brooke Burkett. Support group for men and women with bulimia or anorexia",
+				categories: ['Health and Medical'], tag_list: "Support Groups"},
+
+	{name: "Grinnell Regional Home Care, Loan Closet", phone_number: "641-236-2385",
+				address: "210 4th Avenue, Grinnell, IA 50112", description_of_service: "Medical Equipment Loan Closet",
+				categories: ['Health and Medical'], tag_list: "Medical Equipment"},
+
+	{name: "Hammer Medical Supply", phone_number: "641-792-9339", address: "1719 1st Ave. E., Newton",
+				description_of_service: "Medical supply",
+				categories: ['Health and Medical'], tag_list: "Medical Equipment"},
+
+	{name: "Lincare", phone_number: "515-223-6078", address: "Urbandale, IA",
+				description_of_service: "No longer an office in Grinnell",
+				categories: ['Health and Medical'], tag_list: "Medical Equipment"},
+
+	{name: "Long Term Medical Supply", phone_number: "641-236-0608",
+				address: "929 Broad St., Grinnell, IA 50112", description_of_service: "Medical Supply",
+				categories: ['Health and Medical'], tag_list: "Medical Equipment"},
+
+	{name: "Hawk-I", phone_number: "800-257-8563", website: "www.hawk-i.org",
+				description_of_service: "No- or low-cost health care coverage to children in working, income-eligible families.",
+				address: "n/a",
+				categories: ['Health and Medical'], tag_list: "Medical Insurance"},
+
+	{name: "Medicaid (also called Title 19)", phone_number: "800-338-8366", website: "www.dhs.iowa.gov",
+				description_of_service: "(Health care options are listed under the tab “Can we help?”) Apply on line through the Iowa Department of Human Services website. MICA can also help you apply for various Iowa DHS services. For immediate coverage, see Outreach entry below.",
+				address: "n/a",
+				categories: ['Health and Medical'], tag_list: "Medical Insurance"},
+
+	{name: "Iowa Health and Wellness Plan", phone_number: "800-338-8366", website: "www.dhs.iowa.gov",
+				description_of_service: "This is an Iowa Medicaid program, new in 2014, that covers adults ages 19 to 64. Eligible member income is at or below 100 percent of the Federal Poverty Level. ",
+				address: "n/a",
+				categories: ['Health and Medical'], tag_list: "Medical Insurance"},
+
+	{name: "Outreach", phone_number: "641-236-2385",
+				description_of_service: "This program helps families who think they may qualify for Medicaid or Hawk-I. It allows eligibility on same day notice and covers the same benefits as Medicaid. For information, please call the Light Center, or contact VNS of Iowa at 515-558-6240",
+				address: "n/a",
+				categories: ['Health and Medical'], tag_list: "Medical Insurance"},
+
+	{name: "Suicide Prevention Lifeline", address: "n/a",
+				description_of_service: "Suicide Prevention",
+				phone_number: "800-273-8255", website: "http://suicidepreventionlifeline.org/",
+				categories: ['Health and Medical'], tag_list: "Mental Health"},
+
+	{name: "Grinnell Regional Mental Health Clinic", phone_number: "641-236-2347",
+				website: "http://www.grmc.us/services/mental-health", address: "210 4th Ave, Grinnell",
+				description_of_service: "Ahrens Medical Arts Building, third floor; M – F, 8:00 am – 4:30 pm. Note: This clinic is not taking new patients, and will discontinue prescribing medications in Aug. 2016",
+				categories: ['Health and Medical'], tag_list: "Mental Health, GRMC Programs"},
+
+	{name: "Capstone Behavioral Healthcare", phone_number: "641-792-4012", 
+				website: "www.capstonebh.com", address: "306 N. 3rd Avenue E., Newton, IA 50208",
+				description_of_service: "Note: Grinnell location opening in Fall 2016. Contact Newton office until then. Psychiatric therapy for mentally ill; help with substance abuse.",
+				categories: ['Health and Medical'], tag_list: "Mental Health, Substance Abuse"},
+
+	{name: "The Station Clubhouse", phone_number: "641-236-5325",
+				address: "729 Pearl Street, Grinnell", contact_email: "station@pcpartner.net",
+				description_of_service: "The Station Clubhouse is a psychosocial rehabilitation program for adults with a mental illness. It includes work-oriented living skills, and socialization activities in a safe and supportive environment, as well as in-home community support services.",
+				categories: ['Health and Medical'], tag_list: "Mental Health"},
+
+	{name: "Jeff Wells, LMFT, CADC", phone_number: "641-236-4680",
+				address: "815 1/2 5th Ave., Grinnell, IA 50112", website: "http://www.goodtherapy.org/therapists/profile/jeff-wells-20080211",
+				description_of_service: "Individual therapy for adults and older adolescents; substance abuse evaluation and counseling",
+				categories: ['Health and Medical'], tag_list: "Mental Health, Substance Abuse"},
+
+	{name: "Collaborative & Strength-Based Counseling", phone_number: "641-236-8811",
+	            address: "n/a",
+				website: "www.grinnellcounseling.com", description_of_service: "Kun-Hong Lu, LISW",
+				categories: ['Health and Medical'], tag_list: "Mental Health"},
+
+	{name: "Linda Knierim, LISW", address: "715 5th Avenue, Grinnell, IA 50112", phone_number: "641-236-3090",
+				description_of_service: "LISW",
+				categories: ['Health and Medical'], tag_list: "Mental Health"},
+
+	{name: "Davis Psychological Services, PC", website: "www.davispsychservices.org",
+				phone_number: "641-236-0632", address: "821 5th Avenue, Suite 201, Grinnell, IA 50112", description_of_service: "Dr. Brandon Davis",
+				categories: ['Health and Medical'], tag_list: "Mental Health"},
+
+	{name: "Creative Hope Counseling", phone_number: "641-226-2665", 
+				website: "www.creative-hope.com", description_of_service: "Sara Erselius, LISW, RPT. Offers play therapy. Provides individual and group therapy for children & adolescents.",
+				address: "Montezuma, IA",
+				categories: ['Health and Medical'], tag_list: "Mental Health"},
+
+	{name: "Prelude Behavioral Services (formerly MECCA)", phone_number: "515-262-0349",
+				website: "www.PreludeIowa.org", address: "3451 Easton Blvd, Des Moines 50317",
+				alternative_phone_number: "319-351-4357", alternative_address: "430 Southgate Ave, Iowa City 52240",
+				description_of_service: "Prelude provides an array of services including substance abuse and problem gambling treatment, outpatient and residential treatment, halfway and transitional housing, and case management.",
+				categories: ['Health and Medical'], tag_list: "Mental Health"},
+
+	{name: "Healthy Homes Family Services", phone_number: "712-307-6014",
+				alternative_phone_number: "641-236-0273", website: "www.healthyhomesfs.com",
+				description_of_service: "In-home skill building working with children age 3 to 17 years as well as their families struggling with a child’s behaviors in the home or school setting. Families must have Medicaid health insurance to qualify. All major insurances accepted for outpatient therapy. They also offer support groups.",
+				address: "806 5th Ave, Suite #1, Grinnell, IA 50112",
+				categories: ['Health and Medical'], tag_list: "Mental Health"},
+
+	{name: "Midwest Counseling, LLC", phone_number: "319-668-1217",
+				website: "www.midwestcounselingllc.com", address: "523 ½ Court St., PO Box 313, Williamsburg, IA 52361", alternative_address: "821 So. 5th St. Suite 208, Grinnell, IA 50112",
+				description_of_service: "Jessica McNaul, LMHC, NCC, offers counseling in Grinnell. Dr. Robert Detlefsen, DNP, sees all ages and offers psych med management. All major insurance accepted; sliding scale available.",
+				categories: ['Health and Medical'], tag_list: "Mental Health"},
+
+	{name: "NAMI (National Alliance for the Mentally Ill)", phone_number: "641-792-2441",
+				website: "www.namiiowa.com", address: "308 E. 2nd St. North, Newton, IA",
+				description_of_service: "NAMI Jasper County support group: 4th Monday each month at 6:30 pm",
+				categories: ['Health and Medical'], tag_list: "Mental Health"},
+
+	{name: "Support Numbers", address: "n/a",
+				description_of_service: "Substance Abuse Helpline 800-662-4357, Methamphetamine Hotline 888-664-4673, Iowa Drug and Alcohol Helpline 800-242-4111, Al-Anon 800-344-2666, AA Hotline 800-207-2172",
+				categories: ['Health and Medical'], tag_list: "Support Groups, Substance Abuse"},
+
+	{name: "24 Hour Answering Service", address: "n/a",
+				description_of_service: "Des Moines 515-282-8550, Cedar Falls 319-232-4117, Cedar Rapids 319-365-5955",
+				categories: ['Health and Medical'], tag_list: "Support Groups"},
+
+	{name: "Substance Abuse Treatment Unit of Central Iowa (SATUCI)",
+				phone_number: "641-236-8662", website: "www.satuci.com",
+				address: "927 4th Avenue, Grinnell, IA 50112",
+				description_of_service: "Community Center, second floor. Mon. and Wed., 8 am – Noon, 1 – 5 pm. Evaluations, outpatient treatment, prevention and education",
+				categories: ['Health and Medical'], tag_list: "Substance Abuse"},
+
+	{name: "Alcoholics Anonymous (AA) Meetings", phone_number: "641-236-0270",
+				website: "www.ia.al-anon.alateen.org", alternative_phone_number: "888-4AL-ANON",
+				address: "902 Broad St, Grinnell, IA 50112", alternative_address: "6th and State, Grinnell",
+				description_of_service: "United Church of Christ (Broad St.) - Mon & Thurs at noon. St. Paul's Episcopal Church (6th and State) - Tues, Thurs, Sat, Sun at 7:30pm. Meeting for women: first Sat of the month at 9am. Third location: Grinnell College campus, 1233 Park St. (“CRSSJ Prayer Garage”) Mon. at 7:00 pm (Enter from side door facing 8th Ave.)",
+				categories: ['Health and Medical'], tag_list: "Substance Abuse, Support Groups"},
+
+	{name: "Narcotics Anonymous", address: "Station Club House, 729 Pearl St., Grinnell",
+				phone_number: "641-236-0270", alternative_phone_number: "641-821-9565",
+				description_of_service: "Fri. at 7:30 pm",
+				categories: ['Health and Medical'], tag_list: "Substance Abuse, Support Groups"},
+
+	{name: "Moms off Meth", phone_number: "641-673-0336", address: "n/a",
+				description_of_service: "Contact Jackie Allen Black, Crisis Intervention Services", contact_email: "jackie@cismc.org",
+				categories: ['Health and Medical'], tag_list: "Substance Abuse, Support Groups"},
+	
+	# TRANSPORTATION
+    {name: "People Rides", phone_number: "888-616-4298", website: "www.region6planning.org",
+    			address: "903 E Main, Marshalltown, IA 50158",
+    			alternative_phone_number: "641-752-6202",
+    			contact_email: "Peoplerides@region6planning.org",
+    			description_of_service: "Transportation within Grinnell 7:30 am – 3:30 pm, $2.50 one way. Transportation to out-of-town medical appointments is offered subject to driver availability. A shuttle is available to Iowa City on the first Thursday of the month, $10 each way; $20 total. Departs from Marshalltown, with pickups in Grinnell or locations en-route. ETA to Iowa City no sooner than 9:30 am; return no later than 3:30 pm (early if all clients are ready). Vehicles are handicapped-accessible. Call for rates, or visit the website. All services are open to the general public, including persons with disabilities. Dispatch hours: M – F, 7:30 am – 4:30 pm, answering machine available for afterhours messages. 24 hour advance notice preferred.",
+    			categories: ['Transportation']},
+    
+    {name: "Access2Care", phone_number: "866-572-7662",
+    			description_of_service: "(formerly TMS Transportation) For Medicaid Non-Emergency Medical Transportation Program. Call center hours: M – F, 8 am – 5 pm. Call at least 3 days prior to the appointment to schedule transportation. Access2Care can act as a broker, helping transportation providers to receive Medicaid reimbursement for services.",
+    			categories: ['Transportation'], address: "n/a"},
+    
+    {name: "Presbyterian Church Drivers Program", phone_number: "641-236-6059",
+    			description_of_service: "Rides to scheduled medical and dental appointments. Please call 2 weeks in advance if possible.",
+    			address: "n/a", categories: ['Transportation']},
+    
+    {name: "Grinnell United Methodist Church Drivers Program", phone_number: "641-236-3757",
+    			description_of_service: "Rides to scheduled medical and dental appointments. Please call 2 weeks in advance if possible.",
+    			address: "n/a", categories: ['Transportation']},
+    
+    {name: "Poweshiek County Healthy Lifestyles Center", phone_number: "641-236-3757",
+    			address: "925 East St. (First Baptist Church)",
+    			description_of_service: "(formerly NEI3A)", categories: ['Transportation']},
+    
+    {name: "Community Hope Church", phone_number: "641-623-4673",
+    			description_of_service: "Van Ministry between Montezuma and Grinnell only. Office hours: M—Th, 8:30—4:30.",
+    			address: "n/a", categories: ['Transportation']},
+    
+    {name: "ACME Cab Company", phone_number: "641-260-6371", address: "n/a", 
+    			description_of_service: "Cab Company", categories: ['Transportation']},
+    
+    # DISABILITY
+    {name: "Central Iowa Community Services – Poweshiek County Office",
+    			phone_number: "641-236-9199", website: "www.poweshiekcounty.org/central-point-of-coordination/",
+    			alternative_phone_number: "641-236-1349 (fax)", address: "200 4th Ave West, PO Box 936, Grinnell, IA 50112",
+    			contact_email: "bdaily@poweshiekcounty.org or brenda.daily@cicsmhds.org",
+    			description_of_service: "General Assistance, Mental health funding for income-eligible. Service coordination, and services and support for people with disabilities in Poweshiek County.",
+    			categories: ['Disability']},
+    
+    {name: "CIRSI", phone_number: "641-236-1382", address: "821 5th Ave. #205, Grinnell, IA 50112",
+    			description_of_service: "Community-based services for the mentally disabled.",
+    			categories: ['Disability']},
+    
+    {name: "Diamond Life Health Care", phone_number: "641-623-5715",
+    			address: "4912 Barnes City Rd, PO Box 820, Montezuma, IA 50171",
+    			description_of_service: "Residential Care Facility (RCF) for the mentally ill and mentally disabled. Contact: Debbie Van Wyk",
+    			categories: ['Disability']},
+    
+    {name: "Lutheran Services in Iowa", phone_number: "641-792-1541",
+    			address: "109 N. 2nd Ave. E., Newton, IA",
+    			description_of_service: "Services for people with mental illness or mental disability.",
+    			categories: ['Disability']},
+    
+    {name: "Genesis Development", phone_number: "641-236-0230",
+    			website: "www.GenesisDevelopment.com", address: "925 Broad St., Grinnell",
+    			description_of_service: "Provides support for people with disabilities, including supported community living services.",
+    			categories: ['Disability']},
+    
+    {name: "The Arc of Poweshiek County", description_of_service: "Advocacy for children and adults with intellectual and developmental disabilities. Contact: Karen Veerhusen-Langerud.",
+    			contact_email: "veerhuse@grinnell.edu",
+    			address: "n/a",
+    			categories: ['Disability']},
+    
+    {name: "The Arc of East Central Iowa", phone_number: "800-843-0272",
+    			website: "www.arceci.org", alternative_phone_number: "319-365-0487 ext. 1053",
+    			address: "680 2nd Street S.E., Suite 200, Cedar Rapids, IA 52401",
+    			description_of_service: "Advocacy for children and adults with intellectual and developmental disabilities.",
+    			categories: ['Disability']},
+    
+    {name: "Goodwill Industries", phone_number: "515-265-5323",
+    			description_of_service: "Des Moines Headquarters. Supported training and employment for mentally ill and mentally disabled.",
+    			address: "n/a",
+    			categories: ['Disability']},
+    
+    {name: "Special Olympics Iowa", phone_number: "515-986-5520",
+    			address: "551 Dovetail Rd., PO Box 620, Grimes, IA 50111",
+    			contact_email: "rschwarzkopf@soiowa.org",
+    			description_of_service: "Special Olympics Iowa",
+    			categories: ['Disability']},
+    
+    {name: "DHS Department for the Blind", phone_number: "515-281-1333",
+    			address: "524 4th St., Des Moines, IA 50309",
+    			description_of_service: "Department for the Blind",
+    			categories: ['Disability']},
+    
+    {name: "Iowa Vocational Rehabilitation Services", phone_number: "641-352-7942",
+    			website: "www.ivrs.iowa.gov", address: "204 W. State Street, Marshalltown, IA 50158",
+    			description_of_service: "The mission of Iowa Vocational Rehabilitation Services is to work for and with individuals who have disabilities to achieve their employment, independence, and economic goals. IVRS works with sophomores in high school through adults. Services offered include: college funding, job training, employment search, assistive technology, medical and psychological assessment, physical/mental restoration services which may include therapy, wheelchairs, hearing aids, etc., job coaching, career guidance and counseling. For more information about the full spectrum of services offered, visit the website.",
+    			categories: ['Disability']},
+    
+    # MISCELLANEOUS
+    {name: "National Runaway Service Crisis Line", phone_number: "800-621-4000",
+    			address: "n/a",
+    			description_of_service: "Crisis Line",
+    			categories: ['Miscellaneous'], tag_list: "Lifeline"},
+    
+    {name: "National Suicide Prevention Lifeline", phone_number: "800-273-8255",
+    			alternative_phone_number: "515-233-2330", 
+    			description_of_service: "Alternative phone number 2: 800-600-2330",
+    			address: "n/a",
+    			categories: ['Miscellaneous'], tag_list: "Lifeline"},
+    
+    {name: "Habitat for Humanity", phone_number: "515-250-8857",
+    			address: "PO Box 782, 402 E 1st Avenue, Newton, IA 50208",
+    			contact_email: "jaspercountyhabitat@gmail.com",
+    			description_of_service: "Call to donate building items, or to check if items are available for purchase.",
+    			categories: ['Miscellaneous'], tag_list: "Volunteering"},
+    
+    {name: "United Way Fund", phone_number: "641-236-7575",
+    			address: "PO Box 121, Grinnell, IA 50112",
+    			description_of_service: "United Way Fund",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Social Security Administration", phone_number: "800-772-1213",
+    			address: "n/a", description_of_service: "Social Security",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Marshalltown Social Security", phone_number: "877-819-2595",
+    			address: "2502 South 2nd St., Marshalltown, IA 50158",
+    			description_of_service: "Social Security",
+    			categories: ['Miscellaneous']},
+    
+    {name: "American Red Cross", phone_number: "800-951-5600",
+    			website: "www.redcross.org/local/ia",
+    			description_of_service: "This phone number will direct you to the Des Moines chapter, which is the closest chapter to Poweshiek County.",
+    			address: "n/a",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Poweshiek County Extension Office", phone_number: "641-623-5188",
+    			website: "www.extension.iastate.edu/poweshiek",
+    			address: "114 S. 3rd St., PO Box 70, Montezuma, IA",
+    			description_of_service: "Poweshiek County Extension can assist you with making decisions that affect your family, community, business, or farm. They rely on ISU Extension for unbiased, research-based information and education to help you make better decisions.",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Conflict Resolution Center of Iowa", phone_number: "641-236-3939",
+    			address: "PO Box 925, Grinnell, IA 50112",
+    			description_of_service: "Mediation services (formerly Iowa Peace Institute)",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Assurance Wireless", phone_number: "888-321-5880",
+    			website: "www.AssuranceWireless.com",
+    			description_of_service: "Federal lifeline assistance providing free cell phones to income-eligible people.",
+    			address: "n/a",
+    			categories: ['Miscellaneous'], tag_list: "Lifeline"},
+    
+    {name: "House of Compassion Shelter", phone_number: "641-752-5999",
+    			address: "211 W. Church St., Marshalltown, IA 50158",
+    			description_of_service: "Homeless shelter (men, women, and families) and soup kitchen.",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Drake Community Library", phone_number: "641-236-2661",
+    			website: "www.grinnell.lib.ia.us", address: "930 Park St., Grinnell, IA 50112",
+    			description_of_service: "Library",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Christmas Shares", phone_number: "641-236-7402",
+    			description_of_service: "Program to help low-income families by purchasing gift items. Families should call to sign up for the program. Contact: Pam Montgomery, Grinnell.",
+    			address: "n/a",
+    			categories: ['Miscellaneous']},
+    
+    {name: "Christmas Joy", phone_number: "641-623-3275", 
+    			description_of_service: "Program offered through the Montezuma Ministerial Association to help low-income families living within the Montezuma school district with gifts for custodial children. Program collaborates with Christmas Share in Grinnell: families may sign up for one or the other program but not both. Sign up at the First Presbyterian Evangelical Church October the 4th weekend of the month: bring identification to serve as current address verification. Call for more information.",
+    			address: "n/a",
+    			categories: ['Miscellaneous']},
+    			
+    # FINANCIAL
+    
+    {name: "The Campbell Fund", phone_number: "641-236-2600",
+    			address: "Grinnell Community Center, 927 4th Ave., Grinnell, IA 50112",
+    			description_of_service: "Financial assistance for groceries, taxi services, utilities and medical services. for income-eligible Grinnell residents.",
+    			categories: ['Financial']},
+    
+    {name: "Central Iowa Community Services – Poweshiek County Office", phone_number: "641-236-9199",
+    			address: "200 4th Ave West, Grinnell, IA 50112",
+    			description_of_service: "General Assistance provides emergency assistance to Poweshiek County residents to meet basic needs such as food, shelter, medical and utilities. It is not intended to provide on-going, longterm assistance to any individual and/or family.",
+    			categories: ['Financial']},
+    
+    {name: "Salvation Army Poweshiek County Service Extension #261",
+    			phone_number: "641-623-3275", address: "First Presbyterian Church, Montezuma, IA",
+    			description_of_service: "Call Welfare Secretary for information and an appointment – Darla Wilson, Providing assistance within the county for a variety of emergency needs according to SA guidelines.",
+    			categories: ['Financial']},
+    
+    {name: "Grinnell Ministerial Association", phone_number: "641-236-6059",
+    			description_of_service: "MICA will screen candidates for rent, utilities, gas vouchers for residents of Grinnell, Malcom, Newburg, and Searsboro. Grinnell Police Department distributes 1 time vouchers for hotel room and meals for transient persons.",
+    			address: "n/a", categories: ['Financial']},
+    
+    {name: "Brooklyn Ministerial Association", phone_number: "641-522-9298",
+    			address: "503 Clay St., Brooklyn, IA",
+    			description_of_service: "Ministerial Association",
+    			categories: ['Financial']},
+    
+    {name: "Montezuma Ministerial Association", phone_number: "641-623-3275",
+    			description_of_service: "Local churches working together to meet needs of community residents. Community Needs fund is for emergency need and crisis situation and not for negligence, irresponsibility, or repeated use throughout the year. Application for assistance is available from client in-take worker (usually a pastor) at the Montezuma Food Pantry during their hours of operation. No immediate assistance available: may have a 72 hour wait for determination. Welfare secretary Darla Wilson available to answer inquiry calls.",
+    			address: "n/a", categories: ['Financial']},
+    
+    {name: "Emergency Loan Program (SEG)", contact_email: "GrinnellMicroFinance@gmail.com",
+    			description_of_service: "This program provides no-interest loans for emergencies such as car repair, temporary loss of income, or medical emergencies. It is also intended to serve as an alternative to predatory loans.",
+    			address: "n/a", categories: ['Financial']},
+    
+    {name: "Mid-Iowa Credit Counseling", address: "n/a",
+    			description_of_service: "Ames 888-720-9049, Waterloo 641-234-0661, Des Moines 888-272-4118",
+    			categories: ['Financial']},
+    
+    # FAMILIES
+    {name: "Mid-Iowa Community Action (MICA)", phone_number: "641-236-3923",
+    			website: "www.micaonline.org", alternative_phone_number: "641-236-8704 (fax)",
+    			address: "611 4th Ave., Grinnell, IA 50112",
+    			description_of_service: "MICA is a private, non-profit organization serving children and families in central Iowa. Our vision is that MICA, in collaboration with our community partners, leads efforts to strengthen families and communities. Together, we create communities where fewer people find themselves in poverty and those who do, have a path out. Services: Family Development Center; Head Start; Women, Infants and Children (WIC); LowIncome Home Energy Assistance Program (LIHEAP); house weatherization services; food pantry; family development programs; information and referrals for crisis intervention services.",
+    			categories: ['Families'], tag_list: "Children/Youth, Financial"},
+    
+    {name: "Family Team Meetings (for families before DHS intervenes)", phone_number: "641-236-2385",
+    			address: "Grinnell Regional Public Health, Light Center",
+    			description_of_service: "Sometimes families need assistance in developing a plan for a problem or concern. A Family Team Meeting is a meeting of people chosen by the family to identify family strengths, needs, and resources. A plan is created that provides for the safety and wellbeing of children in the family. To refer or schedule a family team meeting, please call Grinnell Regional Public Health.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Children and Families of Iowa (CFI)", phone_number: "641-682-3642",
+    			website: "www.cfiowa.org", address: "408 East Main St., Ottumwa, IA 52501",
+    			description_of_service: "Mental Health Services, Family-Centered Services. Programs include 24/7 Dads, Community Partnerships for Protecting Children (CPPC), and DHS program Parent Partners.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Parent Partners (DHS program)", phone_number: "641-682-3642",
+    			website: "www.dhs.iowa.gov/parent-partners",
+    			description_of_service: "Apply through DHS. This program is about parents helping parents who are involved with the child welfare system. Parent advocates are birth parents who have been through the “system” and have had successfully resolved cases. The primary goal is to help birth parents get their children returned to them. Parent partners provide support and motivation for those parents who need the extra push to begin their case plan activities. The program is funded by Iowa DHS and administered by Children and Families of Iowa.",
+    			address: "n/a", categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Central Iowa In-Home Services", phone_number: "641-858-3852",
+    			website: "www.cijdc.com",
+    			description_of_service: "Behavior Health Intervention Services (BHIS) Clients must be Title 19 eligible. They may be referred by parents, JCO, DHS, School or other professionals.",
+    			address: "n/a",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Healthy Homes Family Services", phone_number: "712-307-6014",
+    			website: "www.healthyhomesfs.com", address: "806 5th Ave, Suite #2, Grinnell, IA 50112",
+    			description_of_service: "Behavior Health Intervention Services (BHIS). In-home skill building working with children age 3 to 17 years as well as their families struggling with a child’s behaviors in the home or school setting. Medicaid and other major insurance are accepted. They also offer support groups.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Poweshiek County Community Services", phone_number: "641-236-9199",
+    			website: "www.poweshiekcounty.org/general-assistance/", alternative_phone_number: "641-236-1349",
+    			address: "200 4th Ave West, PO Box 936, Grinnell, IA 50112",
+    			contact_email: "shiner@poweshiekcounty.org",
+    			description_of_service: "General Assistance, Mental health funding for income-eligible. Service coordination, and services and support for people with disabilities in Poweshiek County.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Four Oaks", phone_number: "641-236-0900",
+    			website: "www.fouroaks.org", address: "821 5th Ave, Suite 101, Grinnell, IA 50112",
+    			description_of_service: "A safety and permanency option that partners with DHS to keep and/or reunite children with their families.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Youth & Shelter Services of Marshall County – Host Home & TLP", phone_number: "641-752-2300",
+    			website: "www.yss.org", address: "11 East State St., Marshalltown, IA 50158",
+    			description_of_service: "Lighthouse Homes and apartments serve as residences for a unique Transitional Living Program targeting homeless, pregnant young women and young parents, ages 16-25. Shelter for young adults aging out of foster care. The program helps non-system-involved young mothers and fathers become independent and self-sufficient.",
+    			categories: ['Families'], tag_list: "Children/Youth, Shelter"},
+    
+    {name: "Quakerdale – Youth Shelter", phone_number: "319-233-2554",
+    			website: "www.quakerdale.org", description_of_service: "Waterloo shelter for at-risk youth; treatment-focused atmosphere.",
+    			address: "n/a", categories: ['Families'], tag_list: "Children/Youth, Shelter"},
+    
+    {name: "Quakerdale – Promise Academy", phone_number: "641-497-5294",
+    			website: "www.quakerdale.org", address: "P.O. Box 8, New Providence, Iowa 50206",
+    			description_of_service: "A residential academy for students ages 10 – 18 who seek a private alternative educational setting and desire to develop and work on academic, spiritual, work, career, and life skills.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Child Care Resource and Referral – CCR&R, Region 4", phone_number: "800-722-7619",
+    			website: "www.iowaccrr.org", address: "808 5th Ave., Des Moines, IA 50309",
+    			contact_email: "bohalloran@orchardplace.org", 
+    			description_of_service: "Local contact: Brenda O’Halloran, 641-820-1923. Local office in the Community Center, Grinnell. CCR&R provides information about childcare providers; advocacy for childcare programs; parent referrals. This program is funded through DHS.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Early Care and Education (ECE)", phone_number: "641-792-5437",
+    			address: "550 N 2nd Ave. W., Newton, IA 50208",
+    			description_of_service: "This is an ISU Extension Agency program that serves Jasper, Poweshiek, and Marion Counties. It offers professional development classes for childcare providers.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Child Support Recovery Unit (CSRU)", phone_number: "888-229-9223",
+    			website: "www.childsupport.ia.gov", address: "204 1/2 West State Street, Marshalltown, IA",
+    			alternative_phone_number: "641-753-6408",
+    			description_of_service: "CSRU",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Zero to Three", description_of_service: "This website has some useful pamphlets from the American Pediatric Assn. and other sources discussing stages of child development.", 
+    			website: "www.zerotothree.org.", address: "n/a", 
+    			categories: ['Families'], tag_list: "Children/Youth"},
 ]
 
 # Populate database with categories
@@ -531,6 +1151,8 @@ resources.each do |resource|
     category_id.push(c_id)
     # Replace list of category names with categories
     resource[:categories] = category_id
+    # Print resource name for debugging purposes
+    puts resource[:name]
     # Create resource
     Resource.create! (resource)
 end
