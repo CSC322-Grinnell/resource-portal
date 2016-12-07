@@ -1015,6 +1015,48 @@ resources = [
     			description_of_service: "Program offered through the Montezuma Ministerial Association to help low-income families living within the Montezuma school district with gifts for custodial children. Program collaborates with Christmas Share in Grinnell: families may sign up for one or the other program but not both. Sign up at the First Presbyterian Evangelical Church October the 4th weekend of the month: bring identification to serve as current address verification. Call for more information.",
     			address: "n/a",
     			categories: ['Miscellaneous']},
+    			
+    # FINANCIAL
+    {name: "Mid-Iowa Community Action (MICA)", phone_number: "641-236-3923",
+    			address: "611 4th Ave., Grinnell, IA 50112",
+    			description_of_service: "Emergency funds for rent, utilities, gas vouchers for medical appointments. Low-Income Home Energy Assistance Program (LIHEAP), budgeting assistance. VITA program for help filing taxes.",
+    			categories: ['Financial']},
+    
+    {name: "The Campbell Fund", phone_number: "641-236-2600",
+    			address: "Grinnell Community Center, 927 4th Ave., Grinnell, IA 50112",
+    			description_of_service: "Financial assistance for groceries, taxi services, utilities and medical services. for income-eligible Grinnell residents.",
+    			categories: ['Financial']},
+    
+    {name: "Central Iowa Community Services – Poweshiek County Office", phone_number: "641-236-9199",
+    			address: "200 4th Ave West, Grinnell, IA 50112",
+    			description_of_service: "General Assistance provides emergency assistance to Poweshiek County residents to meet basic needs such as food, shelter, medical and utilities. It is not intended to provide on-going, longterm assistance to any individual and/or family.",
+    			categories: ['Financial']},
+    
+    {name: "Salvation Army Poweshiek County Service Extension #261",
+    			phone_number: "641-623-3275", address: "First Presbyterian Church, Montezuma, IA",
+    			description_of_service: "Call Welfare Secretary for information and an appointment – Darla Wilson, Providing assistance within the county for a variety of emergency needs according to SA guidelines.",
+    			categories: ['Financial']},
+    
+    {name: "Grinnell Ministerial Association", phone_number: "641-236-6059",
+    			description_of_service: "MICA will screen candidates for rent, utilities, gas vouchers for residents of Grinnell, Malcom, Newburg, and Searsboro. Grinnell Police Department distributes 1 time vouchers for hotel room and meals for transient persons.",
+    			address: "n/a", categories: ['Financial']},
+    
+    {name: "Brooklyn Ministerial Association", phone_number: "641-522-9298",
+    			address: "503 Clay St., Brooklyn, IA",
+    			description_of_service: "Ministerial Association",
+    			categories: ['Financial']},
+    
+    {name: "Montezuma Ministerial Association", phone_number: "641-623-3275",
+    			description_of_service: "Local churches working together to meet needs of community residents. Community Needs fund is for emergency need and crisis situation and not for negligence, irresponsibility, or repeated use throughout the year. Application for assistance is available from client in-take worker (usually a pastor) at the Montezuma Food Pantry during their hours of operation. No immediate assistance available: may have a 72 hour wait for determination. Welfare secretary Darla Wilson available to answer inquiry calls.",
+    			address: "n/a", categories: ['Financial']},
+    
+    {name: "Emergency Loan Program (SEG)", contact_email: "GrinnellMicroFinance@gmail.com",
+    			description_of_service: "This program provides no-interest loans for emergencies such as car repair, temporary loss of income, or medical emergencies. It is also intended to serve as an alternative to predatory loans.",
+    			address: "n/a", categories: ['Financial']},
+    
+    {name: "Mid-Iowa Credit Counseling", address: "n/a",
+    			description_of_service: "Ames 888-720-9049, Waterloo 641-234-0661, Des Moines 888-272-4118",
+    			categories: ['Financial']},
 ]
 
 # Populate database with categories
