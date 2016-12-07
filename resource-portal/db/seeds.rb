@@ -1263,6 +1263,42 @@ resources = [
     			address: "122 Jackson St., Brooklyn, IA 50112",
     			description_of_service: "Meals, social activities.",
     			categories: ['Elderly'], tag_list: "Services, Activities"},
+    {name: "Poweshiek County Healthy Lifestyles Center", description_of_service: "Aging and disability resources to maintain independence. Services include Case Management. Clients must first sign up for Medicaid. Contact Life Long Links (below) for this",
+                website: "www.nei3a.org",
+                phone_number: "641-236-3300",
+                address: "n/a",
+                categories['Elderly']},
+    
+    {name: "Life Long Links", description_of_service: "Call to complete a needs assessment form to access the aging and disability resources of the
+Northeast Iowa Area Agency on Aging.",
+                website: "www.lifelonglinks.org",
+                address: "n/a",
+                phone_number: "866-468-7887",
+                categories['Elderly']},
+    
+    {name: "Senior Health Insurance Information Program (SHIP)", description_of_service: "Trained volunteers explain Medicare, Medicaid, and insurance billing. Free service. ",
+                contact_email: "kolson@grmc.us"
+                address: "n/a",
+                phone_number: "641-236-2588",
+                categories['Elderly']},
+    
+    {name: "DHS Department on Aging", description_of_service: "Long-Term Care Ombudsman: Advocate for care facility residents", 
+                address: "510 East 12th Street, Suite 2",
+                phone_number: "515-725-3333",
+                alternative_phone_number: "515-725-3327",
+                categories['Elderly']},
+    
+    {name: "Poweshiek County Vetrans Affiars", description_of_service: "Veterans Affairs, Mon, Wed, Thurs. 8:00 am – 2:00 pm; Tues, Fri. 8:00 am – noon.",
+                address: "200 4th Ave West, Grinnell, Iowa 50112",
+                phone_number: "641-236-5722",
+                tag_list: "Veterans", 
+                categories['Elderly']},
+    
+    {name: "SE*ED Program", description_of_service: "GRMC’s Senior Education Program provides programs designed for adults of any age to extend their knowledge on healthcare issues, diseases, nutrition, community resources, current and cultural events, as well as less conventional topics like art, biology, history, or religion. Visit the website for a schedule of classes. Transportation is available; call by Thursday before program. Meets Mondays, 10-11 am.",
+                address: "Drake Community Library, 930 Park St., Grinnell, Iowa 50112"
+                website: "www.grmc.us/classes-events/older-adult-programs",
+                phone_number: "641-236-2593",
+                categories['Elderly']},
 
 ]
 
