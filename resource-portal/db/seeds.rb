@@ -4,7 +4,7 @@
 
 categories = [
     {name: "Housing", tag_list: "Furniture, Clothing, Home Owners, Income-Based, Families, Elderly, Disabled"},
-    {name: "Families", tag_list: "Expectant Mothers, New Parents, Children/Youth, After School Programs, Youth Activities"},
+    {name: "Families", tag_list: "Expectant Mothers, New Parents, Children/Youth, After School Programs, Youth Activities, Financial, Shelter"},
     {name: "Elderly", tag_list: "Housing, Services, Activites, Meals on Wheels, Income-Based"},
     {name: "Education", tag_list: "Preschool, Elementary School, Middle School, High School, Education Agencies, Food in Schools, School District"}, 
     {name: "Health and Medical", tag_list: "Hospitals and Health Centers, Non-GRMC Services, GRMC Programs, Dental, Vision, Support Groups, Medical Equipment, Medical Insurance, Mental Health, Substance Abuse"},
@@ -1017,10 +1017,6 @@ resources = [
     			categories: ['Miscellaneous']},
     			
     # FINANCIAL
-    {name: "Mid-Iowa Community Action (MICA)", phone_number: "641-236-3923",
-    			address: "611 4th Ave., Grinnell, IA 50112",
-    			description_of_service: "Emergency funds for rent, utilities, gas vouchers for medical appointments. Low-Income Home Energy Assistance Program (LIHEAP), budgeting assistance. VITA program for help filing taxes.",
-    			categories: ['Financial']},
     
     {name: "The Campbell Fund", phone_number: "641-236-2600",
     			address: "Grinnell Community Center, 927 4th Ave., Grinnell, IA 50112",
@@ -1057,6 +1053,86 @@ resources = [
     {name: "Mid-Iowa Credit Counseling", address: "n/a",
     			description_of_service: "Ames 888-720-9049, Waterloo 641-234-0661, Des Moines 888-272-4118",
     			categories: ['Financial']},
+    
+    # FAMILIES
+    {name: "Mid-Iowa Community Action (MICA)", phone_number: "641-236-3923",
+    			website: "www.micaonline.org", alternative_phone_number: "641-236-8704 (fax)",
+    			address: "611 4th Ave., Grinnell, IA 50112",
+    			description_of_service: "MICA is a private, non-profit organization serving children and families in central Iowa. Our vision is that MICA, in collaboration with our community partners, leads efforts to strengthen families and communities. Together, we create communities where fewer people find themselves in poverty and those who do, have a path out. Services: Family Development Center; Head Start; Women, Infants and Children (WIC); LowIncome Home Energy Assistance Program (LIHEAP); house weatherization services; food pantry; family development programs; information and referrals for crisis intervention services.",
+    			categories: ['Families'], tag_list: "Children/Youth, Financial"},
+    
+    {name: "Family Team Meetings (for families before DHS intervenes)", phone_number: "641-236-2385",
+    			address: "Grinnell Regional Public Health, Light Center",
+    			description_of_service: "Sometimes families need assistance in developing a plan for a problem or concern. A Family Team Meeting is a meeting of people chosen by the family to identify family strengths, needs, and resources. A plan is created that provides for the safety and wellbeing of children in the family. To refer or schedule a family team meeting, please call Grinnell Regional Public Health.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Children and Families of Iowa (CFI)", phone_number: "641-682-3642",
+    			website: "www.cfiowa.org", address: "408 East Main St., Ottumwa, IA 52501",
+    			description_of_service: "Mental Health Services, Family-Centered Services. Programs include 24/7 Dads, Community Partnerships for Protecting Children (CPPC), and DHS program Parent Partners.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Parent Partners (DHS program)", phone_number: "641-682-3642",
+    			website: "www.dhs.iowa.gov/parent-partners",
+    			description_of_service: "Apply through DHS. This program is about parents helping parents who are involved with the child welfare system. Parent advocates are birth parents who have been through the “system” and have had successfully resolved cases. The primary goal is to help birth parents get their children returned to them. Parent partners provide support and motivation for those parents who need the extra push to begin their case plan activities. The program is funded by Iowa DHS and administered by Children and Families of Iowa.",
+    			address: "n/a", categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Central Iowa In-Home Services", phone_number: "641-858-3852",
+    			website: "www.cijdc.com",
+    			description_of_service: "Behavior Health Intervention Services (BHIS) Clients must be Title 19 eligible. They may be referred by parents, JCO, DHS, School or other professionals.",
+    			address: "n/a",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Healthy Homes Family Services", phone_number: "712-307-6014",
+    			website: "www.healthyhomesfs.com", address: "806 5th Ave, Suite #2, Grinnell, IA 50112",
+    			description_of_service: "Behavior Health Intervention Services (BHIS). In-home skill building working with children age 3 to 17 years as well as their families struggling with a child’s behaviors in the home or school setting. Medicaid and other major insurance are accepted. They also offer support groups.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Poweshiek County Community Services", phone_number: "641-236-9199",
+    			website: "www.poweshiekcounty.org/general-assistance/", alternative_phone_number: "641-236-1349",
+    			address: "200 4th Ave West, PO Box 936, Grinnell, IA 50112",
+    			contact_email: "shiner@poweshiekcounty.org",
+    			description_of_service: "General Assistance, Mental health funding for income-eligible. Service coordination, and services and support for people with disabilities in Poweshiek County.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Four Oaks", phone_number: "641-236-0900",
+    			website: "www.fouroaks.org", address: "821 5th Ave, Suite 101, Grinnell, IA 50112",
+    			description_of_service: "A safety and permanency option that partners with DHS to keep and/or reunite children with their families.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Youth & Shelter Services of Marshall County – Host Home & TLP", phone_number: "641-752-2300",
+    			website: "www.yss.org", address: "11 East State St., Marshalltown, IA 50158",
+    			description_of_service: "Lighthouse Homes and apartments serve as residences for a unique Transitional Living Program targeting homeless, pregnant young women and young parents, ages 16-25. Shelter for young adults aging out of foster care. The program helps non-system-involved young mothers and fathers become independent and self-sufficient.",
+    			categories: ['Families'], tag_list: "Children/Youth, Shelter"},
+    
+    {name: "Quakerdale – Youth Shelter", phone_number: "319-233-2554",
+    			website: "www.quakerdale.org", description_of_service: "Waterloo shelter for at-risk youth; treatment-focused atmosphere.",
+    			address: "n/a", categories: ['Families'], tag_list: "Children/Youth, Shelter"},
+    
+    {name: "Quakerdale – Promise Academy", phone_number: "641-497-5294",
+    			website: "www.quakerdale.org", address: "P.O. Box 8, New Providence, Iowa 50206",
+    			description_of_service: "A residential academy for students ages 10 – 18 who seek a private alternative educational setting and desire to develop and work on academic, spiritual, work, career, and life skills.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Child Care Resource and Referral – CCR&R, Region 4", phone_number: "800-722-7619",
+    			website: "www.iowaccrr.org", address: "808 5th Ave., Des Moines, IA 50309",
+    			contact_email: "bohalloran@orchardplace.org", 
+    			description_of_service: "Local contact: Brenda O’Halloran, 641-820-1923. Local office in the Community Center, Grinnell. CCR&R provides information about childcare providers; advocacy for childcare programs; parent referrals. This program is funded through DHS.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Early Care and Education (ECE)", phone_number: "641-792-5437",
+    			address: "550 N 2nd Ave. W., Newton, IA 50208",
+    			description_of_service: "This is an ISU Extension Agency program that serves Jasper, Poweshiek, and Marion Counties. It offers professional development classes for childcare providers.",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Child Support Recovery Unit (CSRU)", phone_number: "888-229-9223",
+    			website: "www.childsupport.ia.gov", address: "204 1/2 West State Street, Marshalltown, IA",
+    			alternative_phone_number: "641-753-6408",
+    			description_of_service: "CSRU",
+    			categories: ['Families'], tag_list: "Children/Youth"},
+    
+    {name: "Zero to Three", description_of_service: "This website has some useful pamphlets from the American Pediatric Assn. and other sources discussing stages of child development.", 
+    			website: "www.zerotothree.org.", address: "n/a", 
+    			categories: ['Families'], tag_list: "Children/Youth"},
 ]
 
 # Populate database with categories
