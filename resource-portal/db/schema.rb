@@ -53,8 +53,6 @@ ActiveRecord::Schema.define(version: 20161121194558) do
     t.float    "longitude"
   end
 
-<<<<<<< HEAD
-=======
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -82,7 +80,6 @@ ActiveRecord::Schema.define(version: 20161121194558) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
->>>>>>> e11f954fddb78936e849369692e1ee8665d90238
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",        null: false
     t.string   "encrypted_password",     default: "",        null: false
