@@ -94,6 +94,29 @@ resources = [
                 description_of_service: "Operates an emergency food pantry for those in need; distributes vouchers for milk and bread provided by local churches; distributes fresh produce from local farmers. Mon – Fri, 8:30 am – 4:30 pm", 
                 tag_list: "Food Pantry",
                 categories: ['Food']},
+                
+    {name: "Free and reduced lunch program", 
+                description_of_service: "Paid for through USDA, this program offers free and reduced-cost lunches to income-eligible children. Sign up through the schools.",
+                address: "n/a",
+                tag_list: "Food In Schools", categories: ['Food']},
+                
+    {name: "Summer breakfast and lunch program",
+                description_of_service: "Grinnell schools (June 6—Aug 12, 2016; 11:15 am—12:30 pm. at H.S.)",
+                phone_number: "641-236-2668",
+                address: "n/a",
+                tag_list: "Food In Schools", categories: ['Food'],
+                alternative_phone_number: "641-623-5121 (Montezuma)"},
+    
+    {name: "Grinnell Tiger Packs",
+                description_of_service: "Food is placed in backpacks for students in need identified by school staff or family. Address questions to the Grinnell elementary and middle schools.",
+                address: "n/a",
+                tag_list: "Food In Schools", categories: ['Food']},
+    
+    {name: "Montezuma Backpack Program",
+                description_of_service: "Contact the schools",
+                address: "n/a",
+                tag_list: "Food In Schools", categories: ['Food']},
+    
     # HOUSING
     {name: "Grinnell Housing Authority", phone_number: "641-236-2611",
                 address: "927 4th Avenue, Grinnell, IA 50112",
