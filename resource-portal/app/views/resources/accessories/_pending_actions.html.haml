@@ -1,10 +1,5 @@
 -# Accessory for pending resources on the admin page
 -# Includes additional info and buttons to approve, edit, and reject
-.row.resource-categories
-  %p
-    This resource appears in these categories:
-    = resource.categories.pluck(:name).join(", ")
-
 .row
   = button_to({ :action => 'modify_status',
                 :controller => 'resources',

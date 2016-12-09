@@ -12,7 +12,7 @@
   .col-md-6
     %ul{:class => "list-group"}
 
-      - if resource.address == "n/a"
+      - if resource.address == "n/a" || resource.address == "None"
         %li Address: #{resource.address}
       - else
         %li
@@ -21,7 +21,7 @@
                     "http://www.google.com/maps/place/#{url_encode(resource.address)}",
                     :target => "_blank"
 
-      - if resource.alternative_address == "n/a"
+      - if resource.alternative_address == "n/a" || resource.alternative_address == nil
         %li Alternative Address: #{resource.alternative_address}
       - else
         %li
@@ -37,7 +37,7 @@
       / Referenced: http://mixandgo.com/blog/how-to-use-link_to-in-rails
       / http://stackoverflow.com/questions/5851999/how-do-i-put-text-and-ruby-code-from-link-to-on-the-same-line-in-haml
       / http://stackoverflow.com/questions/8026619/how-to-write-if-condition-in-haml
-      - if resource.website == "n/a"
+      - if resource.website == "n/a" || resource.website == nil
         %li Website: #{resource.website}
       - else
         %li Website: #{link_to resource.website, "http://"+resource.website, :target => "_blank"}
@@ -47,10 +47,11 @@
       %li Agency Email: #{resource.agency_email}
       - if user_signed_in? && current_user.role == "admin"
         %li{:class => "noprint"} Name of Submitter: #{resource.name_of_submitter}
-      %li 
-        Tags:
-        - resource.tag_list.each do |tag|
-          = link_to tag, tag_path(tag)
+      - if resource.tag_list != []
+        %li 
+          Tags:
+          - resource.tag_list.each do |tag|
+            = link_to tag, tag_path(tag)
       
     - if current_user && !current_page?(admin_path)
       .col-md-3
@@ -68,9 +69,10 @@
           %span.fa.fa-lg.fa-times
           Unfavorite
   .col-md-4
-    %div{:id => "map"}
-      = image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{resource.address}&size=300x300&zoom=17&markers=#{resource.latitude}%2C#{resource.longitude}"
-  
+    - if resource.address != "n/a" && resource.address != "None"
+      %div{:id => "map"}
+        = image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{resource.address}&size=300x300&zoom=17&markers=#{resource.latitude}%2C#{resource.longitude}"
+    
   -# render one of several optional accessory partial views on the right-hand
   -# side of the resource (located in resources/accessories)
   .col-md-2.accessory

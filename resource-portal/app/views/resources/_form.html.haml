@@ -16,6 +16,7 @@
     = form_for @resource,:url => (@resource.new_record? ? resources_path : resource_url(@resource)) do |f|
 
       .form-section.col-md-10
+        %p *** means the field is required
         %p Tell us about your service...
         .row.top-buffer
           %form_group
@@ -53,7 +54,7 @@
                 -# Automatically generate checkboxes for tags based on categories
                 -# Filtering of tags based on selected category done in resource.js
                 - Category.all.each do |category|
-                  %li{:id => "#{category.name}_tags", :class=> "all_tags", :style => "display:none"}
+                  %li{:id => "#{category.name}_tags", :class => "all_tags", :style => "display:none"}
                     - category.tag_list.each do |tag|
                       %div.tag-box-container
                         = check_box_tag 'resource[tag_list][]',

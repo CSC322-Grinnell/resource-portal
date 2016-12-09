@@ -7,8 +7,6 @@
       This is an online resource directory for the Poweshiek County of Iowa consisting of Food, Housing,
       Employment, and many other resources. This website was built through a collaboration between
       Grinnell College and MICA.
-      
-      -# make this shorter
 
 .container
   .row
@@ -33,3 +31,12 @@
         %a.btn.btn-default{:href => new_resource_path, :role => "button", :id => "enter-resource-button"}
           Enter a new resource
           %span.fa.fa-plus
+.container
+  .row
+  .col-md-12
+    %h2{:style => "text-align:center"} Select a Tag!
+.container
+  .row
+    .col-md-12
+      - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+        = link_to tag, tag_path(tag), :class => css_class

@@ -18,9 +18,8 @@
         %p
           = f.label :tags 
           = f.text_field :tag_list, 
-            value: f.object.tag_list.to_s, 
-            class: "form-control", 
-            required: true, 
+            value: f.object.tag_list.to_s,
+            class: "form-control",
             placeholder: 'Tags'
     .row
       .col-md-2
