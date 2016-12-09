@@ -8,12 +8,8 @@ Rails.application.routes.draw do
   root 'categories#homepage'
 
   get 'search/resources' => 'search#resources'
-<<<<<<< HEAD
-  get 'admin' => 'users#admin'
-=======
   get 'admin' => 'users#admin', as: :admin
   get 'tags/:tag', to: 'resources#index', as: :tag
->>>>>>> dev
 
   post 'modify_status', to:  'resources#modify_status'
 
