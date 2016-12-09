@@ -5,7 +5,7 @@
 categories = [
     {name: "Housing", tag_list: "Furniture, Clothing, Home Owners, Income-Based, Families, Elderly, Disabled"},
     {name: "Families", tag_list: "Expectant Mothers, New Parents, Children/Youth, After School Programs, Youth Activities, Financial, Shelter"},
-    {name: "Elderly", tag_list: "Housing, Services, Activites, Meals on Wheels, Income-Based"},
+    {name: "Elderly", tag_list: "Housing, Services, Activites, Meals on Wheels, Income-Based, Lifeline, Veterans Affairs"},
     {name: "Education", tag_list: "Preschool, Elementary School, Middle School, High School, Education Agencies, Food in Schools, School District"}, 
     {name: "Health and Medical", tag_list: "Hospitals and Health Centers, Non-GRMC Services, GRMC Programs, Dental, Vision, Support Groups, Medical Equipment, Medical Insurance, Mental Health, Substance Abuse"},
     {name: "Employment", tag_list: "Job, Hotline"},
