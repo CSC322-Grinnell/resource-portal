@@ -89,15 +89,32 @@ class ResourcesControllerTest < ActionController::TestCase
     assert_redirected_to root_path # After successful creation, redirected to home page.
   end
   
+  #This used to work but the assertion now doesn't work with the method. Used to give count error, now doesn't work period.
+  #I wrote some other stuff to match with the redirect and notice message. Notice checking code probably doesn't work.
   test "users can favorite resources" do
     sign_in @user
     get :show, id: @resource
     assert_difference('@user.favorites.count', +1) do
       Resource.favorite(@resource)
+    
     end
+    assert_redirected_to back
+    assert_equal('notice','You favorited #{@resource.name}')
     assert_response :success
   end
   
+  #Doesn't work, but framework should be fixable
+  test "user can unfavorite resources" do
+    sign_in @user
+    get :show, id: @resource
+    Resource.favorite(@resource)
+    Resource.unfavorite(@resource)
+    assert_redirected_to back
+    assert_equal('notice','Unfavorited #{@resource.name}')
+  end
+  
+  #resource_params test needs to be written: here
+    
   #Old test code
   #test "users can favorite resources" do
   #  sign_in @user
