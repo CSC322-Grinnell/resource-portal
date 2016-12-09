@@ -89,6 +89,16 @@ class ResourcesControllerTest < ActionController::TestCase
     assert_redirected_to root_path # After successful creation, redirected to home page.
   end
   
+  test "users can favorite resources" do
+    sign_in @user
+    get :show, id: @resource
+    assert_difference('@user.favorites.count', +1) do
+      Resource.favorite(@resource)
+    end
+    assert_response :success
+  end
+  
+  #Old test code
   #test "users can favorite resources" do
   #  sign_in @user
   #  get :show, id: @resource
